@@ -10,4 +10,4 @@
 [![Netlify Status](https://api.netlify.com/api/v1/badges/31b73ed9-ab1b-4d78-92c5-1ae24345ad9d/deploy-status)](https://app.netlify.com/sites/xxdocs/deploys)
 
 [GitHub](https://github.com/WeiXinao/docs)
-[Get Started](#docsify)
+[Get Started](README)
