@@ -1666,5 +1666,3 @@ while (true) {
 </script>
 ~~~
 
->[!note] hello world
->hello xiaoxin
