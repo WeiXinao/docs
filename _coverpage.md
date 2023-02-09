@@ -1,6 +1,7 @@
 <!-- _coverpage.md -->
 
-![logo](_media/icon.svg)
+![](http://pic.xiaoxin.link/img/v2-291be7780689a775c9ecb655daa67fe4_r%20(1).png)
+
 
 # Xnotes <small></small>
 
