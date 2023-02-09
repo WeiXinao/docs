@@ -1,4 +1,4 @@
-- [Introduction](/)
+- [Introduction](README)
 - 前端
 	- 学习路线
 		- HTML
