@@ -19,9 +19,13 @@ world
 <!-- tabs:end -->
 
 ```mindmap
-root
-  topic1
-    subtopic
-  topic2
-    subtopic
+Xnotes
+  Introduction
+  前端
+    学习路线
+      HTML
+        第一天总结 
+        第二天总结
+      JavaScript
+        Javascript基础
 ```
