@@ -6,9 +6,7 @@
 
 > The notes on the road of programming.
 
-- Simple and lightweight
-- No statically built html files
-- Multiple themes
 
-[GitHub](https://github.com/docsifyjs/docsify/)
-[Get Started](/)
+
+[GitHub](https://github.com/WeiXinao/docs)
+[Get Started](#docsify)
