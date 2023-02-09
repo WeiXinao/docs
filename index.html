@@ -29,6 +29,21 @@
         crossChapter: true,
         crossChapterText: true,
       },
+      plugins: [
+        function pageFooter(hook, vm) {
+          var footer = [
+            '<hr/>',
+            '<footer>',
+            '<p><a href="https://github.com/WeiXinao">WeiXinao</a> &copy;2023.</p>',
+            '<p>Proudly published with <a href="https://github.com/docsifyjs/docsify" target="_blank">docsify</a>.</p>',
+            '</footer>',
+          ].join('');
+
+          hook.afterEach(function (html) {
+            return html + footer;
+          });
+        },
+      ],
     }
   </script>
   <!-- Docsify v4 -->
