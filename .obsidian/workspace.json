@@ -1,0 +1,146 @@
+{
+  "main": {
+    "id": "4bd023d1b7a400ca",
+    "type": "split",
+    "children": [
+      {
+        "id": "a0a3ef5ea283633c",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "b5374b8524c4e89d",
+            "type": "leaf",
+            "state": {
+              "type": "empty",
+              "state": {}
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "632a63bbf4adac56",
+    "type": "split",
+    "children": [
+      {
+        "id": "443eb6ec25da144e",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "4f3dc7072644b5fe",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              }
+            }
+          },
+          {
+            "id": "1c74189002662e31",
+            "type": "leaf",
+            "state": {
+              "type": "starred",
+              "state": {}
+            }
+          },
+          {
+            "id": "ce2c0fec2d9e2d17",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical"
+              }
+            }
+          }
+        ],
+        "currentTab": 2
+      }
+    ],
+    "direction": "horizontal",
+    "width": 349.5
+  },
+  "right": {
+    "id": "ac157b449d131207",
+    "type": "split",
+    "children": [
+      {
+        "id": "bdc72b20b4ab5ad4",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "7b21dd79ee4f856f",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": true,
+                "unlinkedCollapsed": true
+              }
+            }
+          },
+          {
+            "id": "42c6788ea5e26afc",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {}
+            }
+          },
+          {
+            "id": "89bbe49c3ed75f66",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": false
+              }
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 438.5
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "switcher:打开快速切换": false,
+      "graph:查看关系图谱": false,
+      "canvas:Create new canvas": false,
+      "templates:插入模板": false,
+      "command-palette:打开命令面板": false,
+      "markdown-importer:打开 Markdown 格式转换器": false,
+      "audio-recorder:开始/结束录音": false,
+      "markdown-table-editor:Open Markdown Table Editor": false,
+      "obsidian42-brat:BRAT": false
+    }
+  },
+  "active": "7b21dd79ee4f856f",
+  "lastOpenFiles": [
+    "ComputerNetworks/assets/image-20220908203121788.png",
+    "ComputerNetworks/assets/image-20220908202449215.png",
+    "ComputerNetworks/第一章-计算机网络体系结构.md",
+    "others/Obsidian Callout.md",
+    "前端/前端路线/JavaScript/JavaScript 基础.md",
+    "前端/前端路线/HTML/第一天总结.md",
+    "JavaEE/小米商城.md",
+    "Nginx/nginx.md",
+    "前端/前端路线/HTML/第二天总结.md",
+    "ComputerNetworks/王道23考研计算机网络复习指导.pdf"
+  ]
+}
