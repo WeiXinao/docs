@@ -11,8 +11,12 @@
             "id": "b5374b8524c4e89d",
             "type": "leaf",
             "state": {
-              "type": "empty",
-              "state": {}
+              "type": "markdown",
+              "state": {
+                "file": "前端/前端路线/JavaScript/JavaScript 基础.md",
+                "mode": "preview",
+                "source": false
+              }
             }
           }
         ]
@@ -82,10 +86,11 @@
             "state": {
               "type": "backlink",
               "state": {
+                "file": "前端/前端路线/JavaScript/JavaScript 基础.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
-                "showSearch": false,
+                "showSearch": true,
                 "searchQuery": "",
                 "backlinkCollapsed": true,
                 "unlinkedCollapsed": true
@@ -97,7 +102,9 @@
             "type": "leaf",
             "state": {
               "type": "outline",
-              "state": {}
+              "state": {
+                "file": "前端/前端路线/JavaScript/JavaScript 基础.md"
+              }
             }
           },
           {
@@ -111,7 +118,8 @@
               }
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "horizontal",
@@ -130,8 +138,9 @@
       "obsidian42-brat:BRAT": false
     }
   },
-  "active": "7b21dd79ee4f856f",
+  "active": "42c6788ea5e26afc",
   "lastOpenFiles": [
+    "README.md",
     "ComputerNetworks/assets/image-20220908203121788.png",
     "ComputerNetworks/assets/image-20220908202449215.png",
     "ComputerNetworks/第一章-计算机网络体系结构.md",
@@ -140,7 +149,6 @@
     "前端/前端路线/HTML/第一天总结.md",
     "JavaEE/小米商城.md",
     "Nginx/nginx.md",
-    "前端/前端路线/HTML/第二天总结.md",
-    "ComputerNetworks/王道23考研计算机网络复习指导.pdf"
+    "前端/前端路线/HTML/第二天总结.md"
   ]
 }
