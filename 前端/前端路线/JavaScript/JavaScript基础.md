@@ -3,7 +3,7 @@
 ## JavaScript 是什么？
 
 
-![javascript#inlineR|500](https://raw.githubusercontent.com/WeiXinao/imgBed2/main/img/20230206130455.png)
+![javascript#inlineR|500](https://raw.githubusercontent.com/WeiXinao/imageBed/main/img20230206130455.png)
 1. Javascript（是什么？） 
 	- 是一种运行在客户端（浏览器）的编程语言，实现人机交互效果。 
 2. 作用（做什么？） 
