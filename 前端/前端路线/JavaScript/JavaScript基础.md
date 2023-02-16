@@ -23,7 +23,7 @@
 
 **JavaScript权威网站**：[MDN Web Docs (mozilla.org)](https://developer.mozilla.org/zh-CN/)
 
- ![javascript](https://raw.githubusercontent.com/WeiXinao/imgBed2/main/img/20230208162849.png) 
+ ![javascript](https://raw.githubusercontent.com/WeiXinao/imageBed/main/img20230208162849.png) 
 
 ## 体验JavaScript
 
