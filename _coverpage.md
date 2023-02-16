@@ -11,3 +11,13 @@
 
 [GitHub](https://github.com/WeiXinao/docs)
 [Get Started](README)
+
+imgBed
+
+WeiXinao/imgBed2
+
+main
+
+img/
+
+https://cdn.jsdeliver.net/gh/WeiXinao/ImageBed2
