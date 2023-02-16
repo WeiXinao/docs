@@ -19,4 +19,5 @@ embed
 
 它们都是<mark>可替换元素</mark>
 
-MIME
+> MIME(Multipurpose Internet Mail Extensions)多用途互联网邮件扩展类型。
+
