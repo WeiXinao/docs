@@ -1134,9 +1134,44 @@ embed
 **示例**
 
 ```html
-
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p>
+        在我们学校有量两门课程非常受欢迎，<b>HTML&CSS</b> 和 <b>JS</b> 
+    </p>
+</body>
+</html>
 ```
 ## q
 
 一小段引用文本
 
+**示例**
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p>
+        最近热播的美剧《权利的游戏》中有一段经典台词：<q>在权利的斗争中，非胜即死，没有中间状态</q>。
+    </p>
+</body>
+</html>
+```
+
+## blockquote
+
+大段引用的文本
