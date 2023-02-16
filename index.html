@@ -61,7 +61,6 @@
       plugins: [
         function pageFooter(hook, vm) {
           var footer = [
-            '<meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests" />',
             '<hr/>',
             '<footer >',
             '<p style="text-align:center;line-height: 20px;"><a href="https://github.com/WeiXinao">WeiXinao</a> &copy;2023.</p>',
@@ -72,6 +71,17 @@
 
           hook.afterEach(function (html) {
             return html + footer;
+          });
+        },
+        function resolveImgDisplay(hook, vm) {
+          var metaFrag = [
+          '<meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">'
+          ].join('');
+
+          hook.afterEach(function (html) {
+            let splits = html.split("<head>");
+            console.log(splits[0]);
+            return splits[0] + '<head>' + metaFrag + splits[1];
           });
         },
       ],
