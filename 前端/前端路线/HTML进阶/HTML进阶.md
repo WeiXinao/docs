@@ -1,3 +1,8 @@
+
+# HTML5 元素周期表
+
+👉 [HTML5元素周期表 (xuanfengge.com)](https://www.xuanfengge.com/funny/html5/element/)
+
 # iframe 元素
 
 框架页
@@ -1121,3 +1126,17 @@ embed
 </body>
 </html>
 ```
+
+## b（bold）
+
+以前是一个无语义元素，主要用于加粗字体
+
+**示例**
+
+```html
+
+```
+## q
+
+一小段引用文本
+
