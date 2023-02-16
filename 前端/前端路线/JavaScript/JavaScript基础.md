@@ -3,7 +3,7 @@
 ## JavaScript 是什么？
 
 
-![javascript#inlineR|500](http://pic.xiaoxin.link/img/20230206130455.png)
+![javascript#inlineR|500](https://raw.githubusercontent.com/WeiXinao/imgBed2/main/img/20230206130455.png)
 1. Javascript（是什么？） 
 	- 是一种运行在客户端（浏览器）的编程语言，实现人机交互效果。 
 2. 作用（做什么？） 
@@ -23,7 +23,7 @@
 
 **JavaScript权威网站**：[MDN Web Docs (mozilla.org)](https://developer.mozilla.org/zh-CN/)
 
- ![javascript](http://pic.xiaoxin.link/img/20230208162849.png) 
+ ![javascript](https://raw.githubusercontent.com/WeiXinao/imgBed2/main/img/20230208162849.png) 
 
 ## 体验JavaScript
 
@@ -59,7 +59,7 @@
 </html>
 ```
 
-![](http://pic.xiaoxin.link/img/2023-02-06-14-21-17.gif)
+![](https://raw.githubusercontent.com/WeiXinao/imgBed2/main/img/2023-02-06-14-21-17.gif)
 
 
 ### 总结
@@ -119,7 +119,7 @@ JavaScript 程序不能独立运行，它需要被嵌入 HTML 中，然后浏览
  </body>  
  </html>
 ```
- 
+
 如果 script 标签使用 src 属性引入了某 .js 文件，那么 标签的代码会被忽略！！！如下代码所示：
 
 ```javascript
@@ -309,7 +309,7 @@ console.log('控制台打印')
 
 **展示：**
 
-![](http://pic.xiaoxin.link/img/prompt.gif)
+![](https://raw.githubusercontent.com/WeiXinao/imgBed2/main/img/prompt.gif)
 
 JavaScript 代码执行顺序：
 
@@ -434,7 +434,7 @@ var 就是个bug，别迷恋它了，以后声明变量我们统一使用 let
 
 声明（定义）变量相当于创造了一个空的“容器”，通过赋值向这个容器中添加数据。
 
-![](http://pic.xiaoxin.link/img/20230206213416.png)
+![](https://raw.githubusercontent.com/WeiXinao/imgBed2/main/img/20230206213416.png)
 >[!note]
 >是通过变量名来获得变量里面的数据
 
@@ -522,7 +522,7 @@ let age = 19;
 
 变量本质：是程序在内存中申请的一块用来存放数据的小空间
 
-![](http://pic.xiaoxin.link/img/20230206230008.png)
+![](https://raw.githubusercontent.com/WeiXinao/imgBed2/main/img/20230206230008.png)
 
 
 ### 关键字
@@ -678,7 +678,7 @@ const PI = 3.14
 
 ## 数据类型
 
-![](http://pic.xiaoxin.link/img/JS%20%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B.png)
+![](https://raw.githubusercontent.com/WeiXinao/imgBed2/main/img/JS%20%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B.png)
 
 > 计算机世界中的万事成物都是数据。
 
@@ -1269,7 +1269,7 @@ console.log(num)
 
 ### 表达式和语句
 
-![](http://pic.xiaoxin.link/img/20230208202543.png)
+![](https://raw.githubusercontent.com/WeiXinao/imgBed2/main/img/20230208202543.png)
 
 ### 分支语句
 
@@ -1611,7 +1611,7 @@ for (; ;) {
 
 ## 综合案例-ATM存取款机
 
-![](http://pic.xiaoxin.link/img/20230208202714.png)
+![](https://raw.githubusercontent.com/WeiXinao/imgBed2/main/img/20230208202714.png)
 
 分析：
 
