@@ -11,7 +11,54 @@ iframe 可替换元素
 3. CSS 不能完全控制其样式
 4. 具有行块盒的特点
 
+**示例1**
 
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        iframe {
+            width: 100%;
+            height: 500px;
+        }
+    </style>
+</head>
+<body>
+    <a href="https://www.baidu.com" target="myframe">百度</a>
+    <a href="https://www.douyu.com" target="myframe">斗鱼</a>
+    <a href="https://www.taobao.com" target="myframe">淘宝</a>
+    <iframe name="myframe" src="https://notes.xiaoxin.link" frameborder="0"></iframe>
+</body>
+</html>
+```
+
+**示例2**
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        iframe {
+            width: 1000px;
+            height: 600px;
+        }
+    </style>
+</head>
+<body>
+    <iframe src="https://player.bilibili.com/player.html?aid=815983366&bvid=BV1PG4y1x7WL&cid=844036512&page=1" scrolling="no" frameborder="no" framespacing="0" allowfullscreen="true"> </iframe>
+</body>
+</html>
+```
 
 # 在页面中使用 flash
 
@@ -25,6 +72,37 @@ embed
 
 比如，资源是一个 jpg 图片， MIME: img/jpeg
 
+**示例**
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        object, embed {
+            width: 600px;
+            height: 500px;  
+        }
+    </style>
+</head>
+<body>
+    <!-- <object data="./main.swf" type="application/x-shockwave-flash">
+        <param name="quality" value="high">
+    </object>
+    <embed src="./main.swf" quality="high" type="application/x-shockwave-flash"> -->
+
+    <!-- 兼容的写法 -->
+    <object data="./main.swf" type="application/x-shockwave-flash">
+        <param name="quality" value="high">
+        <embed src="./main.swf" quality="high" type="application/x-shockwave-flash">
+    </object>
+</body>
+</html>
+```
 
 ## 类型大全
 
@@ -997,3 +1075,8 @@ embed
 {".json","application/json"},
 
 # 其他元素
+
+## abbr
+
+缩写词
+
