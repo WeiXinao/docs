@@ -1274,7 +1274,7 @@ rel 属性：relation，链接资源和当前网页的关系
 
 type 属性：链接资源的 MIME 类型
 
-**[示例](https://weixinao.github.io/Web-Study-Source-Code/HTML%E8%BF%9B%E9%98%B6/3.%E5%85%B6%E4%BB%96%E5%85%83%E7%B4%A0/test09.htm)**
+**[示例](https://weixinao.github.io/Web-Study-Source-Code/HTML%E8%BF%9B%E9%98%B6/3.%E5%85%B6%E4%BB%96%E5%85%83%E7%B4%A0/test09.html)**
 
 ```html
 <!DOCTYPE html>
