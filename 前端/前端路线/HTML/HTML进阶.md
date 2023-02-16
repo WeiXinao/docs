@@ -1176,7 +1176,7 @@ embed
 
 大段引用的文本
 
-**示例**
+**[示例](https://weixinao.github.io/Web-Study-Source-Code/HTML%E8%BF%9B%E9%98%B6/3.%E5%85%B6%E4%BB%96%E5%85%83%E7%B4%A0/test05.html)**
 
 ```javascript
 <!DOCTYPE html>
