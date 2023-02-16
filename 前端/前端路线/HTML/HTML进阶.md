@@ -1248,3 +1248,28 @@ embed
 
 示例
 
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="keywords" content="在线商城,美容,微整形">
+    <meta name="author" content="xiaoxin,1632967698@qq.com">
+    <meta name="description" content="...">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html>
+```
+
+## link 
+
+链接外部资源（CSS，图标）
+
+```html
+
+```
