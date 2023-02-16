@@ -1080,3 +1080,44 @@ embed
 
 缩写词
 
+**示例**
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p>
+        <abbr title="cascading style sheet">CSS</abbr> 用于为页面添加样式
+    </p>
+</body>
+</html>
+```
+
+## time
+
+提供给浏览器或搜索引擎阅读的时间
+
+**示例**
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p>
+        <time datetime="2023-5-1">今年5月</time>，我录制了 HTML 和 CSS 的视频
+    </p>
+</body>
+</html>
+```
