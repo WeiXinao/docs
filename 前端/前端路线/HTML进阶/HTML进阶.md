@@ -21,3 +21,8 @@ embed
 
 > MIME(Multipurpose Internet Mail Extensions)多用途互联网邮件扩展类型。
 
+比如，资源是一个 jpg 图片， MIME: img/jpeg
+
+
+
+
