@@ -11,6 +11,8 @@ iframe 可替换元素
 3. CSS 不能完全控制其样式
 4. 具有行块盒的特点
 
+
+
 # 在页面中使用 flash
 
 object
@@ -994,3 +996,4 @@ embed
 
 {".json","application/json"},
 
+# 其他元素
