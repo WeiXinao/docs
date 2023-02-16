@@ -1196,4 +1196,12 @@ embed
 </html>
 ```
 
-![](https://img-blog.csdnimg.cn/c1cc7f1f612244879fdd2ecacb45fed8.gif)
+## br
+
+无语义，主要用于在文本中换行
+
+## hr
+
+无语义，主要用于分割
+
+## meta 
