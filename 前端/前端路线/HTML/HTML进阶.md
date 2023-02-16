@@ -1270,6 +1270,25 @@ embed
 
 链接外部资源（CSS，图标）
 
-```html
+rel 属性：relation，链接资源和当前网页的关系
 
+type 属性：链接资源的 MIME 类型
+
+**[示例](https://weixinao.github.io/Web-Study-Source-Code/HTML%E8%BF%9B%E9%98%B6/3.%E5%85%B6%E4%BB%96%E5%85%83%E7%B4%A0/test09.htm)**
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./style.css">
+    <link rel="shortcut icon" href="Opera.ico" type="image/x-icon">
+</head>
+<body>
+    
+</body>
+</html>
 ```
