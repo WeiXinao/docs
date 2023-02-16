@@ -59,7 +59,7 @@
 </html>
 ```
 
-![](https://raw.githubusercontent.com/WeiXinao/imgBed2/main/img/2023-02-06-14-21-17.gif)
+![](https://raw.githubusercontent.com/WeiXinao/imageBed/main/img2023-02-06-14-21-17.gif)
 
 
 ### 总结
@@ -434,7 +434,7 @@ var 就是个bug，别迷恋它了，以后声明变量我们统一使用 let
 
 声明（定义）变量相当于创造了一个空的“容器”，通过赋值向这个容器中添加数据。
 
-![](https://raw.githubusercontent.com/WeiXinao/imgBed2/main/img/20230206213416.png)
+![](https://raw.githubusercontent.com/WeiXinao/imageBed/main/img20230206213416.png)
 >[!note]
 >是通过变量名来获得变量里面的数据
 
@@ -522,7 +522,7 @@ let age = 19;
 
 变量本质：是程序在内存中申请的一块用来存放数据的小空间
 
-![](https://raw.githubusercontent.com/WeiXinao/imgBed2/main/img/20230206230008.png)
+![](https://raw.githubusercontent.com/WeiXinao/imageBed/main/img20230206230008.png)
 
 
 ### 关键字
