@@ -1200,8 +1200,46 @@ embed
 
 无语义，主要用于在文本中换行
 
+**[示例](https://weixinao.github.io/Web-Study-Source-Code/HTML%E8%BF%9B%E9%98%B6/3.%E5%85%B6%E4%BB%96%E5%85%83%E7%B4%A0/test06.html)**
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    湖北省 <br>
+    武汉市 <br>
+    武昌区 <br>
+</body>
+</html>
+```
+
 ## hr
 
 无语义，主要用于分割
+
+**[示例](https://weixinao.github.io/Web-Study-Source-Code/HTML%E8%BF%9B%E9%98%B6/3.%E5%85%B6%E4%BB%96%E5%85%83%E7%B4%A0/test07.html)**
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quibusdam, maiores ducimus? Vel repellendus, aut neque cumque reiciendis dolore rerum ex praesentium rem pariatur labore minus reprehenderit eligendi minima exercitationem animi.
+    <hr>
+    Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet, delectus. Molestias consectetur nesciunt magnam in dolore, dolorem quidem. Vero minus placeat ipsam sed incidunt dolorem accusantium libero ea vitae ab?
+</body>
+</html>
+```
 
 ## meta 
