@@ -1269,7 +1269,7 @@ console.log(num)
 
 ### 表达式和语句
 
-![](https://raw.githubusercontent.com/WeiXinao/imgBed2/main/img/20230208202543.png)
+![](https://raw.githubusercontent.com/WeiXinao/imageBed/main/img20230208202543.png)
 
 ### 分支语句
 
@@ -1611,7 +1611,7 @@ for (; ;) {
 
 ## 综合案例-ATM存取款机
 
-![](https://raw.githubusercontent.com/WeiXinao/imgBed2/main/img/20230208202714.png)
+![](https://raw.githubusercontent.com/WeiXinao/imageBed/main/img20230208202714.png)
 
 分析：
 
