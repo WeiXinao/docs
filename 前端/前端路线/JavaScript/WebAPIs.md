@@ -162,9 +162,10 @@ document.querySelectorAll('ul li')
 - 对象.innerText 属性
 - 对象.innerHTML 属性
 
-1. **元素.innerText 属性**
-	- 将文本内容添加/更新到任意标签位置
-	- 显示纯文本，不解析标签
+## 1. 元素.innerText 属性
+
+- 将文本内容添加/更新到任意标签位置
+- 显示纯文本，不解析标签
 
 >[!NOTE]
 >举例说明：
@@ -178,7 +179,7 @@ document.querySelectorAll('ul li')
 >```
 
 
-### 2. 元素.innerHTML 属性
+## 2. 元素.innerHTML 属性
 
 - 将文本内容添加/更新到任意标签位置
 - 会解析标签，多标签建议使用模板字符
@@ -192,8 +193,14 @@ document.querySelectorAll('ul li')
 >     box.innerHTML = '<strong>我要更换</strong>'
 >```
 
-### 总结
-
+## 总结
+1. 设置/修改 DOM 元素内容有哪两种方式？
+	- 元素.innerText 属性
+	- 元素.innerHTML 属性
+1. 两者的区别是什么？
+	- 元素.innerText 属性，只识别文本，不能解析标签
+	- <font color=#F36208>元素.innerHTML 属性，能识别文本，能够解析标签</font>
+	- <font color=#F36208>如果你还在纠结到底用谁，你可以选择 innerHTML</font>
 
 
 
