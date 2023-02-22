@@ -78,6 +78,7 @@ document.querySelectorAll('css选择器')
 
 >[!NOTE]
 >注意事项：
+>
 >哪怕只有一个元素，通过 `querySelectAll()` 获取过来的也是一个<font color=#F36208 style="font-weight: bold">伪数组</font>，
 >里面只有一个元素而已
 
@@ -155,6 +156,11 @@ document.querySelectorAll('ul li')
 1. 他们两者小括号里面的参数有什么注意事项？
 	- 里面写 CSS 选择器 
 	- <font color=#F36208 style="font-weight: bold;">必须是字符串，也就是必须加引号</font>
+
+# 操作元素内容
+
+- 对象.innerText 属性
+- 对象.innerHTML 属性
 
 
 
