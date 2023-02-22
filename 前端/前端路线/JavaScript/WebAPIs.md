@@ -162,6 +162,19 @@ document.querySelectorAll('ul li')
 - 对象.innerText 属性
 - 对象.innerHTML 属性
 
+1. **元素innerText 属性**
+	- 将文本内容添加/更新到任意标签位置
+	- 显示纯文本，不解析标签
+
+>[!NOTE]
+>举例说明：
+>
+>```javascript
+>		 // 1. 获取元素
+ >       const box = document.querySelector('.box');
+ >       // 2. 修改文字内容 对象.innerText 属性
+ >       console.log(box.innerText); // 获取文字内容
+ >       box.innerText = '<strong>我是一个盒子</strong>';  // 修改文字内容
+>```
 
 
- 
