@@ -22,4 +22,13 @@
 
 1. DOM 树是什么？
 	-  将 HTML 文档以树状结构直观的表现出来，我们称之为文档树或 DOM 对象
-	- 作用：文档树直观的体现了标签与标签之间的关系
+	- 作用：<font color=#F36208>文档树直观的体现了标签与标签之间的关系</font>
+2. DOM 对象是怎么创建的？
+	- 浏览器根据 HTML 标签生成的 <font color=#F36208>JS对象（BOM对象）</font>
+	- DOM 的核心就是把内容当<font color=#F36208>对象</font>来处理
+3. document 是什么？
+	- 是 DOM 里提供的一个<font color=#F36208 style="font-weight: 700">对象</font>
+	- 网页所有的内容都在 document 里面
+
+## 获取 DOM 对象
+
