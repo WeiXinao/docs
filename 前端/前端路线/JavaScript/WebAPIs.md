@@ -203,11 +203,65 @@ document.querySelectorAll('ul li')
 	- <font color=#F36208>元素.innerHTML 属性，能识别文本，能够解析标签</font>
 	- <font color=#F36208>如果你还在纠结到底用谁，你可以选择 innerHTML</font>
 
-## 
+## 案例：年会抽奖案例
 
+需求：从数组随机抽取一等奖、二等奖和三等奖，显示到对应的标签里面。
 
+分析：
+1. 声明数组：`const personArr = ['周杰伦', '刘德华', '周星驰', '张学友']`
+2. 一等奖：随机生成一个数字（0~数组长度），找到对应数组的名字
+3. 通过 `innerText` 或者 `innerHTML` 将名字写入 `span` 元素内部
+4. 二等奖依次类推
 
+![](https://raw.githubusercontent.com/WeiXinao/imgBed2/main/img/202302230152381.png)
 
+参考代码：
+
+```javascript
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>年会抽奖</title>
+  <style>
+    .wrapper {
+      width: 840px;
+      height: 420px;
+      background: url(./images/bg01.jpg) no-repeat center / cover;
+      padding: 100px 250px;
+      box-sizing: border-box;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="wrapper">
+    <strong>传智教育年会抽奖</strong>
+    <h1>一等奖：<span id="one">???</span></h1>
+    <h3>二等奖：<span id="two">???</span></h3>
+    <h5>三等奖：<span id="three">???</span></h5>
+  </div>
+  <script>
+    // 1. 声明数组
+    const personArr = ['周杰伦', '刘德华', '周星驰', '张学友'];
+    const prizes = document.querySelectorAll('div.wrapper span');
+    // 2. 先做一等奖
+    for (let i = 0; i < 3; i++) {
+      const randomIndex = Math.floor(Math.random() * personArr.length);
+      const selectElement = personArr[randomIndex];
+      personArr.splice(randomIndex, 1);
+      prizes[i].innerText = selectElement;
+    }
+  </script>
+</body>
+
+</html>
+```
+
+:pointer
 
 
 
