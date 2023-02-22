@@ -78,8 +78,8 @@ document.querySelectorAll('css选择器')
 
 >[!NOTE]
 >注意事项：
->哪怕只有一个元素，通过 `querySelectAll()` 获取过来的也是一个<font color=#F36208 >伪数组</font>，里面只有一个元素而已 
-
+>哪怕只有一个元素，通过 `querySelectAll()` 获取过来的也是一个<font color=#F36208 style="font-weight: bold">伪数组</font>，
+>里面只有一个元素而已
 
 **参数：**
 
@@ -113,7 +113,49 @@ document.querySelectorAll('ul li')
 **参考代码：**
 
 ```javascript
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>输出DOM对象</title>
+</head>
+<body>
+    <ul class="nav">
+        <li>我的首页</li>
+        <li>产品介绍</li>
+        <li>联系方式</li>
+    </ul>
+    <script>
+        // 1. 获取元素
+        const lis = document.querySelectorAll('.nav li');
+        console.log(lis);
+        lis.forEach(element => {
+           console.log(element); // 每个 li 对象  
+        });
 
+        // const p = document.querySelectorAll('.nav');
+        // p[0].style.color = 'red';
+    </script>
+</body>
+</html>
 ```
 
 👉[演示demo]()
+
+### 总结
+
+1. 获取页面中的标签我们最终常用哪两种方式？
+	- `querySelectorAll()`
+	- `querySelector()`
+2. 它们两者的区别是什么？
+	- `querySelector()` 只能选择一个元素，可以直接操作
+	- `querySelectorAll()` 可以选择多个元素，得到的是伪数组，需要遍历得到每一个元素
+1. 他们两者小括号里面的参数有什么注意事项？
+	- 里面写 CSS 选择器 
+	- <font color=#F36208 style="font-weight: bold;">必须是字符串，也就是必须加引号</font>
+
+
+
+ 
