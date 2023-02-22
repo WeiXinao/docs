@@ -1,5 +1,8 @@
 # CSS 属性计算过程
 
+![](https://raw.githubusercontent.com/WeiXinao/imgBed2/main/img/CSS%E5%B1%9E%E6%80%A7%E8%AE%A1%E7%AE%97%E8%BF%87%E7%A8%8B.png)
+
+
 你是否了解 CSS 的属性计算过程呢？
 
 有的同学可能会讲，CSS属性我倒是知道，例如：
