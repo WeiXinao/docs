@@ -73,4 +73,23 @@ document.querySelectorAll('css选择器')
 
 **参数：**
 
-包含一个或多个有效的 CSS选择器 <font color=#F36208 sty>字符串</font>
+包含一个或多个有效的 CSS选择器 <font color=#F36208 style="font-weight: bold">字符串</font>
+
+**返回值：**
+
+CSS 选择器匹配的 <font color=#F36208>NodeList 对象集合</font>
+
+**例如：**
+
+```javascript
+document.querySelectorAll('ul li')
+```
+
+### 总结
+
+1. 获取一个 DOM 元素我们使用谁？能直接操作修改吗？
+	- `querySelector()`
+	- 可以
+2. 获取多个 DOM 元素我们使用谁？能直接操作修改吗？ 如果不能可以怎么做到修改？
+	- `querySelectorAll()`
+	- 不可以，只能
