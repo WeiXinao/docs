@@ -71,6 +71,16 @@ CSS 选择器匹配的第一个元素，一个 HTMLElement 对象。
 document.querySelectorAll('css选择器')
 ```
 
+得到的是一个<font color=#F36208 style="font-weight: bold">伪数组</font>：
+- 有长度有索引号的数组
+- 但是没有 `pop() push()` 等数组方法
+想要得到里面的每一个对象，但需要遍历（for）的方式获得。
+
+>[!NOTE]
+>注意事项：
+>哪怕只有一个元素，通过 `querySelectAll()` 获取过来的也是一个<font color=#F36208 >伪数组</font>，里面只有一个元素而已 
+
+
 **参数：**
 
 包含一个或多个有效的 CSS选择器 <font color=#F36208 style="font-weight: bold">字符串</font>
@@ -105,3 +115,5 @@ document.querySelectorAll('ul li')
 ```javascript
 
 ```
+
+👉[演示demo]()
