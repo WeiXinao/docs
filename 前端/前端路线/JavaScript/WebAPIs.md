@@ -46,9 +46,19 @@
 
 1. 选择匹配第一个元素
 
-**语法**
+**语法：**
 
 ```javascript
 document.querySelector('css选择器')
 ```
 
+**参数：**
+
+包含一个或多个有效的 CSS 选择器 <font color=#F36208 style="font-weight : bold">字符串</font>
+
+**返回值：**
+
+CSS 选择器匹配的第一个元素，一个 HTMLElement 对象。
+如果没有匹配到，则返回null。
+
+👉 多参看文档：
