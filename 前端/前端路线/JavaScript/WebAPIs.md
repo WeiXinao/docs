@@ -61,4 +61,16 @@ document.querySelector('css选择器')
 CSS 选择器匹配的第一个元素，一个 HTMLElement 对象。
 如果没有匹配到，则返回null。
 
-👉 多参看文档：
+👉 多参看文档： https://developer.mozilla.org/zh-CN/docs/Web/API/Document/querySelector
+
+2. 选择匹配的多个元素
+
+**语法：**
+
+```javascript
+document.querySelectorAll('css选择器')
+```
+
+**参数：**
+
+包含一个或多个有效的 CSS选择器 <font color=#F36208 sty>字符串</font>
