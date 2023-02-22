@@ -92,4 +92,11 @@ document.querySelectorAll('ul li')
 	- 可以
 2. 获取多个 DOM 元素我们使用谁？能直接操作修改吗？ 如果不能可以怎么做到修改？
 	- `querySelectorAll()`
-	- 不可以，只能
+	- 不可以，只能通过遍历的方式一次给里面的元素做修改
+
+### 练习
+
+请控制台依次输出 3 个 li 的 DOM 对象
+
+![](https://raw.githubusercontent.com/WeiXinao/imgBed2/main/img/code.png)
+
