@@ -194,6 +194,7 @@ document.querySelectorAll('ul li')
 >```
 
 ## 总结
+
 1. 设置/修改 DOM 元素内容有哪两种方式？
 	- 元素.innerText 属性
 	- 元素.innerHTML 属性
@@ -202,7 +203,7 @@ document.querySelectorAll('ul li')
 	- <font color=#F36208>元素.innerHTML 属性，能识别文本，能够解析标签</font>
 	- <font color=#F36208>如果你还在纠结到底用谁，你可以选择 innerHTML</font>
 
-
+## 
 
 
 
