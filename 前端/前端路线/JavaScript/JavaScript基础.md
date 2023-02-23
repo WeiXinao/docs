@@ -1669,18 +1669,6 @@ while (true) {
 
 ![](https://raw.githubusercontent.com/WeiXinao/imgBed2/main/img/202302220054548.png)
 
->[!NOTE]
->ADAS
-
-
->[!DANGER]
->123 
-
-
->[!WARNING]
->DASD
-
-
 
 
 

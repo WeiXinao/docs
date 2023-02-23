@@ -76,6 +76,8 @@ document.querySelectorAll('css选择器')
 - 但是没有 `pop() push()` 等数组方法
 想要得到里面的每一个对象，但需要遍历（for）的方式获得。
 
+> [!note]
+>
 > 注意事项：
 >
 > 哪怕只有一个元素，通过 `querySelectAll()` 获取过来的也是一个<font color=#F36208 style="font-weight: bold">伪数组</font>，
@@ -166,16 +168,17 @@ document.querySelectorAll('ul li')
 - 将文本内容添加/更新到任意标签位置
 - 显示纯文本，不解析标签
 
->[!NOTE]
->举例说明：
+> [!note]
 >
->```javascript
->		 // 1. 获取元素
- >       const box = document.querySelector('.box');
- >       // 2. 修改文字内容 对象.innerText 属性
- >       console.log(box.innerText); // 获取文字内容
- >       box.innerText = '<strong>我是一个盒子</strong>';  // 修改文字内容
->```
+> 举例说明：
+>
+> ```java
+> // 1. 获取元素
+> const box = document.querySelector('.box');
+> // 2. 修改文字内容 对象.innerText 属性
+> console.log(box.innerText); // 获取文字内容
+> box.innerText = '<strong>我是一个盒子</strong>';  // 修改文字内容
+> ```
 
 
 ## 2. 元素.innerHTML 属性
@@ -183,14 +186,16 @@ document.querySelectorAll('ul li')
 - 将文本内容添加/更新到任意标签位置
 - 会解析标签，多标签建议使用模板字符
 
->[!NOTE]
->举例说明
->```javascript
-> 	// 3. innerHTML 解析标签
->     console.log(box.innerHTML);
->     box.innerHTML = '我要更换';
->     box.innerHTML = '<strong>我要更换</strong>'
->```
+> [!note]
+>
+> 举例说明
+>
+> ```javascript
+> // 3. innerHTML 解析标签
+> console.log(box.innerHTML);
+> box.innerHTML = '我要更换';
+> box.innerHTML = '<strong>我要更换</strong>'
+> ```
 
 ## 总结
 
