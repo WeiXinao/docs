@@ -276,7 +276,7 @@ document.querySelectorAll('ul li')
 
 
 
-[testJump](test.md#world)
+[testJump](./test.md#world)
 
 
 
