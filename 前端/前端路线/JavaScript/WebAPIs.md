@@ -76,11 +76,10 @@ document.querySelectorAll('css选择器')
 - 但是没有 `pop() push()` 等数组方法
 想要得到里面的每一个对象，但需要遍历（for）的方式获得。
 
->[!NOTE]
->注意事项：
+> 注意事项：
 >
->哪怕只有一个元素，通过 `querySelectAll()` 获取过来的也是一个<font color=#F36208 style="font-weight: bold">伪数组</font>，
->里面只有一个元素而已
+> 哪怕只有一个元素，通过 `querySelectAll()` 获取过来的也是一个<font color=#F36208 style="font-weight: bold">伪数组</font>，
+> 里面只有一个元素而已
 
 **参数：**
 
