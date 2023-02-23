@@ -288,3 +288,4 @@ document.querySelectorAll('ul li')
 2. CSS页面背景图片 `background-image`
 3. 标签选择 body，因为 body 是唯一的标签，可以直接写 `document.body.style`
 
+<font color='orange'>qweqw</font>
