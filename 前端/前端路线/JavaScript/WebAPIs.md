@@ -1,3 +1,5 @@
+
+
 ## DOM 树
 
 - DOM 树是什么
@@ -79,11 +81,7 @@ document.querySelectorAll('css选择器')
 
 > [!note]
 > 
-> 
 >
-> 
->
-> 
 >
 > 注意事项：
 >
@@ -177,14 +175,15 @@ document.querySelectorAll('ul li')
 
 > [!note]
 > 
+>
 > 举例说明：
 >
 > ```java
 >// 1. 获取元素
 > const box = document.querySelector('.box');
->// 2. 修改文字内容 对象.innerText 属性
+> // 2. 修改文字内容 对象.innerText 属性
 > console.log(box.innerText); // 获取文字内容
->box.innerText = '<strong>我是一个盒子</strong>';  // 修改文字内容
+> box.innerText = '<strong>我是一个盒子</strong>';  // 修改文字内容
 > ```
 
 
@@ -195,14 +194,15 @@ document.querySelectorAll('ul li')
 
 > [!note]
 > 
+>
 > 举例说明
 >
 > ```javascript
 >// 3. innerHTML 解析标签
 > console.log(box.innerHTML);
->box.innerHTML = '我要更换';
+> box.innerHTML = '我要更换';
 > box.innerHTML = '<strong>我要更换</strong>'
->```
+> ```
 
 ## 总结
 
@@ -294,7 +294,18 @@ document.querySelectorAll('ul li')
 2. CSS页面背景图片 `background-image`
 3. 标签选择 body，因为 body 是唯一的标签，可以直接写 `document.body.style`
 
-> [!note]
-> 
-> 
 
+
+> [!note]
+>
+> sadasdasd
+>
+> asdasdasdsad
+>
+> asdasdasdasd
+>
+> asdasdasdasdasdad
+>
+> asdasdasdasdasdasdasdas
+>
+> d
