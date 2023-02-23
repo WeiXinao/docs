@@ -80,8 +80,8 @@ document.querySelectorAll('css选择器')
   想要得到里面的每一个对象，但需要遍历（for）的方式获得。
 
 > [!note]
-> 
 >
+> 
 >
 > 注意事项：
 >
@@ -174,12 +174,12 @@ document.querySelectorAll('ul li')
 - 显示纯文本，不解析标签
 
 > [!note]
-> 
+>
 >
 > 举例说明：
 >
 > ```java
->// 1. 获取元素
+> // 1. 获取元素
 > const box = document.querySelector('.box');
 > // 2. 修改文字内容 对象.innerText 属性
 > console.log(box.innerText); // 获取文字内容
@@ -193,12 +193,12 @@ document.querySelectorAll('ul li')
 - 会解析标签，多标签建议使用模板字符
 
 > [!note]
-> 
+>
 >
 > 举例说明
 >
 > ```javascript
->// 3. innerHTML 解析标签
+> // 3. innerHTML 解析标签
 > console.log(box.innerHTML);
 > box.innerHTML = '我要更换';
 > box.innerHTML = '<strong>我要更换</strong>'
@@ -298,14 +298,6 @@ document.querySelectorAll('ul li')
 
 > [!note]
 >
-> sadasdasd
+> asdadasda
 >
-> asdasdasdsad
->
-> asdasdasdasd
->
-> asdasdasdasdasdad
->
-> asdasdasdasdasdasdasdas
->
-> d
+> sadasdasda
