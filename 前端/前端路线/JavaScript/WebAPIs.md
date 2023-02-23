@@ -1,34 +1,34 @@
 ## DOM 树
 
 - DOM 树是什么
-	- 将 HTML 文档以树状结构直观的表现出来，我们称之为文档树或 DOM 树
-	- 描述网页内容关系的名词
-	- 作用：<font color=#F36208>文档树直观的体现了标签与标签之间的关系</font>
+  - 将 HTML 文档以树状结构直观的表现出来，我们称之为文档树或 DOM 树
+  - 描述网页内容关系的名词
+  - 作用：<font color=#F36208>文档树直观的体现了标签与标签之间的关系</font>
 
 ## DOM 对象⭐
 
 - DOM 对象：浏览器根据 html 标签生成的 <font color=#F36208>JS对象</font> 
-	- 所有的标签属性都可以在这个对象上面找到
-	- 修改这个对象的属性会自动映射到标签身上
+  - 所有的标签属性都可以在这个对象上面找到
+  - 修改这个对象的属性会自动映射到标签身上
 - DOM 的核心思想
-	- 把网页内容作为<font color=#F36208>对象</font>来处理
+  - 把网页内容作为<font color=#F36208>对象</font>来处理
 - document 对象
-	- 是 DOM 里提供的一个<font color=#F36208>对象</font>
-	- 所以它提供的属性和方法都是<font color=#F36208>用来访问和操作网页内容的</font>
-		- 例：`document.write()`
-	- 网页所有内容都在 document 里面
+  - 是 DOM 里提供的一个<font color=#F36208>对象</font>
+  - 所以它提供的属性和方法都是<font color=#F36208>用来访问和操作网页内容的</font>
+    - 例：`document.write()`
+  - 网页所有内容都在 document 里面
 
 ## 总结
 
 1. DOM 树是什么？
-	-  将 HTML 文档以树状结构直观的表现出来，我们称之为文档树或 DOM 对象
-	- 作用：<font color=#F36208>文档树直观的体现了标签与标签之间的关系</font>
+   -  将 HTML 文档以树状结构直观的表现出来，我们称之为文档树或 DOM 对象
+   -  作用：<font color=#F36208>文档树直观的体现了标签与标签之间的关系</font>
 2. DOM 对象是怎么创建的？
-	- 浏览器根据 HTML 标签生成的 <font color=#F36208>JS对象（BOM对象）</font>
-	- DOM 的核心就是把内容当<font color=#F36208>对象</font>来处理
+   - 浏览器根据 HTML 标签生成的 <font color=#F36208>JS对象（BOM对象）</font>
+   - DOM 的核心就是把内容当<font color=#F36208>对象</font>来处理
 3. document 是什么？
-	- 是 DOM 里提供的一个<font color=#F36208 style="font-weight: 700">对象</font>
-	- 网页所有的内容都在 document 里面
+   - 是 DOM 里提供的一个<font color=#F36208 style="font-weight: 700">对象</font>
+   - 网页所有的内容都在 document 里面
 
 ## 获取 DOM 对象
 
@@ -72,16 +72,17 @@ document.querySelectorAll('css选择器')
 ```
 
 得到的是一个<font color=#F36208 style="font-weight: bold">伪数组</font>：
+
 - 有长度有索引号的数组
 - 但是没有 `pop() push()` 等数组方法
-想要得到里面的每一个对象，但需要遍历（for）的方式获得。
+  想要得到里面的每一个对象，但需要遍历（for）的方式获得。
 
 > [!note]
->
+> 
 > 注意事项：
 >
 > 哪怕只有一个元素，通过 `querySelectAll()` 获取过来的也是一个<font color=#F36208 style="font-weight: bold">伪数组</font>，
-> 里面只有一个元素而已
+>里面只有一个元素而已
 
 **参数：**
 
@@ -100,11 +101,11 @@ document.querySelectorAll('ul li')
 ### 总结
 
 1. 获取一个 DOM 元素我们使用谁？能直接操作修改吗？
-	- `querySelector()`
-	- 可以
+   - `querySelector()`
+   - 可以
 2. 获取多个 DOM 元素我们使用谁？能直接操作修改吗？ 如果不能可以怎么做到修改？
-	- `querySelectorAll()`
-	- 不可以，只能通过遍历的方式一次给里面的元素做修改
+   - `querySelectorAll()`
+   - 不可以，只能通过遍历的方式一次给里面的元素做修改
 
 ### 练习
 
@@ -149,14 +150,14 @@ document.querySelectorAll('ul li')
 ### 总结
 
 1. 获取页面中的标签我们最终常用哪两种方式？
-	- `querySelectorAll()`
-	- `querySelector()`
+   - `querySelectorAll()`
+   - `querySelector()`
 2. 它们两者的区别是什么？
-	- `querySelector()` 只能选择一个元素，可以直接操作
-	- `querySelectorAll()` 可以选择多个元素，得到的是伪数组，需要遍历得到每一个元素
-1. 他们两者小括号里面的参数有什么注意事项？
-	- 里面写 CSS 选择器 
-	- <font color=#F36208 style="font-weight: bold;">必须是字符串，也就是必须加引号</font>
+   - `querySelector()` 只能选择一个元素，可以直接操作
+   - `querySelectorAll()` 可以选择多个元素，得到的是伪数组，需要遍历得到每一个元素
+3. 他们两者小括号里面的参数有什么注意事项？
+   - 里面写 CSS 选择器 
+   - <font color=#F36208 style="font-weight: bold;">必须是字符串，也就是必须加引号</font>
 
 # 操作元素内容
 
@@ -169,15 +170,15 @@ document.querySelectorAll('ul li')
 - 显示纯文本，不解析标签
 
 > [!note]
->
+> 
 > 举例说明：
 >
 > ```java
-> // 1. 获取元素
+>// 1. 获取元素
 > const box = document.querySelector('.box');
-> // 2. 修改文字内容 对象.innerText 属性
+>// 2. 修改文字内容 对象.innerText 属性
 > console.log(box.innerText); // 获取文字内容
-> box.innerText = '<strong>我是一个盒子</strong>';  // 修改文字内容
+>box.innerText = '<strong>我是一个盒子</strong>';  // 修改文字内容
 > ```
 
 
@@ -187,31 +188,32 @@ document.querySelectorAll('ul li')
 - 会解析标签，多标签建议使用模板字符
 
 > [!note]
->
+> 
 > 举例说明
 >
 > ```javascript
-> // 3. innerHTML 解析标签
+>// 3. innerHTML 解析标签
 > console.log(box.innerHTML);
-> box.innerHTML = '我要更换';
+>box.innerHTML = '我要更换';
 > box.innerHTML = '<strong>我要更换</strong>'
-> ```
+>```
 
 ## 总结
 
 1. 设置/修改 DOM 元素内容有哪两种方式？
-	- 元素.innerText 属性
-	- 元素.innerHTML 属性
+   - 元素.innerText 属性
+   - 元素.innerHTML 属性
 1. 两者的区别是什么？
-	- 元素.innerText 属性，只识别文本，不能解析标签
-	- <font color=#F36208>元素.innerHTML 属性，能识别文本，能够解析标签</font>
-	- <font color=#F36208>如果你还在纠结到底用谁，你可以选择 innerHTML</font>
+   - 元素.innerText 属性，只识别文本，不能解析标签
+   - <font color=#F36208>元素.innerHTML 属性，能识别文本，能够解析标签</font>
+   - <font color=#F36208>如果你还在纠结到底用谁，你可以选择 innerHTML</font>
 
 ## 案例：年会抽奖案例
 
 需求：从数组随机抽取一等奖、二等奖和三等奖，显示到对应的标签里面。
 
 分析：
+
 1. 声明数组：`const personArr = ['周杰伦', '刘德华', '周星驰', '张学友']`
 2. 一等奖：随机生成一个数字（0~数组长度），找到对应数组的名字
 3. 通过 `innerText` 或者 `innerHTML` 将名字写入 `span` 元素内部
@@ -276,22 +278,13 @@ document.querySelectorAll('ul li')
 
 
 
-[testJump](test.md#world)
+## 练习：页面刷新，页面随机更换背景图片
 
+需求：当我们刷新页面，页面中的背景图片随机显示不同的图片
 
+分析：
 
+1. 随机函数
+2. CSS页面背景图片 `background-image`
+3. 标签选择 body，因为 body 是唯一的标签，可以直接写 `document.body.style`
 
-
-> [!attention]
->
-> asdaasdasdasd
->
-> asdasdasdasdasd
->
-> asdasdasdasdasdasd
->
-> asdasdasdasdasdasdasdasd
->
-> sadasdasdasdasdasdasdasdasdas
->
-> 
