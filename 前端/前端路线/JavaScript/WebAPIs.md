@@ -276,7 +276,7 @@ document.querySelectorAll('ul li')
 
 
 
-[testJump](test.md#world)
+[testJump](前端/前端路线/JavaScript/test.md#world)
 
 
 
