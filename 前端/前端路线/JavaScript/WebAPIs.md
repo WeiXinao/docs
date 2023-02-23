@@ -288,4 +288,31 @@ document.querySelectorAll('ul li')
 2. CSS页面背景图片 `background-image`
 3. 标签选择 body，因为 body 是唯一的标签，可以直接写 `document.body.style`
 
-<font color='orange'>qweqw</font>
+```javascript
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>随机更换背景图片</title>
+    <style>
+        body {
+            background: url(./images/desktop_1.jpg) no-repeat top center/cover;
+        }
+    </style>
+</head>
+
+<body>
+    <script>
+        const randomIndex = Math.floor(Math.random() * 11);
+        document.body.style.backgroundImage = `url(./images/desktop_${randomIndex}.jpg)` ;
+    </script>
+</body>
+
+</html>
+```
+
+
+
