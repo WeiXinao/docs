@@ -505,7 +505,22 @@ document.querySelectorAll('ul li')
   - 在标签一律以 `data-` 开头
   - 在 DOM 对象上一律以 dataset 对象方式获取
 
-  
+  示例：
+
+  ```javascript
+  <div data-id="1" data-spm="something">1</div>
+  <div data-id="2">2</div>
+  <div data-id="3">3</div>
+  <div data-id="4">4</div>
+  <div data-id="5">5</div>
+  <script>
+      const one = document.querySelector('div');
+  console.log(one.dataset.id); // 1
+  console.log(one.dataset.spm); // something
+  </script>
+  ```
 
   
+
+
 
