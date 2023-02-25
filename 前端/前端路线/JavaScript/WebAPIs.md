@@ -1,3 +1,5 @@
+# WebAPIs
+
 ## DOM 树
 
 - DOM 树是什么
@@ -448,13 +450,7 @@ document.querySelectorAll('ul li')
 </html>
 ```
 
-# 操作元素属性
 
-- 操作元素**常用**属性
-- 操作元素**样式**属性
-- 操作表单元素属性
-- <font color='red'>操作**表单元素**属性</font>
-- 自定义属性
 
 ## 操作表单元素属性
 
@@ -515,12 +511,17 @@ document.querySelectorAll('ul li')
   <div data-id="5">5</div>
   <script>
       const one = document.querySelector('div');
-  console.log(one.dataset.id); // 1
-  console.log(one.dataset.spm); // something
+  	console.log(one.dataset.id); // 1
+  	console.log(one.dataset.spm); // something
   </script>
   ```
 
-  
+  # 定时器-间歇函数
 
+  > 目标：能够说出定时器函数在开发中的使用场景
 
+- 网页中经常会需要一种功能：每隔一段时间需要<font color='red'>自动</font>执行一段代码，不需要我们手动去触发
+- 例如：网页中的倒计时
+- 要实现这种需求，需要定时器函数
+- 定时器函数有两种，今天我们讲间歇函数
 
