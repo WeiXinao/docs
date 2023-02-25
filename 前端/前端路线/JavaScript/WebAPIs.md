@@ -463,3 +463,7 @@ document.querySelectorAll('ul li')
 - 获取：DOM对象.属性名
 - 设置：DOM对象.属性 = 新值
 
+![img](https://raw.githubusercontent.com/WeiXinao/imgBed2/main/img/SNAGHTML69e4b4.PNG)
+
+- 表单属性中添加就有效果，移除就没有效果，一律用布尔值表示，如果为 `true` 代表添加了该属性，如果是 `false` 代表移除了该属性
+- 比如：disabled、checked、selected
