@@ -626,5 +626,7 @@ clearInterval(timer)
    2. 按钮里面的文字跟着一起变化
    3. 如果秒数等于 0 停止定时器，里面文字变为同意，最后，按钮可以点击
 
+:point_right: [演示demo](https://github.com/WeiXinao/Web-Study-Source-Code/webAPIs第一天/02-code/17_用户注册倒计时.html)
+
 
 
