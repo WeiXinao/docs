@@ -466,4 +466,19 @@ document.querySelectorAll('ul li')
 ![img](https://raw.githubusercontent.com/WeiXinao/imgBed2/main/img/SNAGHTML69e4b4.PNG)
 
 - 表单属性中添加就有效果，移除就没有效果，一律用布尔值表示，如果为 `true` 代表添加了该属性，如果是 `false` 代表移除了该属性
+
 - 比如：disabled、checked、selected
+
+  示例
+
+  ```javascript
+  <input type="checkbox">
+  <script>
+      // 1. 获取 
+      const input = 	document.querySelector('input');
+  	console.log(input.checked); // false，只接受布尔值
+  	input.checked = 'true'; // 'true' 表示 true，会选中，不提倡 
+  </script>
+  ```
+
+  
