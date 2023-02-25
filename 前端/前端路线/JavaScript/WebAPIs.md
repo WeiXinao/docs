@@ -1,5 +1,3 @@
-
-
 ## DOM 树
 
 - DOM 树是什么
@@ -80,8 +78,6 @@ document.querySelectorAll('css选择器')
   想要得到里面的每一个对象，但需要遍历（for）的方式获得。
 
 > [!note]
->
-> 
 >
 > 注意事项：
 >
@@ -195,7 +191,7 @@ document.querySelectorAll('ul li')
 > [!note]
 >
 >
-> 举例说明
+> 举例说明：
 >
 > ```javascript
 > // 3. innerHTML 解析标签
@@ -294,10 +290,161 @@ document.querySelectorAll('ul li')
 2. CSS页面背景图片 `background-image`
 3. 标签选择 body，因为 body 是唯一的标签，可以直接写 `document.body.style`
 
-> [!note]
->
-> asdasdasddas
->
-> asdasdasdasdasd
->
-> asdasda
+
+
+1. 使用 className 和 classList 的区别？
+   - `className` 和 `classList` 修改大量样式的更方便
+   - `对象.style.属性` 修改样式不多时更方便
+   - `classList` 是追加和删除不影响之前类名
+
+
+
+随机轮播图
+
+```javascript
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>轮播图点击切换</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    .slider {
+      width: 560px;
+      height: 400px;
+      overflow: hidden;
+    }
+
+    .slider-wrapper {
+      width: 100%;
+      height: 320px;
+    }
+
+    .slider-wrapper img {
+      width: 100%;
+      height: 100%;
+      display: block;
+    }
+
+    .slider-footer {
+      height: 80px;
+      background-color: rgb(100, 67, 68);
+      padding: 12px 12px 0 12px;
+      position: relative;
+    }
+
+    .slider-footer .toggle {
+      position: absolute;
+      right: 0;
+      top: 12px;
+      display: flex;
+    }
+
+    .slider-footer .toggle button {
+      margin-right: 12px;
+      width: 28px;
+      height: 28px;
+      appearance: none;
+      border: none;
+      background: rgba(255, 255, 255, 0.1);
+      color: #fff;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+
+    .slider-footer .toggle button:hover {
+      background: rgba(255, 255, 255, 0.2);
+    }
+
+    .slider-footer p {
+      margin: 0;
+      color: #fff;
+      font-size: 18px;
+      margin-bottom: 10px;
+    }
+
+    .slider-indicator {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      display: flex;
+      align-items: center;
+    }
+
+    .slider-indicator li {
+      width: 8px;
+      height: 8px;
+      margin: 4px;
+      border-radius: 50%;
+      background: #fff;
+      opacity: 0.4;
+      cursor: pointer;
+    }
+
+    .slider-indicator li.active {
+      width: 12px;
+      height: 12px;
+      opacity: 1;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="slider">
+    <div class="slider-wrapper">
+      <img src="./images/slider01.jpg" alt="" />
+    </div>
+    <div class="slider-footer">
+      <p>对人类来说会不会太超前了？</p>
+      <ul class="slider-indicator">
+        <li class="active"></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+      </ul>
+      <div class="toggle">
+        <button class="prev">&lt;</button>
+        <button class="next">&gt;</button>
+      </div>
+    </div>
+  </div>
+  <script>
+    // 1. 初始数据
+    const sliderData = [
+      { url: './images/slider01.jpg', title: '对人类来说会不会太超前了？', color: 'rgb(100, 67, 68)' },
+      { url: './images/slider02.jpg', title: '开启剑与雪的黑暗传说！', color: 'rgb(43, 35, 26)' },
+      { url: './images/slider03.jpg', title: '真正的jo厨出现了！', color: 'rgb(36, 31, 33)' },
+      { url: './images/slider04.jpg', title: '李玉刚：让世界通过B站看到东方大国文化', color: 'rgb(139, 98, 66)' },
+      { url: './images/slider05.jpg', title: '快来分享你的寒假日常吧~', color: 'rgb(67, 90, 92)' },
+      { url: './images/slider06.jpg', title: '哔哩哔哩小年YEAH', color: 'rgb(166, 131, 143)' },
+      { url: './images/slider07.jpg', title: '一站式解决你的电脑配置问题！！！', color: 'rgb(53, 29, 25)' },
+      { url: './images/slider08.jpg', title: '谁不想和小猫咪贴贴呢！', color: 'rgb(99, 72, 114)' },
+    ]
+    const randomIndex = Math.floor(Math.random() * sliderData.length);
+    const data = sliderData[randomIndex];
+    const sliderIndicator = document.querySelector('.slider-indicator');
+    const sliderImg = document.querySelector('.slider-wrapper img');
+    const sliderDisc = document.querySelector('.slider-footer p')
+    const sliderFooter = document.querySelector('.slider-footer');
+    const active = document.querySelector('.active');
+    active.classList.remove('active');
+    sliderIndicator.children[randomIndex].classList.add('active');
+    sliderImg.src = data.url;
+    sliderDisc.innerText = data.title;
+    sliderFooter.style.backgroundColor = data.color;
+  </script>
+</body>
+
+</html>
+```
+
