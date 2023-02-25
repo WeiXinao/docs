@@ -558,7 +558,45 @@ setIneterval(函数，间隔时间)
 > let n = setInterval(fn, 3000); 
 > ```
 >
+> 注意
+>
+> 1. 函数名字<font color='red'>不需要加括号</font>
+> 2. 定时器返回的是一个 id 数字
+
+定时器函数可以开启和关闭定时器
+
+
+
+## 2. 关闭定时器
+
+```javascript
+let 变量名 = setInterval(函数, 间隔时间)
+clearInterval(变量名)
+```
+
+一般不会刚创建就停止，而是满足一定条件再停止
+
+```
+let timer = setInterval(function() {
+	console.log('hi~~');
+}, 1000);
+clearInterval(timer)
+```
+
+> [!attention]
+>
 > 注意：
 >
-> 1. 函数名字<font color='red'>**不需要加括号</font>
+> 1. 函数名字<font color='red'>不需要加括号</font>
+> 2. <font color='red'>定时器返回的是一个 id 数字</font>
+
+
+
+## 总结
+
+1. 定时器函数有什么作用？
+   - 可以根据时间自动重复执行某些代码
+2. 定时器函数如何开启？
+   - setInterval(函数名，时间)
+3. 定时器如何关闭
 
