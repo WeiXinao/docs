@@ -544,5 +544,21 @@ setIneterval(函数，间隔时间)
 
 
 
-
+> [!tip]
+>
+> 举例说明
+>
+> ```javascript
+> function fn() { 
+>     console.log('一秒执行一次');
+> }
+> // setInterval(函数, 间隔时间) // 函数名不要加小括号
+> 
+> // 每隔一秒调用 repeat 函数
+> let n = setInterval(fn, 3000); 
+> ```
+>
+> 注意：
+>
+> 1. 函数名字<font color='red'>**不需要加括号</font>
 
