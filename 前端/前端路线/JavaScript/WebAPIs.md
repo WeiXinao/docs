@@ -469,7 +469,7 @@ document.querySelectorAll('ul li')
 
 - 比如：disabled、checked、selected
 
-  示例
+  示例1：
 
   ```javascript
   <input type="checkbox">
@@ -481,4 +481,31 @@ document.querySelectorAll('ul li')
   </script>
   ```
 
+  示例2：
+
+  ```javascript
+  <button>点击</button>
+  <script>
+      // 1. 获取
+      const btn = document.querySelector('button');
+  	console.log(btn.disabled); // 默认 false 不禁用
+  	btn.disabled = true; // 禁用按钮
+  </script>
+  ```
+
   
+
+## 自定义属性
+
+- **标准属性：**标签天生自带的属性，比如class id title等，可以直接使用点语法操作，比如：disabled、checked、selected
+
+- **自定义属性：**
+
+  - 在 HTML5 中推出来了专门的 `data-` 自定义属性
+  - 在标签一律以 `data-` 开头
+  - 在 DOM 对象上一律以 dataset 对象方式获取
+
+  
+
+  
+
