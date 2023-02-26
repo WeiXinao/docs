@@ -892,8 +892,10 @@ clearInterval(timer)
 - DOM L2
 
   ```javascript
-  事件源.
+  事件源.addEventListener(事件，事件处理函数)
   ```
 
-  
+- 区别
+
+  on 方式会被覆盖，<font color='red'>addEventListener</font> 方式可以绑定多次，拥有更多特性，推荐使用
 
