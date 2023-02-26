@@ -666,9 +666,9 @@ clearInterval(timer)
 
 - 什么是事件？
 
-  事件是在编程时系统内发生的<font color='red'>**动作**</font>或者发生的事情
+  事件是在编程时系统内发生的<font color='red' style="font-weight: bold;">动作</font>或者发生的事情
 
-  比如用户在网页上<font color='red'>**单击**</font>一个按钮
+  比如用户在网页上<font color='red' style="font-weight: bold;">单击</font>一个按钮
 
 - **什么是事件监听？**
 
@@ -676,7 +676,18 @@ clearInterval(timer)
 
   比如鼠标经过显示下拉菜单，比如点击可以播放轮播图等等
 
-  
+- 语法：
+
+  ```javascript
+  元素对象.addEventListener('事件类型', 要执行的函数)
+  ```
 
   
+
+- 事件监听三要素
+  - **时间源**：那个 dom 元素被事件触发了，要获取 dom 元素
+  - **事件类型**：用什么方式触发，比如鼠标单击 click、鼠标经过 mouseover 等
+  - **事件调用的函数：**要做什么
+
+
 
