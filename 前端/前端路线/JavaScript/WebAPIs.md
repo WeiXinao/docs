@@ -707,6 +707,8 @@ clearInterval(timer)
 
 ## 案例：随机点名案例
 
+![2023-02-26_19-41-46](https://raw.githubusercontent.com/WeiXinao/imgBed2/main/img/2023-02-26_19-41-46.gif)
+
 业务分析：
 
 1. 点击开始按钮随机抽取数组的一个数据，放到页面中
