@@ -941,3 +941,29 @@ clearInterval(timer)
 
 # 事件类型 
 
+![事件类型](https://raw.githubusercontent.com/WeiXinao/imgBed2/main/img/%E4%BA%8B%E4%BB%B6%E7%B1%BB%E5%9E%8B.png)
+
+## 鼠标事件
+
+```html
+<style>
+    div {
+        width: 200px;
+        height: 200px;
+        background-color: pink;
+    }
+</style>
+
+<div></div>    
+<script>
+    const div = document.querySelector('div');
+    // 鼠标经过
+    div.addEventListener('mouseenter', () => {
+        div.style.backgroundColor = 'skyblue';
+    })
+    div.addEventListener('mouseleave', () => {
+        div.style.backgroundColor = 'pink';
+    })
+</script>
+```
+
