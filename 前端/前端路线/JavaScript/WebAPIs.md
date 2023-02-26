@@ -658,7 +658,7 @@ clearInterval(timer)
 
 :point_right: [演示demo](https://weixinao.github.io/Web-Study-Source-Code/webAPIs第一天/02-code/17_用户注册倒计时.html)
 
-# 时间监听（绑定）
+# 事件监听（绑定）
 
 ## 事件监听
 
@@ -797,6 +797,8 @@ clearInterval(timer)
 </body>
 ```
 
+
+
 ## 解惑：垃圾回收机制
 
 ```html
@@ -817,6 +819,8 @@ clearInterval(timer)
 当给按钮做了一次点击事件，函数就执行了，执行完后，函数里面的变量就没用了，js 的垃圾回收机制就会自动回收函数中的变量，下次点击，有会创建一个新的 num 变量。
 ```
 
+
+
 ### 情形1
 
 ```html
@@ -834,6 +838,8 @@ clearInterval(timer)
 ![image-20230226232616337](https://raw.githubusercontent.com/WeiXinao/imgBed2/main/img/image-20230226232616337.png)
 
 在一次调用中重复赋值，会报错。
+
+
 
 ### 情形2：
 
@@ -853,8 +859,41 @@ clearInterval(timer)
 
 正常执行，因为 两个 const num 不属于一个作用域，函数外的 num 属于全局作用域，函数内的 num 属于局部作用域。
 
+
+
 ### 情形3：
 
 ```javascript
+<button>点击</button>
+<script>
+    const num = 10;
+    const btn = document.querySelector('button');
+    btn.addEventListener('click', () => { 
+        num = Math.random();
+        console.log(num);
+})        
+</script>
 ```
+
+![image-20230226233419636](https://raw.githubusercontent.com/WeiXinao/imgBed2/main/img/image-20230226233419636.png)
+
+对函数外的 const num 重复赋值，报错。
+
+
+
+## 拓展阅读-事件监听版本
+
+- DOM L0
+
+  ```html
+  事件源.on事件 = function () {}
+  ```
+
+- DOM L2
+
+  ```javascript
+  事件源.
+  ```
+
+  
 
