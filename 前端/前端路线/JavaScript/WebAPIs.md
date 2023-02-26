@@ -776,19 +776,16 @@ clearInterval(timer)
         const name = document.querySelector('.qs');
         let randomIndex;
         let intervalIndex;
-        start.addEventListener('click', () => {
-            if (arr.length === 1) {
-                start.disabled = true;
-                end.disabled = true;
-                name.innerText = arr[0];
-                return;
-            }
+		start.addEventListener('click', () => {
             start.disabled = true;
             end.disabled = false;
             intervalIndex = setInterval(() => {
                 randomIndex = Math.floor(Math.random() * arr.length);
                 name.innerText = arr[randomIndex];
             }, 100)    
+            if (arr.length === 1) {
+                start.disabled = end.disabled = true;
+            }
         })
         end.addEventListener('click', () => {
             end.disabled = true;
@@ -800,7 +797,18 @@ clearInterval(timer)
 </body>
 ```
 
+## 解惑：垃圾回收机制
 
+```html
+<button>点击</button>
+<script>
+    const btn = document.querySelector('button');
+	btn.addEventListener('click', () => { 
+    const num = Math.random();
+    console.log(num);
+})
+</script>
+```
 
 
 
