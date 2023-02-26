@@ -814,10 +814,47 @@ clearInterval(timer)
 
 ```
 答：其实，它用到了我们的垃圾回收机制，如果一个函数中的变量，如果我们执行完一个函数之后，如果这个变量不再使用了，它就会被回收掉。
-当
+当给按钮做了一次点击事件，函数就执行了，执行完后，函数里面的变量就没用了，js 的垃圾回收机制就会自动回收函数中的变量，下次点击，有会创建一个新的 num 变量。
 ```
 
+### 情形1
 
+```html
+<button>点击</button>
+<script>
+    const btn = document.querySelector('button');
+    btn.addEventListener('click', () => { 
+        const num = Math.random();
+        num = 10;
+        console.log(num);
+    })        
+</script>
+```
 
+![image-20230226232616337](https://raw.githubusercontent.com/WeiXinao/imgBed2/main/img/image-20230226232616337.png)
 
+在一次调用中重复赋值，会报错。
+
+### 情形2：
+
+```javascript
+<button>点击</button>
+<script>
+    const num = 10;
+	const btn = document.querySelector('button');
+	btn.addEventListener('click', () => { 
+    	const num = Math.random();
+    	console.log(num);
+	})        
+</script>
+```
+
+![image-20230226233005598](https://raw.githubusercontent.com/WeiXinao/imgBed2/main/img/image-20230226233005598.png)
+
+正常执行，因为 两个 const num 不属于一个作用域，函数外的 num 属于全局作用域，函数内的 num 属于局部作用域。
+
+### 情形3：
+
+```javascript
+```
 
