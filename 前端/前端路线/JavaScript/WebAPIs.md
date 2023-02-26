@@ -933,4 +933,11 @@ clearInterval(timer)
 
 - 发展史
   - DOM L0：是 DOM 的发展的第一个版本；L：level
-  - DOM L1
+  - DOM L1：DOM 级别 1 于 1998 年 10 月 1 日成为 W3C 推荐标准
+  - DOM L2：使用 addEventListener 注册事件
+  - DOM L3：DOM3 级事件模块在 DOM2 级事件基础上重新定义了这些事件，也添加了一些新事件类型
+
+
+
+# 事件类型 
+
