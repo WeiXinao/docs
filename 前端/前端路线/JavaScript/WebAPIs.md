@@ -658,5 +658,25 @@ clearInterval(timer)
 
 :point_right: [演示demo](https://weixinao.github.io/Web-Study-Source-Code/webAPIs第一天/02-code/17_用户注册倒计时.html)
 
+# 时间监听（绑定）
 
+## 事件监听
+
+目标：能够给 DOM 元素添加事件监听
+
+- 什么是事件？
+
+  事件是在编程时系统内发生的<font color='red'>**动作**</font>或者发生的事情
+
+  比如用户在网页上<font color='red'>**单击**</font>一个按钮
+
+- **什么是事件监听？**
+
+  就是让程序检测是否有事件发生，一旦有事件触发，就立即调用一个函数做出响应，也称为「绑定事件」或「注册事件」
+
+  比如鼠标经过显示下拉菜单，比如点击可以播放轮播图等等
+
+  
+
+  
 
