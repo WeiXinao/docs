@@ -717,6 +717,89 @@ clearInterval(timer)
 
 核心：利用定时器快速展示，停止定时器结束展示
 
+```html
+<head>
+	<style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        h2 {
+            text-align: center;
+        }
+
+        .box {
+            width: 600px;
+            margin: 50px auto;
+            display: flex;
+            font-size: 25px;
+            line-height: 40px;
+        }
+
+        .qs {
+
+            width: 450px;
+            height: 40px;
+            color: red;
+
+        }
+
+        .btns {
+            text-align: center;
+        }
+
+        .btns button {
+            width: 120px;
+            height: 35px;
+            margin: 0 50px;
+        }
+    </style>
+</head>
+
+<body>
+    <h2>随机点名</h2>
+    <div class="box">
+        <span>名字是：</span>
+        <div class="qs">这里显示姓名</div>
+    </div>
+    <div class="btns">
+        <button class="start">开始</button>
+        <button class="end">结束</button>
+    </div>
+
+    <script>
+        // 数据数组
+        const arr = ['马超', '黄忠', '赵云', '关羽', '张飞']
+        const start = document.querySelector('.start');
+        const end = document.querySelector('.end');
+        const name = document.querySelector('.qs');
+        let randomIndex;
+        let intervalIndex;
+        start.addEventListener('click', () => {
+            if (arr.length === 1) {
+                start.disabled = true;
+                end.disabled = true;
+                name.innerText = arr[0];
+                return;
+            }
+            start.disabled = true;
+            end.disabled = false;
+            intervalIndex = setInterval(() => {
+                randomIndex = Math.floor(Math.random() * arr.length);
+                name.innerText = arr[randomIndex];
+            }, 100)    
+        })
+        end.addEventListener('click', () => {
+            end.disabled = true;
+            start.disabled = false;
+            clearInterval(intervalIndex);
+            arr.splice(randomIndex, 1);
+        })
+    </script>
+</body>
+```
+
 
 
 
