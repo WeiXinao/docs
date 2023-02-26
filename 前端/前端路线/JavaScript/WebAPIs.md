@@ -889,13 +889,48 @@ clearInterval(timer)
   事件源.on事件 = function () {}
   ```
 
+  ```html
+  <button>点击</button>
+  <script>
+      const btn = document.querySelector('button');
+      btn.onclick = () => {
+          alert('11'); 
+      }
+      btn.onclick = () => {
+          alert('22');
+      }
+  </script>
+  ```
+
+  
+
 - DOM L2
 
   ```javascript
   事件源.addEventListener(事件，事件处理函数)
   ```
 
+  ```html
+  <button>点击</button>
+  <script>
+      const btn = document.querySelector('button');
+      btn.addEventListener('click', () => {
+          alert('11');
+      });
+      btn.addEventListener('click', () => {
+          alert('22');
+      });
+  </script>
+  ```
+
+  
+
 - 区别
 
   on 方式会被覆盖，<font color='red'>addEventListener</font> 方式可以绑定多次，拥有更多特性，推荐使用
 
+
+
+- 发展史
+  - DOM L0：是 DOM 的发展的第一个版本；L：level
+  - DOM L1
