@@ -969,3 +969,214 @@ clearInterval(timer)
 
 
 
+## 案例：轮播图点击切换
+
+![image-20230301140539520](https://raw.githubusercontent.com/WeiXinao/imgBed2/main/img/image-20230301140539520.png)
+
+需求：当点击左右按钮，可以切换轮播图
+
+分析：
+
+1. 右侧按钮点击，变量++，如果大于等于8，则复原0
+2. 左侧按钮点击，变量--，如果变量小于0，则复原最后一张
+3. 鼠标经过暂停定时器
+4. 鼠标离开开启定时器
+
+参考代码：
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>轮播图点击切换</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    .slider {
+      width: 560px;
+      height: 400px;
+      overflow: hidden;
+    }
+
+    .slider-wrapper {
+      width: 100%;
+      height: 320px;
+    }
+
+    .slider-wrapper img {
+      width: 100%;
+      height: 100%;
+      display: block;
+    }
+
+    .slider-footer {
+      height: 80px;
+      background-color: rgb(100, 67, 68);
+      padding: 12px 12px 0 12px;
+      position: relative;
+    }
+
+    .slider-footer .toggle {
+      position: absolute;
+      right: 0;
+      top: 12px;
+      display: flex;
+    }
+
+    .slider-footer .toggle button {
+      margin-right: 12px;
+      width: 28px;
+      height: 28px;
+      appearance: none;
+      border: none;
+      background: rgba(255, 255, 255, 0.1);
+      color: #fff;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+
+    .slider-footer .toggle button:hover {
+      background: rgba(255, 255, 255, 0.2);
+    }
+
+    .slider-footer p {
+      margin: 0;
+      color: #fff;
+      font-size: 18px;
+      margin-bottom: 10px;
+    }
+
+    .slider-indicator {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      display: flex;
+      align-items: center;
+    }
+
+    .slider-indicator li {
+      width: 8px;
+      height: 8px;
+      margin: 4px;
+      border-radius: 50%;
+      background: #fff;
+      opacity: 0.4;
+      cursor: pointer;
+    }
+
+    .slider-indicator li.active {
+      width: 12px;
+      height: 12px;
+      opacity: 1;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="slider">
+    <div class="slider-wrapper">
+      <img src="./images/slider01.jpg" alt="" />
+    </div>
+    <div class="slider-footer">
+      <p>对人类来说会不会太超前了？</p>
+      <ul class="slider-indicator">
+        <li class="active"></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+      </ul>
+      <div class="toggle">
+        <button class="prev">&lt;</button>
+        <button class="next">&gt;</button>
+      </div>
+    </div>
+  </div>
+  <script>
+    // 1. 初始数据
+    const sliderData = [
+      { url: './images/slider01.jpg', title: '对人类来说会不会太超前了？', color: 'rgb(100, 67, 68)' },
+      { url: './images/slider02.jpg', title: '开启剑与雪的黑暗传说！', color: 'rgb(43, 35, 26)' },
+      { url: './images/slider03.jpg', title: '真正的jo厨出现了！', color: 'rgb(36, 31, 33)' },
+      { url: './images/slider04.jpg', title: '李玉刚：让世界通过B站看到东方大国文化', color: 'rgb(139, 98, 66)' },
+      { url: './images/slider05.jpg', title: '快来分享你的寒假日常吧~', color: 'rgb(67, 90, 92)' },
+      { url: './images/slider06.jpg', title: '哔哩哔哩小年YEAH', color: 'rgb(166, 131, 143)' },
+      { url: './images/slider07.jpg', title: '一站式解决你的电脑配置问题！！！', color: 'rgb(53, 29, 25)' },
+      { url: './images/slider08.jpg', title: '谁不想和小猫咪贴贴呢！', color: 'rgb(99, 72, 114)' },
+    ]
+
+    // 1. 右侧按钮义务
+    // 1.1 获取右侧按钮
+    const footer = document.querySelector('.slider-footer');
+    const slider = document.querySelector('.slider');
+    const next = document.querySelector('.next');
+    const pre = document.querySelector('.prev');
+    const img = document.querySelector('.slider-wrapper img');
+    const p = document.querySelector('.slider-footer p');
+    const lis = document.querySelectorAll('.slider-indicator li');
+    
+    let i = 0;
+    let intervalIndex = 0;
+    const len = sliderData.length;
+    
+    startInterval();
+    slider.addEventListener('mouseleave', () => { 
+      startInterval();
+    });
+    slider.addEventListener('mouseenter', () => {
+      clearInterval(intervalIndex);
+    });
+
+    next.addEventListener('click', () => {
+      i = (i + 1) % len;
+      showData(sliderData, i);
+    });
+    pre.addEventListener('click', () => {
+      i = (i - 1 + len)  % len;
+      showData(sliderData, i);
+    });
+    
+    for (let j = 0; j < lis.length; j++) {
+      lis[j].addEventListener('click', () => {
+        showData(sliderData, j);
+      });
+    }
+
+    function startInterval() {
+      if (intervalIndex != null) {
+        clearInterval(intervalIndex)
+      }
+      intervalIndex = setInterval(() => {
+        // 利用 js 自动调用点击事件 click() 一定加小括号调用函数
+        next.click(); 
+      }, 3000); 
+    }
+
+    function showData(ds, i) {
+      const data = ds[i];
+      img.src = data.url;
+      p.innerText = data.title;
+      const active = document.querySelector('.active');
+      active.classList.remove('active');
+      lis[i].classList.add('active');
+      footer.style.backgroundColor = data.color;
+    }
+
+  </script>
+</body>
+
+</html>
+```
+
+线上演示：
+
+:point_right: []()
