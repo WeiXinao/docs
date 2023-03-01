@@ -1202,5 +1202,178 @@ clearInterval(timer)
 
 ## 案例：小米搜索框案例
 
-需求：当表单得到焦点，
+需求：当表单得到焦点，显示下拉菜单，失去焦点隐藏下拉菜单
 
+分析：
+
+1. 开始下拉菜单要进行隐藏
+2. 表单获得焦点 focus，显示下拉菜单，并且文本框变色（添加类）
+3. 表单失去焦点。反向操作
+
+参考代码：
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        ul {
+
+            list-style: none;
+        }
+
+        .mi {
+            position: relative;
+            width: 223px;
+            margin: 100px auto;
+        }
+
+        .mi input {
+            width: 223px;
+            height: 48px;
+            padding: 0 10px;
+            font-size: 14px;
+            line-height: 48px;
+            border: 1px solid #e0e0e0;
+            outline: none;
+        }
+
+        .mi .search {
+            border: 1px solid #ff6700;
+        }
+
+        .result-list {
+            position: absolute;
+            left: 0;
+            top: 48px;
+            width: 223px;
+            border: 1px solid #ff6700;
+            border-top: 0;
+            background: #fff;
+            overflow: hidden;
+            display: none;
+        }
+
+        .result-list a {
+            display: block;
+            padding: 6px 15px;
+            font-size: 12px;
+            color: #424242;
+            text-decoration: none;
+        }
+
+        .result-list a:hover {
+            background-color: #eee;
+        }
+    </style>
+
+</head>
+
+<body>
+    <div class="mi">
+        <input type="search" placeholder="小米笔记本">
+        <ul class="result-list">
+            <li><a href="#">全部商品</a></li>
+            <li><a href="#">小米11</a></li>
+            <li><a href="#">小米10S</a></li>
+            <li><a href="#">小米笔记本</a></li>
+            <li><a href="#">小米手机</a></li>
+            <li><a href="#">黑鲨4</a></li>
+            <li><a href="#">空调</a></li>
+        </ul>
+    </div>
+    <script>
+        const search = document.querySelector('input[type="search"]');
+        const resultList = document.querySelector('.result-list');
+        search.addEventListener('blur', () => {
+            resultList.style.display = 'none';
+            search.classList.remove('search');
+        })
+        search.addEventListener('focus', () => {
+            resultList.style.display = 'block';
+            search.classList.add('search');
+        })
+    </script>
+</body>
+
+</html>
+```
+
+
+
+## 键盘事件
+
+```html
+<input type="text">
+<script>
+    // 1. 键盘事件
+    const input = document.querySelector('input');
+    input.addEventListener('keydown', () => {
+        console.log('键盘按下了');
+    });
+    input.addEventListener('keyup', () => {
+        console.log('键盘弹起了');
+    })
+</script>
+```
+
+
+
+## 文本事件
+
+```html
+<input type="text">
+<script>
+    // 2. 用户输入文本事件 input
+    const input = document.querySelector('input');
+    input.addEventListener('input', () => {
+        console.log(input.value);
+    })
+</script>
+```
+
+补充：伪类选择器 focus
+
+```html
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>键盘事件类型</title>
+    <style>
+        input {
+            width: 200px;
+            transition: width .3s;
+        }
+
+        /* focus 伪类选择器 获得较短 */
+        input:focus {
+            width: 300px;
+        }
+    </style>
+</head>
+<body>
+    <input type="text">
+</body>
+```
+
+
+
+## 案例：
+
+需求：用户输入文字，可以计算用户输入的字数
+
+分析：
+
+1. 
