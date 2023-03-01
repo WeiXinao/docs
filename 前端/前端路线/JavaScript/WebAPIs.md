@@ -303,7 +303,7 @@ document.querySelectorAll('ul li')
 
 随机轮播图
 
-```javascript
+```html
 <!DOCTYPE html>
 <html lang="en">
 
