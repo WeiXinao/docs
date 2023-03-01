@@ -1179,4 +1179,28 @@ clearInterval(timer)
 
 线上演示：
 
-:point_right: []()
+:point_right: [演示demo](https://weixinao.github.io/Web-Study-Source-Code/webAPIs%E7%AC%AC%E4%BA%8C%E5%A4%A9/02-code/08-%E8%BD%AE%E6%92%AD%E5%9B%BE%E5%AE%8C%E6%95%B4%E7%89%88.html)
+
+
+
+## 焦点事件
+
+```html
+<input type="text">
+<script>
+    const input = document.querySelector('input');
+    input.addEventListener('focus', () => {
+        console.log('有焦点触发');
+    })
+    input.addEventListener('blur', () => {
+        console.log('失去焦点');
+    })
+</script>
+```
+
+
+
+## 案例：小米搜索框案例
+
+需求：当表单得到焦点，
+
