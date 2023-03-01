@@ -1370,7 +1370,7 @@ clearInterval(timer)
 
 
 
-## 案例：
+## 案例：评论字数统计
 
 需求：用户输入文字，可以计算用户输入的字数
 
@@ -1523,3 +1523,6 @@ clearInterval(timer)
 线上演示：
 
 :point_right: [演示demo](https://weixinao.github.io/Web-Study-Source-Code/webAPIs%E7%AC%AC%E4%BA%8C%E5%A4%A9/02-code/13-%E8%AF%84%E8%AE%BA%E5%9B%9E%E8%BD%A6%E5%8F%91%E5%B8%83.html)
+
+
+
