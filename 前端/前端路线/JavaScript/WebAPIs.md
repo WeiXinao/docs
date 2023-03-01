@@ -843,7 +843,7 @@ clearInterval(timer)
 
 ### 情形2：
 
-```javascript
+```html
 <button>点击</button>
 <script>
     const num = 10;
@@ -863,7 +863,7 @@ clearInterval(timer)
 
 ### 情形3：
 
-```javascript
+```html
 <button>点击</button>
 <script>
     const num = 10;
@@ -1208,7 +1208,7 @@ clearInterval(timer)
 
 1. 开始下拉菜单要进行隐藏
 2. 表单获得焦点 focus，显示下拉菜单，并且文本框变色（添加类）
-3. 表单失去焦点。反向操作
+3. 表单失去焦点，反向操作
 
 参考代码：
 
@@ -1529,6 +1529,4 @@ clearInterval(timer)
 >###### 参考：
 >
 >[JS监听键盘组合事件 - 掘金 (juejin.cn)](https://juejin.cn/post/6920166753909604366)
-
-
 
