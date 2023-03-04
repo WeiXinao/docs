@@ -1524,8 +1524,6 @@ clearInterval(timer)
 
 :point_right: [演示demo](https://weixinao.github.io/Web-Study-Source-Code/webAPIs%E7%AC%AC%E4%BA%8C%E5%A4%A9/02-code/13-%E8%AF%84%E8%AE%BA%E5%9B%9E%E8%BD%A6%E5%8F%91%E5%B8%83.html)
 
-
-
 >###### 参考：
 >
 >[JS监听键盘组合事件 - 掘金 (juejin.cn)](https://juejin.cn/post/6920166753909604366)
