@@ -1528,3 +1528,113 @@ clearInterval(timer)
 >
 >[JS监听键盘组合事件 - 掘金 (juejin.cn)](https://juejin.cn/post/6920166753909604366)
 
+![57315ec7-b8f2-451f-ab62-31fa06bd47d8](https://raw.githubusercontent.com/WeiXinao/imgBed2/main/img/57315ec7-b8f2-451f-ab62-31fa06bd47d8.png)
+
+```html
+<head lang="en">
+  <meta charset="UTF-8">
+  <title></title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+
+    table {
+      border-collapse: collapse;
+      border-spacing: 0;
+      border: 1px solid #c0c0c0;
+      width: 500px;
+      margin: 100px auto;
+      text-align: center;
+    }
+
+    th {
+      background-color: #09c;
+      font: bold 16px "微软雅黑";
+      color: #fff;
+      height: 24px;
+    }
+
+    td {
+      border: 1px solid #d0d0d0;
+      color: #404060;
+      padding: 10px;
+    }
+
+    .allCheck {
+      width: 80px;
+    }
+  </style>
+</head>
+
+<body>
+  <table>
+    <tr>
+      <th class="allCheck">
+        <input type="checkbox" name="" id="checkAll"> <span class="all">全选</span>
+      </th>
+      <th>商品</th>
+      <th>商家</th>
+      <th>价格</th>
+    </tr>
+    <tr>
+      <td>
+        <input type="checkbox" name="check" class="ck">
+      </td>
+      <td>小米手机</td>
+      <td>小米</td>
+      <td>￥1999</td>
+    </tr>
+    <tr>
+      <td>
+        <input type="checkbox" name="check" class="ck">
+      </td>
+      <td>小米净水器</td>
+      <td>小米</td>
+      <td>￥4999</td>
+    </tr>
+    <tr>
+      <td>
+        <input type="checkbox" name="check" class="ck">
+      </td>
+      <td>小米电视</td>
+      <td>小米</td>
+      <td>￥5999</td>
+    </tr>
+  </table>
+  <script>
+    // 2. 获取出大复选框外的小复选框
+    const checkboxes = document.querySelectorAll('.ck');
+    // 1. 获取大复选框
+    const selectAll = document.querySelector('#checkAll');
+    checkboxes.forEach(element => {
+      element.addEventListener('click', () => {
+        /* let flag = true;
+          checkboxes.forEach(element => {
+          if (!element.checked) {
+            flag = false;
+            return;
+          }
+        });
+        selectAll.checked = flag; */
+        const selectedBoxes = document.querySelectorAll ('.ck:checked');
+        selectAll.checked = selectedBoxes.length === checkboxes.length;
+      });
+    });
+
+    // 3. 点击大复选框（注册事件）
+    selectAll.addEventListener('click', function () {
+      // 4. 遍历所有的小复选框，让小复选框的 checked = 大复选框的 checked
+      checkboxes.forEach(element => {
+        element.checked = selectAll.checked;
+      });
+    });
+  </script>
+</body>
+```
+
+![事件委托@2x](https://raw.githubusercontent.com/WeiXinao/imgBed2/main/img/%E4%BA%8B%E4%BB%B6%E5%A7%94%E6%89%98%402x.png)
+
+![AI for Mind Maps](https://raw.githubusercontent.com/WeiXinao/imgBed2/main/img/AI%20for%20Mind%20Maps.png)
+
