@@ -111,3 +111,15 @@ console.log(obj.name);
 
 ![image-20230309144127871](https://raw.githubusercontent.com/WeiXinao/imgBed2/main/img/202303091441916.png)
 
+![image-20230309144733626](https://raw.githubusercontent.com/WeiXinao/imgBed2/main/img/202303091447680.png)
+
+![image-20230309144907427](https://raw.githubusercontent.com/WeiXinao/imgBed2/main/img/202303091449480.png)
+
+```javascript
+let obj = Object();
+console.log(typeof obj);
+```
+
+
+
+![image-20230309145113664](https://raw.githubusercontent.com/WeiXinao/imgBed2/main/img/202303091451707.png)
