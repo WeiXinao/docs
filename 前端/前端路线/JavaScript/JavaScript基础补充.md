@@ -38,11 +38,68 @@ let age = 18;
 let gender = "男";
 ```
 
-上述表示方式，我们能确定这些信息是一个人的还是多个人的吗？答案是不能的。如果我们想用多条信息来描述一个人，我们该怎么表示呢？由此，
+上述表示方式，我们能确定这些信息是一个人的还是多个人的吗？答案是不能的。如果我们想用多条信息来描述一个人，我们该怎么表示呢？由此，就引出了我们的变量。
 
+### 对象的声明
 
+声明一个对象有两种方式，
 
-  
+方式1：
+
+```javascript
+let obj = new Object();
+```
+
+方式2：
+
+```javascript
+let obj = Object();
+```
+
+## 对象的属性
+
+对象中可以存储多个类型的数据，对象中存储的数据，我们称为**属性**。
+
+向对象中添加属性：
+
+```
+对象.属性名 = 属性值
+```
+
+```javascript
+obj.name = "孙悟空";
+obj.age = 18;
+obj.gender = '男';
+```
+
+ 读取对象中的属性：
+
+```
+对象.属性名
+```
+
+```javascript
+console.log(obj.name);
+```
+
+修改属性：
+
+```javascript
+obj.name = "Tom sun";
+```
+
+删除属性：
+
+```javascript
+delete obj.name;
+```
+
+如果读取的是一个对象中没有的属性，不会报错而是 undefined
+
+```javascript
+delete obj.name;
+console.log(obj.name);
+```
 
 
 
