@@ -101,7 +101,7 @@ delete obj.name;
 console.log(obj.name);
 ```
 
-
+![image-20230309141003016](https://raw.githubusercontent.com/WeiXinao/imgBed2/main/img/202303091410102.png)
 
 
 
