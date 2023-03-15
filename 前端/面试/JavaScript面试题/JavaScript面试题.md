@@ -5,14 +5,34 @@
    ```
    ECMAScript：JS 的核心内容，描述了语言的基础语，比如 var，for，数据类型（数组、字符串）
    文档对象模型（DOM）：DOM 把整个HTML页面规划为元素构成的文档
-   浏览器对象模型（BOM）：
+   浏览器对象模型（BOM）：可以对浏览器窗口进行访问和操作（在浏览器上弹出一些窗口，关闭窗口，移动窗口，提供浏览器信息，页面的信息，屏幕的信息）
    ```
 
    
 
 2. JS 有哪些内置对象？
 
+   ```
+   String Boolean Number Array Object Function Math Date RegExp ...
+   Math
+   	abs() sqrt() max() min()
+   Date
+   	new Date() getYear()
+   Array
+   	见题3
+   String
+   	concat() length slice() split()
+   ```
+
+   
+
 3. 操作数组的方法有哪些？
+
+   ```
+   push() pop() sort() splice() unshift() shift() reverse()
+   ```
+
+   
 
 4. JS对数据类的检测方法有哪些？
 
