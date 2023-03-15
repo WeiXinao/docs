@@ -137,8 +137,32 @@
    ```
    原型就是一个普通对象，它是为构造函数的实例共享属性和方法；所有实例中引用的原型都是同一个对象
    使用 prototype 可以把方法挂在原型上，内存只保存一份，其他的实例可以去共享它 
+   实例是怎么访问到原型上的方法的？
+   	__proto__ 可以理解为一个指针，实例对象中的属性，指向构造函数的原型（prototype）
+   原型链到底是什么
    ```
 
+   示例1
+
+   ```javascript
+   function Person() { 
+       this.say = function () {
+           console.log('唱歌');
+       }
+   }
    
+   var p1 = new Person();
+   var p2 = new Person();
+   p1.say();
+   p2.say();
+   
+   Person.prototype.look = function () {
+       console.log('西游记');
+   }
+   p1.look();
+   p2.look();
+   ```
+
+   ​	
 
 10. new操作符具体做了什么？
