@@ -29,12 +29,21 @@
 3. 操作数组的方法有哪些？
 
    ```
-   push() pop() sort() splice() unshift() shift() reverse()
+   push() pop() sort() splice() unshift() shift() reverse() concat() join()
+   map() filter() ervery() some() ruduce() isArray() findIndex()
+   哪些方法会改变原数组？
+   	push() pop() unshift() shift() sort() reverse() splice()
    ```
 
    
 
 4. JS对数据类的检测方法有哪些？
+
+   ```
+    
+   ```
+
+   
 
 5. 说一下闭包，闭包有什么特点？
 
