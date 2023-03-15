@@ -166,6 +166,24 @@
    p2.look();
    ```
 
+   示例2：
+
+   ```javascript
+   function Person() {
+   }
+   
+   var p1 = new Person();
+   var p2 = new Person();
+   
+   Person.prototype.look = function () {
+       console.log('西游记');
+   }
+   p1.look();
+   p2.look();
+   
+   console.log(p1.__proto__ === Person.prototype); // true 
+   ```
+
    
 
 10. new操作符具体做了什么？
@@ -174,7 +192,7 @@
     1. 创建一个空对象
     2. 把空对象和构造函数通过原型链进行链接
     3. 把构造函数的 this 绑定到新的空对象身上
-    4根据构建函数返回的类型判断，如果是值类型，则返回对象，如果是
+    4. 根据构建函数返回的类型判断，如果是值类型，则返回对象，如果是引用类型，就返回这个引用类型
     ```
 
     
