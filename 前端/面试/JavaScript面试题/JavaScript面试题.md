@@ -45,6 +45,27 @@
    constructor() 几乎可以判断基本数据类型和引用数据类型；如果声明了一个构造函数，并把它的原型指向了 Array 的时候， constructor 就判断不出来了Object.prototype.toString.call()
    ```
 
+   示例：
+
+   ```javascript
+   // typeof() 对基本数据类型没问题，遇到引用数据类型就不管用
+   console.log(typeof 666); // number
+   console.log(typeof [1, 2, 3]); // Object
+   // instance() 只能判断引用数据类型，不能判断基本数据类型
+   console.log([] instanceof Array) // true
+   console.log('abc' instanceof String) // false
+   // constructor() 几乎可以判断基本数据类型和引用数据类型；如果声明了一个构造函数，并把它的原型指向了 Array 的时候， constructor 就判断不出来了  
+   console.log(('abc').constructor === String); // true
+   // Object.prototype.toString.call()
+   var opt = Object.prototype.toString;
+   console.log(opt.call(2)); // [object Number]
+   console.log(opt.call(true)); // [object Boolean]
+   console.log(opt.call('aaa')); // [object String]
+   console.log(opt.call([])); // [object Array]
+   console.log(opt.call({})); // [object Object]
+   console.log(String); // [Function: String]
+   ```
+
    
 
 5. 说一下闭包，闭包有什么特点？
@@ -103,13 +124,20 @@
 
    ``` N
    基本数据类型：String Number Boolean undefined null
-   	基本数据类型保存在栈内存当中
+   	基本数据类型保存在栈内存当中，保存的就是一个具体的值
    引用数据类型（复杂数据类型）：Object Function Array
-   	引用数据类型保存在堆内存中
+   	引用数据类型保存在堆内存中， 声明一个引用类型的变量，它保存的是引用类型数据的地址
+   	假如声明了两个引用类型，同时指向了一个地址的时候，修改其中一个，那么另外一个也会改变
    ```
 
    
 
 9. 说一下原型链。
+
+   ```
+   原型就是一个普通对象，它是为构造函数的实例共享属性和方法；所有实例中引用的原型都是同一个对象 
+   ```
+
+   
 
 10. new操作符具体做了什么？
