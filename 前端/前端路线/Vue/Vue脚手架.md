@@ -56,9 +56,9 @@
         ```js
         props:{
         	name:{
-        	type:String, //类型
-        	required:true, //必要性
-        	default:'老王' //默认值
+                type:String, //类型
+                required:true, //必要性
+                default:'老王' //默认值
         	}
         }
         ```
@@ -128,7 +128,7 @@
 
     ​			1).一个组件在用：放在组件自身即可。
 
-    ​			2). 一些组件在用：放在他们共同的父组件上（<span style="color:red">状态提升</span>）。
+    ​			2). 一些组件在用：放在他们 共同的父组件上（<span style="color:red">状态提升</span>）。
 
     ​	(3).实现交互：从绑定事件开始。
 
@@ -206,6 +206,8 @@
 
 1. 一种组件间通信的方式，适用于<span style="color:red">任意组件间通信</span>。
 
+   ![全局事件总线](https://raw.githubusercontent.com/WeiXinao/imgBed2/main/img/202303301353407.png)
+
 2. 安装全局事件总线：
 
    ```js
@@ -238,7 +240,9 @@
 
 ## 消息订阅与发布（pubsub）
 
-1.   一种组件间通信的方式，适用于<span style="color:red">任意组件间通信</span>。
+1. 一种组件间通信的方式，适用于<span style="color:red">任意组件间通信</span>。
+
+   ![消息订阅与发布](https://raw.githubusercontent.com/WeiXinao/imgBed2/main/img/202303301648468.png)
 
 2. 使用步骤：
 
@@ -261,18 +265,20 @@
    4. 提供数据：```pubsub.publish('xxx',数据)```
 
    5. 最好在beforeDestroy钩子中，用```PubSub.unsubscribe(pid)```去<span style="color:red">取消订阅。</span>
-	
+
 ## nextTick
 
 1. 语法：```this.$nextTick(回调函数)```
 2. 作用：在下一次 DOM 更新结束后执行其指定的回调。
 3. 什么时候用：当改变数据后，要基于更新后的新DOM进行某些操作时，要在nextTick所指定的回调函数中执行。
 
-## Vue封装的过度与动画
+## Vue封装的过渡与动画
 
 1. 作用：在插入、更新或移除 DOM元素时，在合适的时候给元素添加样式类名。
 
-2. 图示：<img src="https://img04.sogoucdn.com/app/a/100520146/5990c1dff7dc7a8fb3b34b4462bd0105" style="width:60%" />
+2. 图示：
+
+   ![](https://v2.cn.vuejs.org/images/transition.png)
 
 3. 写法：
 
@@ -295,9 +301,36 @@
       </transition>
       ```
 
-   3. 备注：若有多个元素需要过度，则需要使用：```<transition-group>```，且每个元素都要指定```key```值。
+   3. 备注：若有多个元素需要过度，则需要使用：```<transition-group>```，且每个元素都要指定 ```key``` 值。
 
 ## vue脚手架配置代理
+
+### 补充
+
+1. xhr  `new XMLHttpRequest() xhr.open() xhr.send()`
+2. JQuery `$.get $post`
+3. axios :star:
+4. fetch
+
+### 跨域
+
+1. 什么是跨域？
+   - 违背了同源策略
+
+2. 什么是同源策略？
+   - 同源策略规定了三个东西必须一致：协议名、主机名、端口号
+
+ ![下载](https://raw.githubusercontent.com/WeiXinao/imgBed2/main/img/202304021903439.png)
+
+3. 如何解决？
+
+   1. cors
+
+   2. jsonp 
+
+      巧妙利用了 `script` 标签请求外部资源不受同源策略影响的特性，但需要前后端配合实现。而且只适用于 ==get请求==。
+
+   3. 代理服务器
 
 ### 方法一
 
@@ -1055,14 +1088,18 @@ module.exports = {
 
 
 1. 对于一个url来说，什么是hash值？—— #及其后面的内容就是hash值。
+
 2. hash值不会包含在 HTTP 请求中，即：hash值不会带给服务器。
+
 3. hash模式：
    1. 地址中永远带着#号，不美观 。
    2. 若以后将地址通过第三方手机app分享，若app校验严格，则地址会被标记为不合法。
    3. 兼容性较好。
+   
 4. history模式：
    1. 地址干净，美观 。
    2. 兼容性和hash模式相比略差。
    3. 应用部署上线时需要后端人员支持，解决刷新页面服务端404的问题。
 	
 	 
+
