@@ -18,7 +18,7 @@ JavaScript 组成
 - DOM（node 有）
 - BOM（node 没有）
 
-DOM 
+DOM、BOM 中有用的 API node.js 进行了保留，如 `setTimeout()、console.log`
 
 ## 安装
 
@@ -67,4 +67,14 @@ nvm list                                 显示已安装的 node 版本
 nvm install 版本						    安装指定版本的 node
 nvm use 版本								指定要使用的 node 版本
 ```
+
+## 异步编程
+
+### 进程和线程
+
+- 进程（厂房）
+  - 程序的运行环境
+
+- 线程（工人）
+  - 线程是实际进行运算的东西
 
