@@ -1,4 +1,4 @@
-# Vue2
+# Vue2 基础
 
 ## 第一章 Vue 核心
 
@@ -102,14 +102,10 @@
 
 Vue CLI(Vue commend line interface)
 
-
-
-```
+```markdown
 package-lock.json		包版本控制文件
 README.md				对整个工程进行一个说明
 ```
-
-
 
 > vue.runtime.esm.js	esm 表示 ES module
 
@@ -125,5 +121,5 @@ README.md				对整个工程进行一个说明
 			买瓷砖（Vue 核心） + 雇工人（模板解析器）======> 铺好的瓷砖
 ```
 
-Webpack 中的loader：eslint、jslint、jshint 都能进行语法检查
+Webpack 中的 loader：eslint、jslint、jshint 都能进行语法检查。
 

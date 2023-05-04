@@ -22,7 +22,10 @@
 
 ![image-20220512102219160](D:/NoteBookOnline/assets/image-20220512102219160.png)
 
-> [!NOTE]
->
-> <span style="color:red;">if you have queries that regularly return the majority or all of your documents, an index will not really help you there.</span>
 
+
+
+
+> [!note]
+> 
+> <span style="color:red;">if you have queries that regularly return the majority or all of your documents, an index will not really help you there.</span>

@@ -22,8 +22,8 @@
 ## 关于不同版本的Vue
 
 1. vue.js与vue.runtime.xxx.js的区别：
-    1. vue.js是完整版的Vue，包含：核心功能 + 模板解析器。
-    2. vue.runtime.xxx.js是运行版的Vue，只包含：核心功能；没有模板解析器。
+   1. vue.js是完整版的Vue，包含：核心功能 + 模板解析器。
+   2. vue.runtime.xxx.js是运行版的Vue，只包含：核心功能；没有模板解析器。
 2. 因为vue.runtime.xxx.js没有模板解析器，所以不能使用template这个配置项，需要使用render函数接收到的createElement函数去指定具体内容。
 
 ## vue.config.js配置文件
@@ -36,8 +36,8 @@
 1. 被用来给元素或子组件注册引用信息（id的替代者）
 2. 应用在html标签上获取的是真实DOM元素，应用在组件标签上是组件实例对象（vc）
 3. 使用方式：
-    1. 打标识：```<h1 ref="xxx">.....</h1>``` 或 ```<School ref="xxx"></School>```
-    2. 获取：```this.$refs.xxx```
+   1. 打标识：```<h1 ref="xxx">.....</h1>``` 或 ```<School ref="xxx"></School>```
+   2. 获取：```this.$refs.xxx```
 
 ## props配置项
 
@@ -47,23 +47,23 @@
 
 3. 接收数据：
 
-    1. 第一种方式（只接收）：```props:['name'] ```
+   1. 第一种方式（只接收）：```props:['name'] ```
 
-    2. 第二种方式（限制类型）：```props:{name:String}```
+   2. 第二种方式（限制类型）：```props:{name:String}```
 
-    3. 第三种方式（限制类型、限制必要性、指定默认值）：
+   3. 第三种方式（限制类型、限制必要性、指定默认值）：
 
-        ```js
-        props:{
-        	name:{
-                type:String, //类型
-                required:true, //必要性
-                default:'老王' //默认值
-        	}
-        }
-        ```
+      ```js
+      props:{
+      	name:{
+              type:String, //类型
+              required:true, //必要性
+              default:'老王' //默认值
+      	}
+      }
+      ```
 
-    > 备注：props是只读的，Vue底层会监测你对props的修改，如果进行了修改，就会发出警告，若业务需求确实需要修改，那么请复制props的内容到data中一份，然后去修改data中的数据。
+   > 备注：props是只读的，Vue底层会监测你对props的修改，如果进行了修改，就会发出警告，若业务需求确实需要修改，那么请复制props的内容到data中一份，然后去修改data中的数据。
 
 ## mixin(混入)
 
@@ -71,20 +71,20 @@
 
 2. 使用方式：
 
-    第一步定义混合：
+   第一步定义混合：
 
-    ```
-    {
-        data(){....},
-        methods:{....}
-        ....
-    }
-    ```
+   ```
+   {
+       data(){....},
+       methods:{....}
+       ....
+   }
+   ```
 
-    第二步使用混入：
+   第二步使用混入：
 
-    ​	全局混入：```Vue.mixin(xxx)```
-    ​	局部混入：```mixins:['xxx']	```
+   ​	全局混入：```Vue.mixin(xxx)```
+   ​	局部混入：```mixins:['xxx']	```
 
 ## 插件
 
@@ -94,22 +94,22 @@
 
 3. 定义插件：
 
-    ```js
-    对象.install = function (Vue, options) {
-        // 1. 添加全局过滤器
-        Vue.filter(....)
-    
-        // 2. 添加全局指令
-        Vue.directive(....)
-    
-        // 3. 配置全局混入(合)
-        Vue.mixin(....)
-    
-        // 4. 添加实例方法
-        Vue.prototype.$myMethod = function () {...}
-        Vue.prototype.$myProperty = xxxx
-    }
-    ```
+   ```js
+   对象.install = function (Vue, options) {
+       // 1. 添加全局过滤器
+       Vue.filter(....)
+   
+       // 2. 添加全局指令
+       Vue.directive(....)
+   
+       // 3. 配置全局混入(合)
+       Vue.mixin(....)
+   
+       // 4. 添加实例方法
+       Vue.prototype.$myMethod = function () {...}
+       Vue.prototype.$myProperty = xxxx
+   }
+   ```
 
 4. 使用插件：```Vue.use()```
 
@@ -122,21 +122,21 @@
 
 1. 组件化编码流程：
 
-    ​	(1).拆分静态组件：组件要按照功能点拆分，命名不要与html元素冲突。
+   ​	(1).拆分静态组件：组件要按照功能点拆分，命名不要与html元素冲突。
 
-    ​	(2).实现动态组件：考虑好数据的存放位置，数据是一个组件在用，还是一些组件在用：
+   ​	(2).实现动态组件：考虑好数据的存放位置，数据是一个组件在用，还是一些组件在用：
 
-    ​			1).一个组件在用：放在组件自身即可。
+   ​			1).一个组件在用：放在组件自身即可。
 
-    ​			2). 一些组件在用：放在他们 共同的父组件上（<span style="color:red">状态提升</span>）。
+   ​			2). 一些组件在用：放在他们 共同的父组件上（<span style="color:red">状态提升</span>）。
 
-    ​	(3).实现交互：从绑定事件开始。
+   ​	(3).实现交互：从绑定事件开始。
 
 2. props适用于：
 
-    ​	(1).父组件 ==> 子组件 通信
+   ​	(1).父组件 ==> 子组件 通信
 
-    ​	(2).子组件 ==> 父组件 通信（要求父先给子一个函数）
+   ​	(2).子组件 ==> 父组件 通信（要求父先给子一个函数）
 
 3. 使用v-model时要切记：v-model绑定的值不能是props传过来的值，因为props是不可以修改的！
 
@@ -150,27 +150,27 @@
 
 3. 相关API：
 
-    1. ```xxxxxStorage.setItem('key', 'value');```
-        				该方法接受一个键和值作为参数，会把键值对添加到存储中，如果键名存在，则更新其对应的值。
+   1. ```xxxxxStorage.setItem('key', 'value');```
+      	该方法接受一个键和值作为参数，会把键值对添加到存储中，如果键名存在，则更新其对应的值。
 
-    2. ```xxxxxStorage.getItem('person');```
+   2. ```xxxxxStorage.getItem('person');```
 
-        ​		该方法接受一个键名作为参数，返回键名对应的值。
+      ​		该方法接受一个键名作为参数，返回键名对应的值。
 
-    3. ```xxxxxStorage.removeItem('key');```
+   3. ```xxxxxStorage.removeItem('key');```
 
-        ​		该方法接受一个键名作为参数，并把该键名从存储中删除。
+      ​		该方法接受一个键名作为参数，并把该键名从存储中删除。
 
-    4. ``` xxxxxStorage.clear()```
+   4. ``` xxxxxStorage.clear()```
 
-        ​		该方法会清空存储中的所有数据。
+      ​		该方法会清空存储中的所有数据。
 
 4. 备注：
 
-    1. SessionStorage存储的内容会随着浏览器窗口关闭而消失。
-    2. LocalStorage存储的内容，需要手动清除才会消失。
-    3. ```xxxxxStorage.getItem(xxx)```如果xxx对应的value获取不到，那么getItem的返回值是null。
-    4. ```JSON.parse(null)```的结果依然是null。
+   1. SessionStorage存储的内容会随着浏览器窗口关闭而消失。
+   2. LocalStorage存储的内容，需要手动清除才会消失。
+   3. ```xxxxxStorage.getItem(xxx)```如果xxx对应的value获取不到，那么getItem的返回值是null。
+   4. ```JSON.parse(null)```的结果依然是null。
 
 ## 组件的自定义事件
 
@@ -180,19 +180,19 @@
 
 3. 绑定自定义事件：
 
-    1. 第一种方式，在父组件中：```<Demo @atguigu="test"/>```  或 ```<Demo v-on:atguigu="test"/>```
+   1. 第一种方式，在父组件中：```<Demo @atguigu="test"/>```  或 ```<Demo v-on:atguigu="test"/>```
 
-    2. 第二种方式，在父组件中：
+   2. 第二种方式，在父组件中：
 
-        ```js
-        <Demo ref="demo"/>
-        ......
-        mounted(){
-           this.$refs.xxx.$on('atguigu',this.test)
-        }
-        ```
+      ```js
+      <Demo ref="demo"/>
+      ......
+      mounted(){
+         this.$refs.xxx.$on('atguigu',this.test)
+      }
+      ```
 
-    3. 若想让自定义事件只能触发一次，可以使用```once```修饰符，或```$once```方法。
+   3. 若想让自定义事件只能触发一次，可以使用```once```修饰符，或```$once```方法。
 
 4. 触发自定义事件：```this.$emit('atguigu',数据)```		
 
@@ -381,7 +381,7 @@ module.exports = {
 1. 优点：可以配置多个代理，且可以灵活的控制请求是否走代理。
 2. 缺点：配置略微繁琐，请求资源时必须加前缀。
 
-## 插槽
+## 插槽 
 
 1. 作用：让父组件可以向子组件指定位置插入html结构，也是一种组件间通信的方式，适用于 <strong style="color:red">父组件 ===> 子组件</strong> 。
 
@@ -471,7 +471,7 @@ module.exports = {
                      }
                  </script>
          ```
-   
+
    
 
 ## Vuex
@@ -484,7 +484,37 @@ module.exports = {
 
 ​		多个组件需要共享数据时
 
+1. 多个组件依赖同一状态
+2. 来自不同组件的行为需要变更同一状态
+
 ### 3.搭建vuex环境
+
+![vuex](https://raw.githubusercontent.com/WeiXinao/imgBed2/main/img/202304121559113.png)
+
+> [!note]
+>
+> **State**：object对象，数据保存在此处，比如：
+>
+> ```javascript
+> {
+> todos:[]
+> ...
+> sum: 0
+> }
+> ```
+>
+> ![image-20230412162412069](https://raw.githubusercontent.com/WeiXinao/imgBed2/main/img/202304121624213.png)
+>
+> 组件中可以直接 commit
+>
+> ![image-20230412170340576](https://raw.githubusercontent.com/WeiXinao/imgBed2/main/img/202304121703707.png)
+>
+> store.dispatch、store.commit 都是 store 给我们提供的
+>
+> 总结：
+>
+> 1. Actions，Mutations，State 都是 Object 类型
+> 2. 得让 所有的 VueComponent 的实例对象，vc 可以看到（访问）store，才能让每个组件实例对象都能调用 `dispatch、commit` 等方法
 
 1. 创建文件：```src/store/index.js```
 
@@ -722,10 +752,17 @@ module.exports = {
 
  ## 路由
 
-1. 理解： 一个路由（route）就是一组映射关系（key - value），多个路由需要路由器（router）进行管理。
-2. 前端路由：key是路径，value是组件。
-
 ### 1.基本使用
+
+1. 理解： 一个路由（route）就是一组映射关系（key - value），多个路由需要路由器（router）进行管理。
+2. 前端路由：
+   - 理解：key是路径，value是组件。
+   - 工作过程：当浏览器的路径发生改变时，对应的组件就会显示。
+3. 后端路由：
+   - 理解：value 是 function，用于处理客户端提交的请求。
+   - 工作过程：服务器接到一个请求时，根据**请求路径**找到匹配的**函数**来处理请求，返回响应数据。
+
+#### 1.1 步骤 
 
 1. 安装vue-router，命令：```npm i vue-router```
 
@@ -928,7 +965,9 @@ module.exports = {
                title:'你好'
    		}
    	}"
-   >跳转</router-link>
+   >
+       跳转
+   </router-link>
    ```
 
    > 特别注意：路由携带params参数时，若使用to的对象写法，则不能使用path配置项，必须使用name配置！
@@ -971,6 +1010,14 @@ module.exports = {
 1. 作用：控制路由跳转时操作浏览器历史记录的模式
 2. 浏览器的历史记录有两种写入方式：分别为```push```和```replace```，```push```是追加历史记录，```replace```是替换当前记录。路由跳转时候默认为```push```
 3. 如何开启```replace```模式：```<router-link replace .......>News</router-link>```
+
+![image-20230426235149773](https://raw.githubusercontent.com/WeiXinao/imgBed2/main/img/202304271739629.png)
+
+<p align="center">图1</p>
+
+![image-20230427000559007](https://raw.githubusercontent.com/WeiXinao/imgBed2/main/img/202304271739420.png)
+
+<p align="center">图2</p>
 
 ### 9.编程式路由导航
 
@@ -1020,6 +1067,8 @@ module.exports = {
    2. ```deactivated```路由组件失活时触发。
 
 ### 12.路由守卫
+
+![路由守卫](https://raw.githubusercontent.com/WeiXinao/imgBed2/main/img/202304271808705.png)
 
 1. 作用：对路由进行权限控制
 
@@ -1085,21 +1134,15 @@ module.exports = {
 
 ### 13.路由器的两种工作模式
 
-
-
 1. 对于一个url来说，什么是hash值？—— #及其后面的内容就是hash值。
-
 2. hash值不会包含在 HTTP 请求中，即：hash值不会带给服务器。
-
 3. hash模式：
+
    1. 地址中永远带着#号，不美观 。
    2. 若以后将地址通过第三方手机app分享，若app校验严格，则地址会被标记为不合法。
    3. 兼容性较好。
-   
 4. history模式：
+
    1. 地址干净，美观 。
    2. 兼容性和hash模式相比略差。
    3. 应用部署上线时需要后端人员支持，解决刷新页面服务端404的问题。
-	
-	 
-
