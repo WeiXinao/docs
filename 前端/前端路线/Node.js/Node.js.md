@@ -10,13 +10,15 @@ Node.js是一个构建在V8引擎之上的JavaScript运行环境。它使得JS�
   - 单线程、异步、非阻塞
   - 统一 API
 
-## node.js 和 JavaScript 区别
+### node.js 和 JavaScript 区别
 
 JavaScript 组成
 
-- ECMAScript(European Computer Manufacturer Association)
-- DOM
-- BOM
+- ECMAScript（European Computer Manufacturer Association）
+- DOM（node 有）
+- BOM（node 没有）
+
+DOM 
 
 ## 安装
 
