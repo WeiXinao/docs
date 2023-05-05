@@ -589,3 +589,5 @@ Promise.resolve用来创建一个新的Promise实例，且直接通过resolve存
 
 Promise.reject用来创建一个新的Promise实例，且直接通过reject存入一个数据。
 
+> [!note]
+>
