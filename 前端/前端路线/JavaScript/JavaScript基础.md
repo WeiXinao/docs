@@ -148,17 +148,6 @@ JavaScript 程序不能独立运行，它需要被嵌入 HTML 中，然后浏览
 > 2. 外部 JavaScript 会使代码更加有序，更易于复用，且没有了脚本的混合，HTML 也会更加易读，因此这是个好的习惯。
 > 3. 书写的位置尽量写到文档末尾 `</body>`  前面
 
->[!WARNING]
->123123
-
->[!Danger]
->asdas
-
->[!TIP]
->ASDASD
-
-
-
 #### 内联JavaScript
 
 代码写在标签内部
