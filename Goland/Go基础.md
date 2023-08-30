@@ -121,8 +121,6 @@ helloGo：表示 module 名字，随自己喜欢
 
 - clean：移除对象文件
 
-  ![image-20230302221425519](C:\Users\小新\AppData\Roaming\Typora\typora-user-images\image-20230302221425519.png)
-
 - doc：显示包或者符号的文档
 
 - env：打印 go 的环境信息
@@ -140,19 +138,136 @@ helloGo：表示 module 名字，随自己喜欢
   ![](https://raw.githubusercontent.com/WeiXinao/imgBed2/main/img/image-20230302222536495.png)
 
 - generate：从 processing source 生成 go 文件
-
 - get：下载并安装包和依赖
-
 - install：编译并安装包和依赖
-
 - list：列出包
-
 - run：编译并运行 go 程序
-
 - test：运行测试
-
 - tool：运行 go 提供的工具
-
 - version：显示 go 的版本
+- vet：运行go tool vet 
 
-- vet：运行go tool vet
+
+
+## 变量
+
+### 变量声明
+
+#### 声明单个变量
+
+方式1：指定变量类型，声名后若不赋值，使用默认值
+
+```go
+// int 的默认值是 0
+var i int
+fmt.Println("i = ", i)
+```
+
+方式2：根据值自行判断变量类型（类型推导）
+
+```go
+var num = 10.11
+fmt.Println("num = ", num)
+```
+
+方式3：省略 var, 注意 := 左侧的变量不应该是已经声名过的，否则会导致编译错误
+
+```go
+// 下面的方式等价 var name; name = "tom"
+// := 的 :不能省略，否则错误
+name := "tom"
+fmt.Println("name = ", name)
+```
+
+#### 一次声明多个变量
+
+方式1：
+
+```go
+var n1, n2, n3 int
+fmt.Println("n1 = ", n1, "n2 = ", n2, "n3 = ", n3)
+```
+
+方式2：类型推导
+
+```go
+var n1, name, n3 = 100, "tom", 888
+fmt.Printf("n1 = ", n1, "name =", name, "n3 = ", n3)
+```
+
+方式3：类型推导简写
+
+```go
+n1, name, n3 := 100, "tom", 888
+fmt.Println("n1 = ", n1, "name = ", name, "n3 = ", n3)
+```
+
+#### 声明全局变量
+
+在函数外声明的变量就是全局变量
+
+```go
+//定义全局变量
+var n1 = 100
+var n2 = 200
+var name = "jack"
+
+//上面的声明方式也可以改成一次性声明
+var (
+	n3    = 300
+	n4    = 900
+	name2 = "merry"
+)
+```
+
+### 注意事项
+
+1. 该区域的数据值可以在同一类型范围内不断变化
+
+```go
+// 该区域的数据值可以在同一类型范围内不断变化
+var i int = 10
+i = 30
+i = 50
+fmt.Println("i = ", i)
+i = 1.2 // 错误， int, 原因是不能改变类型
+```
+
+2. 变量在同一个作用域内不能重名
+
+```go
+// 该区域的数据值可以在同一类型范围内不断变化
+var i int = 10
+i = 30
+i = 50
+fmt.Println("i = ", i)
+
+// var i int =59
+i := 99
+```
+
+## 数据类型
+
+![数据类型](https://raw.githubusercontent.com/WeiXinao/imgBed2/main/img/202308221448391.png)
+
+### 整数类型
+
+基本介绍
+
+&nbsp; 简单来说，就是用于存放数值的，比如 0，1，2，3，4，5 等等。
+
+案例演示
+
+![image](https://raw.githubusercontent.com/WeiXinao/imgBed2/main/img/202308221455012.png)
+
+![image](https://raw.githubusercontent.com/WeiXinao/imgBed2/main/img/202308221456148.png)
+
+整数各个类型
+
+| **类型** | **有无符号** | **占用存储空间** |             **范围**             | **备注** |
+| :------: | :----------: | :--------------: | :------------------------------: | :------: |
+|   int8   |      有      |      1字节       |             -128~127             |          |
+|  int16   |      有      |      2字节       | -2<sup>15</sup>~2<sup>15</sup>-1 |          |
+|  int32   |      有      |      4字节       | -2<sup>31</sup>~2<sup>31</sup>-1 |          |
+|  int64   |      有      |      8字节       | -2<sup>63</sup>~2<sup>63</sup>-1 |          |
+

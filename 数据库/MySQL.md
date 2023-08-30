@@ -14,9 +14,9 @@ DDL（Data Definition Language），数据定义语言，该语言部分包括�
 
 | 功能                       | SQL                                                     |
 | -------------------------- | ------------------------------------------------------- |
-| 查看所有数据库             | `show databases`                                        |
+| 查看所有数据库             |`show databases`|
 | 创建数据库                 | `create database [if not exists] mydb1 [chartset=utf8]` |
-| 切换（选择要操作的数据库） | `use mydb1;`                                            |
+| 切换（选择要操作的数据库） |`use mydb1;`|
 | 删除数据库                 | `drop database [if exist] mydb1`                        |
-| 修改数据库编码             | `alert database mydb1 character set utf-8;`             |
+|修改数据库编码|`alert database mydb1 character set utf-8;`|
 

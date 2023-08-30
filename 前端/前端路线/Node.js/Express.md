@@ -2,9 +2,7 @@
 
 ![image-20230509140307931](https://raw.githubusercontent.com/WeiXinao/imgBed2/main/img/202305091403028.png)
 
-Express 是 node 中的服务器软件
-
-​	通过 express 可以快速的在 node 中搭建一个 web 服务器
+Express 是 node 中的服务器软件，通过 express 可以快速的在 node 中搭建一个 web 服务器
 
 ## 使用步骤
 
@@ -299,6 +297,7 @@ express-session 默认是将 session 存储到内存中的，所以服务器一�
    ```
 
 2. 使用验证码
+
 3. 经量使用 post 请求（结合 token）
 
 #### token（令牌）
@@ -399,7 +398,7 @@ express-session 默认是将 session 存储到内存中的，所以服务器一�
 - 它的主要特点就是，服务器只返回数据
 
 - 服务器和客户端在传输数据时通常会使用 JSON 作为格式数据
--  请求的方法：
+- 请求的方法：
   - GET	      加载数据
   - POST        新建或添加数据
   - PUT          添加或修改数据
@@ -546,7 +545,9 @@ app.listen(PORT, () => {
 AJAX
 
 - A —— 异步 J —— JavaScript A —— And X —— xml
+
 - 异步的 js 和 xml
+
 - 它的作用就是通过 js 向服务器发送请求和加载数据
 
 - xml 就是早期 AJAX 使用的数据格式
@@ -692,17 +693,19 @@ fetch('http://localhost:3000/test', {
     b 网站：http://heihei.com
 
   - 跨域需要检查三个东西：
+
     - 协议
     - 域名
     - 端口号
+
   - 当我们通过 AJAX 去发送跨域请求时，浏览器为了服务器的安全，会阻止 JS 读取服务器的数据，<mark style="background-color: #fad4b5">CORS error 是为了保护服务器</mark>
 
 - 解决方案
 
   - 在服务器中设置一个允许跨域的头
-  
+
     `Access-Control-Allow-Origin`允许哪些客户端访问我们的服务器
-  
+
     ```js
     res.setHeader('Access-Control-Allow-Origin', 'http://127.0.0.1:5500')
     或
@@ -713,11 +716,11 @@ fetch('http://localhost:3000/test', {
     res.setHeader('Access-Control-Allow-Methods', 'GET,POST')
     res.setHeader('Access-Control-Allow-Headers', 'Content-Type')
     ```
-    
+
     > [!attention]
     >
     > `Access-Control-Allow-Origin` 设置指定值时，只能设置一个
-    
+
     
 
 ## 本地存储
@@ -922,7 +925,9 @@ localStorage
 问题：
 
 - 现在是登录以后直接将用户信息存储到本地 `localStorage`
+
 - 主要存在两个问题：
+
   1. 数据安全问题
   2. 服务器不知道你有没有登录
 
@@ -930,7 +935,7 @@ localStorage
 
   - 如何告诉服务器客户端的登录状态，rest 风格的服务器是无状态的，所以不要在服务器中存储用户的数据
 
-  - 服务器中不能存储用户信息，可以将用户信息发送给客户端保存，客户端每次访问服务器时，直接将用户信息发回，客户端每次访问服务器时，直接将用户信息发回，服务器就可以根据用户信息来识别用户的身份，但是如果将数据直接发给客户端同样会有数据安全的问题，所以我们必须对数据进行加密，加密以后，再发送给客户端保存，这样就可以避免数据的泄露
+  - 服务器中不能存储用户信息，可以将用户信息发送给客户端保存，客户端每次访问服务器时，直接将用户信息发回，服务器就可以根据用户信息来识别用户的身份，但是如果将数据直接发给客户端同样会有数据安全的问题，所以我们必须对数据进行加密，加密以后，再发送给客户端保存，这样就可以避免数据的泄露
 
   - 在 node 中可以直接使用 jsonwebtoken 这个包对数据进行加密
 
@@ -985,8 +990,6 @@ localStorage
 
 
 ## Axios
-
-
 
 
 
