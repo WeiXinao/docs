@@ -10,9 +10,3 @@
 
 [GitHub](https://github.com/WeiXinao/docs) 
 [Get Started](README)
-
-
-
-
-
-

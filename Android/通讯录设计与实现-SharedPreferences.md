@@ -110,7 +110,7 @@ RecyclerView 可以让您轻松高效地显示大量数据。您提供数据并�
 如果您打算使用 RecyclerView，那么您需要完成几项工作。下面几部分对这些工作进行了详细介绍。
 
 - 首先，确定列表或网格的外观。一般来说，您可以使用 RecyclerView 库的某个标准布局管理器。
-
+  
   ```java
   void initView() {
           recyclerView = findViewById(R.id.contactRecyclerView);
@@ -124,10 +124,8 @@ RecyclerView 可以让您轻松高效地显示大量数据。您提供数据并�
       }
   ```
 
-  
-
 - 设计列表中每个元素的外观和行为。根据此设计，扩展 `ViewHolder` 类。您的 `ViewHolder` 版本提供了列表项的所有功能。您的 ViewHolder 是 `View` 的封装容器，且该视图由 `RecyclerView` 管理。
-
+  
   ```java
   // 让MyViewHolder持有它的三个子view
   public class MyViewHolder extends RecyclerView.ViewHolder {
@@ -169,10 +167,8 @@ RecyclerView 可以让您轻松高效地显示大量数据。您提供数据并�
   }
   ```
 
-  
-
 - 定义用于将您的数据与 `ViewHolder` 视图相关联的 `Adapter`。
-
+  
   ```java
   @Data
   public class MyAdapters extends RecyclerView.Adapter<MyAdapters.MyViewHolder> {
@@ -252,8 +248,6 @@ RecyclerView 可以让您轻松高效地显示大量数据。您提供数据并�
   }
   ```
 
-  
-
 此外，您还可以使用[高级自定义选项](https://developer.android.google.cn/guide/topics/ui/layout/recyclerview-custom?hl=zh-cn)根据自己的具体需求定制 RecyclerView。
 
 ##### 规划布局
@@ -263,13 +257,12 @@ RecyclerView 中的列表项由 [`LayoutManager`](https://developer.android.goog
 - [`LinearLayoutManager`](https://developer.android.google.cn/reference/androidx/recyclerview/widget/LinearLayoutManager?hl=zh-cn) 将各个项排列在一维列表中。
 
 - `GridLayoutManager`
-
-   
-
+  
   将所有项排列在二维网格中：
 
-  - 如果网格垂直排列，`GridLayoutManager` 会尽量使每行中所有元素的宽度和高度相同，但不同的行可以有不同的高度。
-  - 如果网格水平排列，`GridLayoutManager` 会尽量使每列中所有元素的宽度和高度相同，但不同的列可以有不同的宽度。
+- 如果网格垂直排列，`GridLayoutManager` 会尽量使每行中所有元素的宽度和高度相同，但不同的行可以有不同的高度。
+
+- 如果网格水平排列，`GridLayoutManager` 会尽量使每列中所有元素的宽度和高度相同，但不同的列可以有不同的宽度。
 
 - [`StaggeredGridLayoutManager`](https://developer.android.google.cn/reference/androidx/recyclerview/widget/StaggeredGridLayoutManager?hl=zh-cn) 与 `GridLayoutManager` 类似，但不要求同一行中的列表项具有相同的高度（垂直网格有此要求）或同一列中的列表项具有相同的宽度（水平网格有此要求）。其结果是，同一行或同一列中的列表项可能会错落不齐。
 
@@ -387,7 +380,6 @@ public class MyAdapters extends RecyclerView.Adapter<MyAdapters.MyViewHolder> {
         }
     }
 }
-
 ```
 
 `MainActivity`
@@ -531,8 +523,6 @@ public class MainActivity extends AppCompatActivity {
     }
 }
 ```
-
-
 
 ## 添加联系人
 
@@ -713,7 +703,6 @@ void setAdapter() {
         intent.setClass(AddActivity.this, MainActivity.class);
         startActivity(intent);
     }
-
 ```
 
 #### 完整代码
@@ -838,14 +827,11 @@ public class AddActivity extends AppCompatActivity {
 
 
 }
-
 ```
 
 ## 效果展示
 
 ![通讯录1](assets/%E9%80%9A%E8%AE%AF%E5%BD%951.gif)
-
-
 
 ## 参考
 
