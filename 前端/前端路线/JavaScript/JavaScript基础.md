@@ -445,6 +445,7 @@ var 就是个bug，别迷恋它了，以后声明变量我们统一使用 let
 声明（定义）变量相当于创造了一个空的“容器”，通过赋值向这个容器中添加数据。
 
 ![](https://raw.githubusercontent.com/WeiXinao/imageBed/main/img20230206213416.png)
+
 >[!note]
 >是通过变量名来获得变量里面的数据
 
