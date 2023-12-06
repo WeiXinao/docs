@@ -1,7 +1,7 @@
 # Introduction
 
 ```mindmap
-Xnotes
+XNotes
   Introduction
   前端
     学习路线
