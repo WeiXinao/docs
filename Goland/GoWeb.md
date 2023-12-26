@@ -462,6 +462,10 @@ func main() {
 
 ### 处理 application/json 格式
 
+![image-20231226170849764](https://cdn.jsdelivr.net/gh/WeiXinao/imgBed2@main/img/202312261708935.png)
+
+![image-20231226171058548](https://cdn.jsdelivr.net/gh/WeiXinao/imgBed2@main/img/202312261710602.png)
+
 ```go
 package main
 
@@ -501,6 +505,8 @@ func main() {
 ### cookie
 
 在 cookie 中设置一个 counter 键值对，每次访问将对应值 +1
+
+![image-20231226171903970](https://cdn.jsdelivr.net/gh/WeiXinao/imgBed2@main/img/202312261719053.png)
 
 ```go
 package main
@@ -558,6 +564,8 @@ func main() {
 
 访问首页时重定向到登录页面
 
+![image-20231226172214417](https://cdn.jsdelivr.net/gh/WeiXinao/imgBed2@main/img/202312261722477.png)
+
 ```go
 package main
 
@@ -603,7 +611,11 @@ func main() {
 
 ![image-20231225224215766](https://cdn.jsdelivr.net/gh/WeiXinao/imgBed2@main/img/202312252242827.png)
 
-### 创建客户端
+![image-20231226173805303](https://cdn.jsdelivr.net/gh/WeiXinao/imgBed2@main/img/202312261738421.png)
+
+![image-20231226174231405](https://cdn.jsdelivr.net/gh/WeiXinao/imgBed2@main/img/202312261742469.png)
+
+### 创建客户端	
 
 1. 发送 GET 请求
 
@@ -631,7 +643,13 @@ func main() {
 }
 ```
 
+![image-20231226190604081](https://cdn.jsdelivr.net/gh/WeiXinao/imgBed2@main/img/202312261906180.png)
+
 2. POST 请求发送 `application/json` 数据
+
+![image-20231226192002580](https://cdn.jsdelivr.net/gh/WeiXinao/imgBed2@main/img/202312261920649.png)
+
+![image-20231226192515135](https://cdn.jsdelivr.net/gh/WeiXinao/imgBed2@main/img/202312261925202.png)
 
 ```go
 package main
@@ -650,10 +668,11 @@ func main() {
 	resp, err := http.Post("http://localhost:8888", "application/json", buffer)
 	fmt.Println(resp, err)
 }
-
 ```
 
 3. POST 请求发送 `application/x-www-form-urlencoded` 数据
+
+![image-20231226192734788](https://cdn.jsdelivr.net/gh/WeiXinao/imgBed2@main/img/202312261927871.png)
 
 ```go
 package main
