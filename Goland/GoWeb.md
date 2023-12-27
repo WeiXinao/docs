@@ -703,4 +703,4 @@ RPC 即远程过程调用（Remote Produre Call），用于构建计算机之间
 rpc 和 rpc/jsonrpc 包提供了对 rpc 的支持
 
 - rpc 构建于 TPC 或 HTTP 协议之上，底层数据编码使用 gob，因 gob 编码为 golang 自定义，所以无法支持跨语言调用
-- rpc/jsonrpc 构建于 TCP 协议之上，底层数据编码使用 json，可支持
+- rpc/jsonrpc 构建于 TCP 协议之上，底层数据编码使用 json，可支持跨语言调用
