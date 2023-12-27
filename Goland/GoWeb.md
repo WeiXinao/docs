@@ -713,3 +713,23 @@ rpc 和 rpc/jsonrpc 包提供了对 rpc 的支持
  - jsonrpc 包常用函数
 	 - Dial：连接 JSONRPC
 	 - ServeConn：处理客户端连接
+		![](https://cdn.jsdelivr.net/gh/WeiXinao/imgBed2@main/img/202312272339435.png)
+	- 15_jsonrpc/data/calculator.go
+
+```go
+package data  
+  
+// CalculatorRequest calculator service 请求对象  
+type CalculatorRequest struct {  
+    Left  int  
+    Right int  
+}  
+  
+// CalculatorResponse calculator service 响应对象  
+type CalculatorResponse struct {  
+    Result int  
+}
+```
+
+
+	
