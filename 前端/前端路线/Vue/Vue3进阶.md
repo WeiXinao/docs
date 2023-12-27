@@ -20,7 +20,7 @@ npm install
 npm run dev
 ```
 
-> [!warnning]
+> [!warning]
 >
 > 如果选择 vue 的项目，默认版本是 vue3
 
