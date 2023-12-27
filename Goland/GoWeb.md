@@ -701,7 +701,6 @@ golang 发送 http 请求的第三方库：https://pkg.go.dev/github.com/imroc/r
 RPC 即远程过程调用（Remote Produre Call），用于构建计算机之间的通信协议，该协议允许运行于一台计算机的程序调用另一台计算机上的程序，开发人员无需对交互过程进行编程
 
 rpc 和 rpc/jsonrpc 包提供了对 rpc 的支持
-
 - rpc 构建于 TPC 或 HTTP 协议之上，底层数据编码使用 gob，因 gob 编码为 golang 自定义，所以无法支持跨语言调用
 - rpc/jsonrpc 构建于 TCP 协议之上，底层数据编码使用 json，可支持跨语言调用
 
@@ -715,7 +714,7 @@ rpc 和 rpc/jsonrpc 包提供了对 rpc 的支持
 - Dial：连接 JSONRPC 
 - ServeConn：处理客户端连接
 ![](https://cdn.jsdelivr.net/gh/WeiXinao/imgBed2@main/img/202312272339435.png)
-15_jsonrpc/data/calculator.go
+- 15_jsonrpc/data/calculator.go
 
 ```go
 package data  
@@ -732,7 +731,7 @@ type CalculatorResponse struct {
 }
 ```
 
-15_jsonrpc/server/service/calculator.go
+- 15_jsonrpc/server/service/calculator.go
 
 ```go
 package service  
@@ -753,7 +752,7 @@ func (c *Calculator) Add(request *data.CalculatorRequest, response *data.Calcula
 }
 ```
 
-15_jsonrpc/server/main.go
+- 15_jsonrpc/server/main.go
 
 ```go
 package main
@@ -798,7 +797,7 @@ func main() {
 }
 ```
 
-15_jsonrpc/client/main.go
+- 15_jsonrpc/client/main.go
 
 ```go
 package main
@@ -833,5 +832,4 @@ func main() {
 	fmt.Println(err, response.Result)
 }
 ```
-
 ### rpc 
