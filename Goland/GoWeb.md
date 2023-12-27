@@ -710,15 +710,16 @@ rpc 和 rpc/jsonrpc 包提供了对 rpc 的支持
 - 方法必须有两个参数和返回值 error，第一个参数为请求结构体变量指针，用于获取客户端提交的参数，第二参数为响应结构体指针变量，用于响应结果返回，返回值 error 用于告知客户端错误信息
 
 ### jsonrpc
- - jsonrpc 包常用函数
-	 - Dial：连接 JSONRPC
-	 - ServeConn：处理客户端连接
-		![](https://cdn.jsdelivr.net/gh/WeiXinao/imgBed2@main/img/202312272339435.png)
-	- 15_jsonrpc/data/calculator.go
+ jsonrpc 包常用函数
+ 
+- Dial：连接 JSONRPC 
+- ServeConn：处理客户端连接
+![](https://cdn.jsdelivr.net/gh/WeiXinao/imgBed2@main/img/202312272339435.png)
+15_jsonrpc/data/calculator.go
 
 ```go
 package data  
-  
+
 // CalculatorRequest calculator service 请求对象  
 type CalculatorRequest struct {  
     Left  int  
@@ -731,5 +732,106 @@ type CalculatorResponse struct {
 }
 ```
 
+15_jsonrpc/server/service/calculator.go
 
-	
+```go
+package service  
+  
+import (  
+    "goProject/src/goWeb/15_jsonrpc/data"  
+    "log")  
+  
+// Calculator 定义计算服务  
+type Calculator struct {  
+}  
+  
+// Add 定义 + 方法  
+func (c *Calculator) Add(request *data.CalculatorRequest, response *data.CalculatorResponse) error {  
+    log.Printf("[+] call add method")  
+    response.Result = request.Left + request.Right  
+    return nil  
+}
+```
+
+15_jsonrpc/server/main.go
+
+```go
+package main
+
+import (
+	"goProject/src/goWeb/15_jsonrpc/server/service"
+	"log"
+	"net"
+	"net/rpc"
+	"net/rpc/jsonrpc"
+)
+
+func main() {
+	addr := ":9999"
+	// 注册服务 指定服务名称
+	rpc.RegisterName("calc", &service.Calculator{})
+	// 注册服务 未指定服务名称，默认结构体名
+	rpc.Register(&service.Calculator{})
+	listener, err := net.Listen("tcp", addr)
+	if err != nil {
+		log.Fatal(err)
+	}
+	defer func() {
+		err = listener.Close()
+		if err != nil {
+			log.Fatal(err)
+		}
+	}()
+	log.Printf("[+] listen on: %s", addr)
+
+	for {
+		conn, err := listener.Accept()
+		if err != nil {
+			log.Printf("[-] error client: %s\n", err.Error())
+			continue
+		}
+		log.Printf("[+] client connected: %s\n", conn.RemoteAddr())
+
+		// 使用例程启动 jsonrpc 处理客户端请求
+		go jsonrpc.ServeConn(conn)
+	}
+}
+```
+
+15_jsonrpc/client/main.go
+
+```go
+package main
+
+import (
+	"fmt"
+	"goProject/src/goWeb/15_jsonrpc/data"
+	"log"
+	"net/rpc/jsonrpc"
+)
+
+func main() {
+	addr := "127.0.0.1:9999"
+	conn, err := jsonrpc.Dial("tcp", addr)
+	if err != nil {
+		log.Fatal(err)
+	}
+	defer func() {
+		err = conn.Close()
+		if err != nil {
+			log.Fatal(err)
+		}
+	}()
+
+	// 定义请求对象
+	request := &data.CalculatorRequest{2, 5}
+	// 定义响应对象
+	response := &data.CalculatorResponse{}
+	// 调用远程方法
+	err = conn.Call("calc.Add", request, response)
+	// 获取结果
+	fmt.Println(err, response.Result)
+}
+```
+
+### rpc 
