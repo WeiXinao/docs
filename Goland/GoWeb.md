@@ -697,10 +697,10 @@ func main() {
 
 golang 发送 http 请求的第三方库：https://pkg.go.dev/github.com/imroc/req/v3#section-readme
 
+## RPC
+RPC 即远程过程调用（Remote Produre Call），用于构建计算机之间的通信协议，该协议允许运行于一台计算机的程序调用另一台计算机上的程序，开发人员无需对交互过程进行编程
 
-| asdasdasd | asdasdasdasd | asdasdasd |  |
-| :--- | ---- | ---- | ---- |
-| asdasdasda | asdasdasdasdasd |  |  |
-| asdasdasdasd | asdasdd |  |  |
-|  |  |  |  |
+rpc 和 rpc/jsonrpc 包提供了对 rpc 的支持
 
+- rpc 构建于 TPC 或 HTTP 协议之上，底层数据编码使用 gob，因 gob 编码为 golang 自定义，所以无法支持跨语言调用
+- rpc/jsonrpc 构建于 TCP 协议之上，底层数据编码使用 json，可支持
