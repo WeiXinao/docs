@@ -833,5 +833,151 @@ func main() {
 }
 ```
 ### rpc 
+![](https://cdn.jsdelivr.net/gh/WeiXinao/imgBed2@main/img/202312281444332.png)
 
 - 16_rpc/data/calculator.go
+
+```go
+package data  
+  
+// CalculatorRequest calculator service 请求对象  
+type CalculatorRequest struct {  
+    Left  int  
+    Right int  
+}  
+  
+// CalculatorResponse calculator service 响应对象  
+type CalculatorResponse struct {  
+    Result int  
+}
+```
+
+- 16_rpc/server/service/calculator.go
+
+```go
+package service  
+  
+import (  
+    "goProject/src/goWeb/16_rpc/data"  
+    "log"
+    )  
+  
+// Calculator 定义计算服务  
+type Calculator struct {  
+}  
+  
+// Add 定义 + 方法  
+func (c *Calculator) Add(request *data.CalculatorRequest, response *data.CalculatorResponse) error {  
+    log.Printf("[+] call add method")  
+    response.Result = request.Left + request.Right  
+    return nil  
+}
+```
+
+- 16_rpc/server/main.go
+
+```go
+package main
+
+import (
+	"goProject/src/goWeb/16_rpc/server/service"
+	"log"
+	"net"
+	"net/http"
+	"net/rpc"
+)
+
+func main() {
+	// 注册 rpc 服务
+	err := rpc.Register(&service.Calculator{})
+	if err != nil {
+		log.Fatal(err)
+	}
+	rpc.HandleHTTP() // 使用 HTTP 服务
+
+	server, err := net.Listen("tcp", ":8888") // 监听服务
+	if err != nil {
+		log.Fatal(err)
+	} else {
+		http.Serve(server, nil)
+	}
+
+	defer func() {
+		err = server.Close()
+		if err != nil {
+			log.Fatal(err)
+		}
+	}()
+}
+```
+
+- 16_rpc/client/main.go
+
+```go
+package main
+
+import (
+	"goProject/src/goWeb/16_rpc/data"
+	"log"
+	"net/rpc"
+)
+
+func main() {
+	client, err := rpc.DialHTTP("tcp", "localhost:8888")
+	if err != nil {
+		log.Fatal(err)
+	}
+	defer func() {
+		err = client.Close()
+		if err != nil {
+			log.Fatal(err)
+		}
+	}()
+
+	req := &data.CalculatorRequest{Left: 5, Right: 7}
+	resp := &data.CalculatorResponse{}
+	err = client.Call("Calculator.Add", req, resp)
+	if err != nil {
+		log.Fatal(err)
+	} else {
+		log.Printf("response result: %d", resp.Result)
+	}
+}
+```
+
+### 异步方式调用 rpc 服务
+- 16_rpc/client_async/main.go
+
+```go
+package main
+
+import (
+	"goProject/src/goWeb/16_rpc/data"
+	"log"
+	"net/rpc"
+)
+
+func main() {
+	client, err := rpc.DialHTTP("tcp", "localhost:8888")
+	if err != nil {
+		log.Fatal(err)
+	}
+	defer func() {
+		err = client.Close()
+		if err != nil {
+			log.Fatal(err)
+		}
+	}()
+
+	req := &data.CalculatorRequest{Left: 5, Right: 7}
+	resp := &data.CalculatorResponse{}
+	call := client.Go("Calculator.Add", req, resp, nil)
+	<-call.Done
+	if err != nil {
+		log.Fatal(err)
+	} else {
+		log.Printf("response result: %d", resp.Result)
+	}
+}
+```
+
