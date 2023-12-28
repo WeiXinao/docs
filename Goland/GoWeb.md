@@ -710,7 +710,6 @@ rpc 和 rpc/jsonrpc 包提供了对 rpc 的支持
 
 ### jsonrpc
  jsonrpc 包常用函数
- 
 - Dial：连接 JSONRPC 
 - ServeConn：处理客户端连接
 ![](https://cdn.jsdelivr.net/gh/WeiXinao/imgBed2@main/img/202312272339435.png)
