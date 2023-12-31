@@ -104,7 +104,8 @@ Go 源文件都需要在开头使用 package 声明所在包，包名告知编�
 ### 介绍
 Go1.11 版本提供 Go modules 机制对包进行管理，同时保留 GOPATH 和 vender 机制，使用临时环境变量 GO111MODULE 进行控制，GO111MODULE 进行控制，GO111MODULE 有三个可选值：
 
-1. 当 GO111MODULE 为 off 时，构建项目始终在 GOPATH 和 vender
+1. 当 GO111MODULE 为 off 时，构建项目始终在 GOPATH 和 vender 目录搜索目标程序依赖包
+2. 当 GO111MODULE 为 on 时，构建项目始终使用 Go module
 
 
 
