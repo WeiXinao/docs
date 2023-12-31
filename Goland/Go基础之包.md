@@ -19,7 +19,15 @@ Go 源文件都需要在开头使用 package 声明所在包，包名告知编�
 1. 将chapter08/gv 目录添加到 GOPATH 环境变量中
 2. 编译&运行
 	- 使用 go build 编译二进制文件
-	- 命令：go build gpkgmain
-		
+		命令：go build gpkgmain 
 		说明：编译路径 gpkgmain 下的包，main 包，则在当前目录产生以 pkgmain 命名的二进制程序
-	
+	- 使用 go run 运行二进制文件
+		命令：go run gpkgmain
+	- 使用 go install 编译并发布二进制文件	
+		命令：go install gpkgmain
+		说明：编译并发布 gpkgmain 下的包，main 包，则在编译以后的以 pkgmain 命名的二进制程序拷贝到 bin 目录
+	- 使用 go install 编译并发布库文件
+		命令：go install gpkgname/pkg01
+		说明：编译并发布路径 gpkgname/pkg01 下的包，非 main 包，则再将编译的以包名命名的库文件拷贝到 pkg/GOOS_GOARCH 目录下
+	- 使用 go install 编译发布所有二进制和库文件
+		命令：go install ./
