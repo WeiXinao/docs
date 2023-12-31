@@ -26,6 +26,7 @@ Go 源文件都需要在开头使用 package 声明所在包，包名告知编�
 	- 使用 go run 运行二进制文件
 		
 		命令：go run gpkgmain
+		
 	- 使用 go install 编译并发布二进制文件	
 		
 		命令：go install gpkgmain
@@ -114,6 +115,7 @@ Go1.11 版本提供 Go modules 机制对包进行管理，同时保留 GOPATH �
 	将项目依赖包拷贝到项目下的 vender 目录，在编译时使用项目下 vender 目录中的包进行编译
 
 	解决问题：
+	
 	- 依赖外部包过多，在使用第三方包时需要使用 go get 进行下载
 	- 第三方包在 go get 下载后不能保证开发和编译时版本的兼容性
 
@@ -128,7 +130,14 @@ Go1.11 版本提供 Go modules 机制对包进行管理，同时保留 GOPATH �
 
    可以借助 go get 工具下载和安装第三方包及其依赖，需要安装与第三方包匹配的代码管理工具，比如 git、svn 等
 
-   
+   常用参数：
 
+   - -d；仅下载依赖包
+   - -u：更新包并安装
+   - -x：打印执行的命令
+   - -v：打印构建的包
+   - -insecure：允许使用 http 协议下载包
 
+第三方包查找地址：
 
+- https://golang.google.cn/
