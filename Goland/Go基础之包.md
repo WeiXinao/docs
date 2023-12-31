@@ -51,7 +51,35 @@ Go 源文件都需要在开头使用 package 声明所在包，包名告知编�
 4. 导入形式
 	1. 绝对路径导入
 
-		在 GOPATH
+		在 GOPATH 目录中查找包
+
+		示例：
+		- `import "fmt"`
+		- `import "gpkgname/pkg01"`
+
+	2. 相对路径导入
+	
+		在当前文件所在目录查找
+		
+		示例：`import "./gpkgname/pkg02"`
+
+	3. 点导入
+	
+		在调用点导入包中的成员时可以直接使用成员名称进行调用（省略包名）
+		
+		```go
+		package main
+		
+		import "fmt"
+		
+		func main() {
+			Println("hello world")
+		}
+		```
+	
+	4. 别名导入
+	
+	   到导入不同路径的相同报名时，可以别名导入为包重命名，避免c
 
 
 
