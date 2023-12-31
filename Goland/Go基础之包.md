@@ -95,7 +95,7 @@ Go 源文件都需要在开头使用 package 声明所在包，包名告知编�
 
 		```go
 		package main 
-
+		
 		func main() {
 		}
 		```
@@ -109,9 +109,26 @@ Go1.11 版本提供 Go modules 机制对包进行管理，同时保留 GOPATH �
 3. 当 GO111MODULE 为 auto（默认）时，当构建源代码不在 GOPATH/src 的子目录且包含 go.mod 文件，则使用 Go modules 机制，否则使用 GOPATH 和 vender 机制
 
 ### GOPATH+vender 机制
+1. vender
+	
+	将项目依赖包拷贝到项目下的 vender 目录，在编译时使用项目下 vender 目录中的包进行编译
 
+	解决问题：
+	- 依赖外部包过多，在使用第三方包时需要使用 go get 进行下载
+	- 第三方包在 go get 下载后不能保证开发和编译时版本的兼容性
 
+2. 包的搜索顺序
 
+   - 在当前包下的 vender 目录查找
+   - 向上级目录查找，直到 GOPATH/src/vender 目录
+   - 在 GOPATH 目录查找
+   - 在 GOROOT 目录查找
+
+3. 第三方包
+
+   可以借助 go get 工具下载和安装第三方包及其依赖，需要安装与第三方包匹配的代码管理工具，比如 git、svn 等
+
+   
 
 
 
