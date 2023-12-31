@@ -141,3 +141,12 @@ Go1.11 版本提供 Go modules 机制对包进行管理，同时保留 GOPATH �
 第三方包查找地址：
 
 - https://golang.google.cn/
+### Go modules 机制
+1. 优势
+
+	- 不用设置 GOPATH，代码可以任意放置
+	- 自动下载依赖管理
+	- 版本控制
+	- 不允许使用相对导入
+	- replace 机制
+
