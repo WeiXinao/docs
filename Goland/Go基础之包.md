@@ -150,3 +150,6 @@ Go1.11 版本提供 Go modules 机制对包进行管理，同时保留 GOPATH �
 	- 不允许使用相对导入
 	- replace 机制
 
+2. 初始化模块
+
+	命令：go mod init modname
