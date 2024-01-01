@@ -153,3 +153,6 @@ Go1.11 版本提供 Go modules 机制对包进行管理，同时保留 GOPATH �
 2. 初始化模块
 
 	命令：go mod init modname
+### 用 Github 管理自己的库
+1. 创建一个 Github 仓库
+![](https://cdn.jsdelivr.net/gh/WeiXinao/imgBed2@main/img/202401011820478.png)
