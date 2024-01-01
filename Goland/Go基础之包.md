@@ -155,4 +155,16 @@ Go1.11 版本提供 Go modules 机制对包进行管理，同时保留 GOPATH �
 	命令：go mod init modname
 ### 用 Github 管理自己的库
 1. 创建一个 Github 仓库
-![](https://cdn.jsdelivr.net/gh/WeiXinao/imgBed2@main/img/202401011820478.png)
+	
+	![](https://cdn.jsdelivr.net/gh/WeiXinao/imgBed2@main/img/202401011820478.png)
+	![](https://cdn.jsdelivr.net/gh/WeiXinao/imgBed2@main/img/202401011824902.png)
+
+
+	这里 **仓库名**、**包名** 保持一致
+
+2.  使用 go mudules 方式进行包管理时，**mod 名**与仓库 url 保持一致 
+
+
+
+
+
