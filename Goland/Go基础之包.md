@@ -192,4 +192,6 @@ Go1.11 版本提供 Go modules 机制对包进行管理，同时保留 GOPATH �
 - `go mod download`
 - `go mod graph`
 
-## 测试
+## 测试 
+Go 提供了 test 工具用于代码的单元测试，test 工具会查找包下以 \_test.go 结尾的测试文件中以 Test 或 Banchmark 开头的函数并给出运行结果
+
