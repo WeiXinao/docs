@@ -17,6 +17,7 @@ Go 源文件都需要在开头使用 package 声明所在包，包名告知编�
 运行：
 1. 将chapter08/gv 目录添加到 GOPATH 环境变量中
 2. 编译&运行
+
 	- 使用 go build 编译二进制文件
 		
 		命令：go build gpkgmain 
