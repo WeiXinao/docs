@@ -163,7 +163,7 @@ Go1.11 版本提供 Go modules 机制对包进行管理，同时保留 GOPATH �
 
 	这里 **仓库名**、**包名** 保持一致
 
-2.  使用 go mudules 方式进行包管理时，**mod 名**与仓库**地址**保持一致，省略协议名，如：https://
+2.  使用 go mudules 方式进行包管理时，**mod 名**与仓库**地址**保持一致，省略协议名，如：`https://`
 
 	![](https://cdn.jsdelivr.net/gh/WeiXinao/imgBed2@main/img/202401011831852.png)
 	![](https://cdn.jsdelivr.net/gh/WeiXinao/imgBed2@main/img/202401011835872.png)
