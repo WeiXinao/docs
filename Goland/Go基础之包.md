@@ -187,7 +187,28 @@ Go1.11 版本提供 Go modules 机制对包进行管理，同时保留 GOPATH �
 	}
 	```
 
+5. 常用命令
+
 - `go list -m all`
+
+	```markdown
+	usage: go list [-f format] [-json] [-m] [list flags] [build flags] [packages]
+	
+	List lists the named packages, one per line.
+	The most commonly-used flags are -f and -json, which control the form.
+	
+	The default output shows the package import path:
+	    
+	    bytes
+	    encoding/json
+	    github.com/gorilla/mux
+	    golang.org/x/net/html
+
+	go help list for more information
+	```
+	
+
+
 - `go mod tidy`
 - `go mod download`
 - `go mod graph`
