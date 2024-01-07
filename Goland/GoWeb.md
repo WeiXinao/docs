@@ -1436,14 +1436,90 @@ text/template 包用于处理处理字符串模板和数据驱动生成目标字
 
 	views/add.html
 
-	```go
-	
+	```html
+	<!DOCTYPE html>
+	<html lang="en">
+	<head>
+	  <meta charset="UTF-8">
+	  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	  <title>任务列表</title>
+	</head>
+	<body>
+	  <form action="/add/" method="POST">
+	    <label>任务名：<input type="text" name="name" value=""></label>
+	    <input type="submit" value="新增">
+	  </form>
+	</body>
+	</html>
 	```
 
 	views/list.html
 
+	```html
+	<!DOCTYPE html>
+	<html lang="en">
+	<head>
+	  <meta charset="UTF-8">
+	  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	  <title>任务列表</title>
+	</head>
+	<body>
+	  <a href="/add/">新增</a>
+	  <table>
+	    <thead>
+	      <tr>
+	        <th>ID</th>
+	        <th>任务</th>
+	        <th>状态</th>
+	      </tr>
+	    </thead>
+	    <tbody>
+	      {{ range . }}
+	        <tr>
+	          <td>{{ .ID }}</td>
+	          <td>{{ .Name }}</td>
+	          <td>{{ .Status }}</td>
+	        </tr>
+	      {{ end }}
+	    </tbody>
+	  </table>
+	</body>
+	</html>
+	```
 
+	main.go
 
 	```go
+	package main
+
+	import (
+		"goProject/src/goWeb/31_todolist/models"
+		"html/template"
+		"net/http"
+	)
 	
+	func main() {
+		addr := "localhost:9999"
+		http.HandleFunc("/list/", func(response http.ResponseWriter, request *http.Request) {
+			tpl := template.Must(template.ParseFiles("src/goWeb/31_todolist/views/list.html"))
+			tpl.ExecuteTemplate(response, "list.html", models.GetTask())
+		})
+	
+		http.HandleFunc("/add/", func(resp http.ResponseWriter, req *http.Request) {
+			if req.Method == http.MethodPost {
+				name := req.PostFormValue("name")
+				models.AddTasks(name)
+				http.Redirect(resp, req, "/list/", 302)
+			}
+	
+			tpl := template.Must(template.ParseFiles("src/goWeb/31_todolist/views/add.html"))
+			tpl.ExecuteTemplate(resp, "add.html", models.GetTask())
+		})
+	
+		http.ListenAndServe(addr, nil)
+	}
 	```
+
+![](https://cdn.jsdelivr.net/gh/WeiXinao/imgBed2@main/img/202401071219171.png)
+
+![](https://cdn.jsdelivr.net/gh/WeiXinao/imgBed2@main/img/202401071220699.png)
