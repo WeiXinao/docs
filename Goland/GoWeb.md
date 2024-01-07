@@ -1363,3 +1363,87 @@ text/template 包用于处理处理字符串模板和数据驱动生成目标字
 		tpl.ExecuteTemplate(os.Stdout, "index.html", []int{1, 2, 3})
 	}
 	```
+
+12. 解析多个自定义模板
+
+	![](https://cdn.jsdelivr.net/gh/WeiXinao/imgBed2@main/img/202401071207437.png)
+
+	html/len.html
+
+	```html
+	{{ len . }}
+	```
+
+	html/index.html
+
+	```go
+	{{ range. }}  
+	{{ . }}  
+	{{ end }}  
+	  
+	{{ template "len.html" . }}
+	```
+
+	main.go
+
+	```go
+		package main 
+		
+		import (
+			"html/template"
+			"os"
+		)
+		
+		type Addr struct {
+			Street string
+			No     int
+		}
+		
+		func main() {
+			tpl := template.Must(template.ParseGlob("src/goWeb/29_tpl/html/*.html"))
+			tpl.ExecuteTemplate(os.Stdout, "index.html", []int{1, 2, 3})
+		}
+	```
+
+13. Todolist 案例
+
+	![](https://cdn.jsdelivr.net/gh/WeiXinao/imgBed2@main/img/202401071212280.png)
+
+	models/task.go
+
+	```go
+	package models
+	
+	type Task struct {
+		ID     int
+		Name   string
+		Status string
+	}
+	
+	var tasks = []*Task{
+		&Task{1, "洗衣服", "正在执行"},
+		&Task{2, "做作业", "未执行"},
+	}
+	
+	func GetTask() []*Task {
+		return tasks
+	}
+	
+	func AddTasks(name string) {
+		tasks = append(tasks, &Task{len(tasks) + 1, name, "新增"})
+	}
+	```
+
+	views/add.html
+
+	```go
+	
+	```
+
+	views/list.html
+
+
+
+	```go
+	
+	```
