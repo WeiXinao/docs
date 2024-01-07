@@ -1072,32 +1072,194 @@ text/template 包用于处理处理字符串模板和数据驱动生成目标字
 
 	```go
 	package main
-
-import (
-	"fmt"
-	"html/template"
-	"os"
-)
-
-func main() {
-	tplText := "{{ . }}"
-	tpl := template.Must(template.New("tpl").Parse(tplText))
-	tpl.Execute(os.Stdout, "kk")
-	fmt.Println()
-
-	// 切片
-	tpl.Execute(os.Stdout, []int{1, 2, 3, 4, 5})
-	fmt.Println()
-
-	// 映射
-	tpl.Execute(os.Stdout, map[string]int{"one": 1, "two": 2})
-	fmt.Println()
-
-	// 结构体
-	tpl.Execute(os.Stdout, struct {
-		ID   int
-		Name string
-	}{1, "小新"})
-}
+	
+	import (
+		"fmt"
+		"html/template"
+		"os"
+	)
+	
+	func main() {
+		tplText := "{{ . }}"
+		tpl := template.Must(template.New("tpl").Parse(tplText))
+		tpl.Execute(os.Stdout, "kk")
+		fmt.Println()
+	
+		// 切片
+		tpl.Execute(os.Stdout, []int{1, 2, 3, 4, 5})
+		fmt.Println()
+	
+		// 映射
+		tpl.Execute(os.Stdout, map[string]int{"one": 1, "two": 2})
+		fmt.Println()
+	
+		// 结构体
+		tpl.Execute(os.Stdout, struct {
+			ID   int
+			Name string
+		}{1, "小新"})
+	}
 
 	```
+
+3. 在模板中遍历切片
+
+	```go
+	package main
+	
+	import (
+		"fmt"
+		"html/template"
+		"os"
+	)
+	
+	func main() {
+		tplText := "{{ index . 1 }}-{{ index . 0 }}"
+		tpl := template.Must(template.New("tpl").Parse(tplText))
+	
+		// 切片
+		tpl.Execute(os.Stdout, []int{1, 2, 3, 4, 5})
+		fmt.Println()
+	}
+	```
+
+4. 在模板中遍历映射
+
+	```go
+	package main
+
+	import (
+		"fmt"
+		"html/template"
+		"os"
+	)
+	
+	func main() {
+		tplText := "{{ .one }}-{{ .two }}-{{ .three }}"
+		tpl := template.Must(template.New("tpl").Parse(tplText))
+	
+		// 映射
+		tpl.Execute(os.Stdout, map[string]int{"one": 1, "two": 2})
+		fmt.Println()
+	}
+	```
+
+5. 在模板中访问结构体属性
+
+	```go
+	package main
+	
+	import (
+		"html/template"
+		"os"
+	)
+	
+	func main() {
+		tplText := "{{ .ID }}-{{ .Name }}"
+		tpl := template.Must(template.New("tpl").Parse(tplText))
+	
+		// 结构体
+		tpl.Execute(os.Stdout, struct {
+			ID   int
+			Name string
+		}{1, "小新"})
+	}
+	```
+
+6. 在模板中使用分支结构
+
+	```go
+	package main
+	
+	import (
+		"html/template"
+		"os"
+	)
+	
+	func main() {
+		tplText := `
+			{{ .ID }}-{{ .Name }}
+			{{ if eq .Sex 1 }}男{{ else }}女{{ end }}
+		`
+		tpl := template.Must(template.New("tpl").Parse(tplText))
+	
+		// 结构体
+		tpl.Execute(os.Stdout, struct {
+			ID   int
+			Name string
+			Sex  int // 1 => 男 0 => 女
+		}{1, "小新", 0})
+	}
+	```
+
+7. 在模板中遍历结构体切片
+
+	```go
+	package main
+	
+	import (
+		"html/template"
+		"os"
+	)
+	
+	type Addr struct {
+		Street string
+		No     int
+	}
+	
+	func main() {
+		tplText := `
+			{{ range . }}
+				{{ .ID }}-{{ .Name }}-{{ if eq .Sex 1 }}男{{ else }}女{{ end }} {{ .Addr.Street }}
+			{{ end }}
+			`
+		tpl := template.Must(template.New("tpl").Parse(tplText))
+	
+		// 结构体
+		tpl.Execute(os.Stdout, []struct {
+			ID   int
+			Name string
+			Sex  int // 1 => 男 0 => 女
+			Addr Addr
+		}{{1, "小新", 1, Addr{"西安", 1111}}, {2, "和珅", 1, Addr{"北京大学", 2222}}})
+	}
+	```
+
+8. 给模板传递自定义函数映射
+
+	```go
+		package main
+
+		import (
+			"html/template"
+			"os"
+			"strings"
+		)
+		
+		type Addr struct {
+			Street string
+			No     int
+		}
+		
+		func main() {
+			tplText := `{{ title . }}`
+		
+			// 自定义函数
+			// key 字符串 函数名称 在模板中调用
+			// value 函数
+			funcs := template.FuncMap{
+				"upper": strings.ToUpper,
+				"title": func(test string) string {
+					//runes := []rune(test)
+					//runes[0] -= 32
+					//return string(runes)
+					return strings.ToUpper(test[:1]) + test[1:]
+				},
+			}
+			tpl := template.Must(template.New("tpl").Funcs(funcs).Parse(tplText))
+		
+			tpl.Execute(os.Stdout, "abcdefg") // Abcdefg
+		}
+	```
+
+9. 
