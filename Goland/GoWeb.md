@@ -998,10 +998,13 @@ text/template 包用于处理处理字符串模板和数据驱动生成目标字
 		![](https://cdn.jsdelivr.net/gh/WeiXinao/imgBed2@main/img/202401071033989.png)
 	- ParseFiles：指定文件模板
 
-		
+		![](https://cdn.jsdelivr.net/gh/WeiXinao/imgBed2@main/img/202401071048493.png)
+	
 	- ParseGlob：指定文件模板匹配模式
 
-		![](https://cdn.jsdelivr.net/gh/WeiXinao/imgBed2@main/img/202401071037996.png)
+		![](https://cdn.jsdelivr.net/gh/WeiXinao/imgBed2@main/img/202401071051509.png)
+
+		
 	- Must：帮助函数，对模板创建结果进行验证，并返回模板对象指针
 
 		![](https://cdn.jsdelivr.net/gh/WeiXinao/imgBed2@main/img/202401071044755.png)
@@ -1009,10 +1012,16 @@ text/template 包用于处理处理字符串模板和数据驱动生成目标字
 	常用方法
 	- Parse：解析模板字符串
 
+	
+
 	- ParseFiles：指定文件模板
 
-
+		![](https://cdn.jsdelivr.net/gh/WeiXinao/imgBed2@main/img/202401071042098.png)
+	
 	- ParseGlob：指定文件模板匹配模式 
+
+		![](https://cdn.jsdelivr.net/gh/WeiXinao/imgBed2@main/img/202401071037996.png)
+
 	- Execute：模板渲染
 	- ExcuteTemplate：指定模板执行模板渲染
 	- Funcs：指定自定义函数字典
