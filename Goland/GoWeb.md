@@ -1262,4 +1262,30 @@ text/template 包用于处理处理字符串模板和数据驱动生成目标字
 		}
 	```
 
-9. 
+9. 模板块
+
+	```go
+	package main 
+	
+	import (
+		"html/template"
+		"os"
+	)
+	
+	type Addr struct {
+		Street string
+		No     int
+	}
+	
+	func main() {
+		tplText := `输入内容：{{ block "content" . }} {{ . }} {{ end }}`
+	
+		tpl := template.Must(template.New("tpl").Parse(tplText))
+	
+		tpl2, _ := tpl.Clone()
+		tpl2, _ = tpl2.Parse(`{{ define "content" }} {{ len . }} {{ end }}`)
+	
+		tpl.Execute(os.Stdout, "abcdef")
+		tpl2.Execute(os.Stdout, "abcdef")
+	}
+	```
