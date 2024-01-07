@@ -1262,7 +1262,7 @@ text/template 包用于处理处理字符串模板和数据驱动生成目标字
 		}
 	```
 
-9. 模板块
+9. 定义单个模板块
 
 	```go
 	package main 
@@ -1287,5 +1287,79 @@ text/template 包用于处理处理字符串模板和数据驱动生成目标字
 	
 		tpl.Execute(os.Stdout, "abcdef")
 		tpl2.Execute(os.Stdout, "abcdef")
+	}
+	```
+
+10. 定义多个模板块
+
+	```go
+	package main
+	
+	import (
+		"html/template"
+		"os"
+	)
+	
+	type Addr struct {
+		Street string
+		No     int
+	}
+	
+	func main() {
+		tplText := `
+		{{ define "len" }} {{ len . }} {{ end }}
+		{{ define "raw" }} {{ . }} {{ end }}
+		
+		{{ template "raw" . }}
+		`
+	
+		tpl := template.Must(template.New("tpl").Parse(tplText))
+	
+		tpl.Execute(os.Stdout, "abcdef")
+	
+		tpl.ExecuteTemplate(os.Stdout, "len", "abcdef")
+		tpl.ExecuteTemplate(os.Stdout, "raw", "abcdef")
+	}
+	```
+
+11. 解析模板文件
+
+	![](https://cdn.jsdelivr.net/gh/WeiXinao/imgBed2@main/img/202401071201295.png)
+
+	html/len.html
+
+	```html
+	{{ len . }}
+	```
+
+	html/index.html
+
+	```go
+	{{ range. }}  
+	{{ . }}  
+	{{ end }}  
+	  
+	{{ template "len.html" . }}
+	```
+
+	main.go
+
+	```go
+	package main
+
+	import (
+		"html/template"
+		"os"
+	)
+	
+	type Addr struct {
+		Street string
+		No     int
+	}
+	
+	func main() {
+		tpl := template.Must(template.ParseFiles("src/goWeb/29_tpl/html/index.html",
+			"src/goWeb/29_tpl/html/len.html"))
+		tpl.ExecuteTemplate(os.Stdout, "index.html", []int{1, 2, 3})
 	}
 	```
