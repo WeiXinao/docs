@@ -1012,7 +1012,7 @@ text/template 包用于处理处理字符串模板和数据驱动生成目标字
 	常用方法
 	- Parse：解析模板字符串
 
-	
+		![](https://cdn.jsdelivr.net/gh/WeiXinao/imgBed2@main/img/202401071117736.png)
 
 	- ParseFiles：指定文件模板
 
@@ -1023,7 +1023,18 @@ text/template 包用于处理处理字符串模板和数据驱动生成目标字
 		![](https://cdn.jsdelivr.net/gh/WeiXinao/imgBed2@main/img/202401071037996.png)
 
 	- Execute：模板渲染
-	- ExcuteTemplate：指定模板执行模板渲染
+
+		![](https://cdn.jsdelivr.net/gh/WeiXinao/imgBed2@main/img/202401071120588.png)
+
+
+	- ExecuteTemplate：指定模板执行模板渲染
+
+		![](https://cdn.jsdelivr.net/gh/WeiXinao/imgBed2@main/img/202401071122318.png)
+
 	- Funcs：指定自定义函数字典
+
+		![](https://cdn.jsdelivr.net/gh/WeiXinao/imgBed2@main/img/202401071124895.png)
+
+
 	- Clone：克隆模板进行模板复用
 
