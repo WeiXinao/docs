@@ -993,7 +993,9 @@ text/template 包用于处理处理字符串模板和数据驱动生成目标字
 - Template
 
 	常用函数
-	- New：创建模板
+	- New：创建模板 
+	
+		![](https://cdn.jsdelivr.net/gh/WeiXinao/imgBed2@main/img/202401071033989.png)
 	- PaseFiles：指定文件模板
 	- ParseGlob：指定文件模板匹配模式
 	- Must：帮助函数，对模板创建结果进行验证，并返回模板对象指针
