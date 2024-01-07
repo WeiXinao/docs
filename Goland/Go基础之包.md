@@ -211,6 +211,30 @@ Go1.11 版本提供 Go modules 机制对包进行管理，同时保留 GOPATH �
 - `go mod download`
 - `go mod graph`
 
+	```markdown
+	Go mod provides access to operations on modules.
+	
+	Note that support for modules is built into all the go commands,
+	not just 'go mod'. For example, day-to-day adding, removing, upgrading,
+	and downgrading of dependencies should be done using 'go get'.
+	See 'go help modules' for an overview of module functionality.
+	
+	Usage:
+	
+	        go mod <command> [arguments]
+	
+	The commands are:
+	
+	        download    download modules to local cache
+	        edit        edit go.mod from tools or scripts
+	        graph       print module requirement graph
+	        init        initialize new module in current directory
+	        tidy        add missing and remove unused modules
+	        vendor      make vendored copy of dependencies
+	        verify      verify dependencies have expected content
+	        why         explain why packages or modules are needed
+	```
+
 ## 测试 
 Go 提供了 test 工具用于代码的单元测试，test 工具会查找包下以 \_test.go 结尾的测试文件中以 Test 或 Banchmark 开头的函数并给出运行结果。
 
@@ -219,5 +243,13 @@ Go 提供了 test 工具用于代码的单元测试，test 工具会查找包下
 ### 单元测试
 ### 测试覆盖率
 
-### 性能测试
+```bash
+go test -cover -coverprofile="cover.out" ./...
+```
+
+```bash
+go tool cover -html .\cover.out
+```
+
+### 基准测试
 
