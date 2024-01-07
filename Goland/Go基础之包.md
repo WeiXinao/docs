@@ -241,6 +241,39 @@ Go 提供了 test 工具用于代码的单元测试，test 工具会查找包下
 单元测试是做功能性测试，基准测试是做性能测试。 
 
 ### 单元测试
+
+![](https://cdn.jsdelivr.net/gh/WeiXinao/imgBed2@main/img/202401071246472.png)
+
+calc/calc.go
+
+```go
+package calc  
+  
+func Add(n, m int) int {  
+    return n + m  
+}
+```
+
+编写 Add 函数的测试代码，测试文件 为 xxx_test.go，以 \_test 结尾，xxx 为被测试的文件名
+
+calc/calc_test.go
+
+```go
+package calc
+
+import (
+	"testing"
+)
+
+func TestAdd(t *testing.T) {
+	if 3 != Add(1, 2) {
+		t.Error("1 + 2 != 3")
+	}
+}
+```
+
+运行 `usage: go test [build/test flags] [packages] [build/test flags & test binary flags]` 执行测试文件，如
+
 ### 测试覆盖率
 
 ```bash
