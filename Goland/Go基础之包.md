@@ -272,7 +272,9 @@ func TestAdd(t *testing.T) {
 }
 ```
 
-运行 `usage: go test [build/test flags] [packages] [build/test flags & test binary flags]` 执行测试文件，如
+运行 `usage: go test [build/test flags] [packages] [build/test flags & test binary flags]` 执行测试文件，如：
+
+![](https://cdn.jsdelivr.net/gh/WeiXinao/imgBed2@main/img/202401071256892.png)
 
 ### 测试覆盖率
 
