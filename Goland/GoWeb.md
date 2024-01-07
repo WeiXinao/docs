@@ -989,52 +989,115 @@ func main() {
 ## 模板技术
 text/template 包用于处理处理字符串模板和数据驱动生成目标字符串，在字符串模板中可以使用数据显示、流程控制、函数、管道、子模板等功能。
 
-常用结构体
+### 常用结构体
+
 - Template
 
-	常用函数
-	- New：创建模板 
+### 常用函数
 	
-		![](https://cdn.jsdelivr.net/gh/WeiXinao/imgBed2@main/img/202401071033989.png)
-	- ParseFiles：指定文件模板
-
-		![](https://cdn.jsdelivr.net/gh/WeiXinao/imgBed2@main/img/202401071048493.png)
+- New：创建模板 
 	
-	- ParseGlob：指定文件模板匹配模式
+![](https://cdn.jsdelivr.net/gh/WeiXinao/imgBed2@main/img/202401071033989.png)
+		
+- ParseFiles：指定文件模板
 
-		![](https://cdn.jsdelivr.net/gh/WeiXinao/imgBed2@main/img/202401071051509.png)
+	![](https://cdn.jsdelivr.net/gh/WeiXinao/imgBed2@main/img/202401071048493.png)
+	
+- ParseGlob：指定文件模板匹配模式
+
+	![](https://cdn.jsdelivr.net/gh/WeiXinao/imgBed2@main/img/202401071051509.png)
 
 		
-	- Must：帮助函数，对模板创建结果进行验证，并返回模板对象指针
+- Must：帮助函数，对模板创建结果进行验证，并返回模板对象指针
 
-		![](https://cdn.jsdelivr.net/gh/WeiXinao/imgBed2@main/img/202401071044755.png)
+	![](https://cdn.jsdelivr.net/gh/WeiXinao/imgBed2@main/img/202401071044755.png)
 	
-	常用方法
-	- Parse：解析模板字符串
+### 常用方法
 
-		![](https://cdn.jsdelivr.net/gh/WeiXinao/imgBed2@main/img/202401071117736.png)
+- Parse：解析模板字符串
 
-	- ParseFiles：指定文件模板
+	![](https://cdn.jsdelivr.net/gh/WeiXinao/imgBed2@main/img/202401071117736.png)
 
-		![](https://cdn.jsdelivr.net/gh/WeiXinao/imgBed2@main/img/202401071042098.png)
+- ParseFiles：指定文件模板
+
+	![](https://cdn.jsdelivr.net/gh/WeiXinao/imgBed2@main/img/202401071042098.png)
 	
-	- ParseGlob：指定文件模板匹配模式 
+- ParseGlob：指定文件模板匹配模式 
 
-		![](https://cdn.jsdelivr.net/gh/WeiXinao/imgBed2@main/img/202401071037996.png)
+	![](https://cdn.jsdelivr.net/gh/WeiXinao/imgBed2@main/img/202401071037996.png)
 
-	- Execute：模板渲染
+- Execute：模板渲染
 
-		![](https://cdn.jsdelivr.net/gh/WeiXinao/imgBed2@main/img/202401071120588.png)
-
-
-	- ExecuteTemplate：指定模板执行模板渲染
-
-		![](https://cdn.jsdelivr.net/gh/WeiXinao/imgBed2@main/img/202401071122318.png)
-
-	- Funcs：指定自定义函数字典
-
-		![](https://cdn.jsdelivr.net/gh/WeiXinao/imgBed2@main/img/202401071124895.png)
+	![](https://cdn.jsdelivr.net/gh/WeiXinao/imgBed2@main/img/202401071120588.png)
 
 
-	- Clone：克隆模板进行模板复用
+- ExecuteTemplate：指定模板执行模板渲染
 
+	![](https://cdn.jsdelivr.net/gh/WeiXinao/imgBed2@main/img/202401071122318.png)
+
+- Funcs：指定自定义函数字典
+
+	![](https://cdn.jsdelivr.net/gh/WeiXinao/imgBed2@main/img/202401071124895.png)
+
+
+- Clone：克隆模板进行模板复用
+
+	![](https://cdn.jsdelivr.net/gh/WeiXinao/imgBed2@main/img/202401071126043.png)
+### 案例
+1. text/template 和 html/template 解析模板字符串
+
+	```go
+	package main  
+	  
+	import (  
+	    "fmt"  
+	    htmlTemplate "html/template"  
+	    "os"    "text/template"
+	)  
+	  
+	func main() {  
+	    // 显示数据  
+	    tplText := "我叫{{.}}"  
+	    tpl, err := template.New("tpl").Parse(tplText)  
+	    fmt.Println(err)  
+	    tpl.Execute(os.Stdout, `<img src="xxxx">`)  
+	    fmt.Println()  
+	  
+	    htmlTpl, err := htmlTemplate.New("tpl").Parse(tplText)  
+	    htmlTpl.Execute(os.Stdout, `<img src="xxxx">`)  
+	}
+	```
+
+2. 在不同的数据上应用模板
+
+	```go
+	package main
+
+import (
+	"fmt"
+	"html/template"
+	"os"
+)
+
+func main() {
+	tplText := "{{ . }}"
+	tpl := template.Must(template.New("tpl").Parse(tplText))
+	tpl.Execute(os.Stdout, "kk")
+	fmt.Println()
+
+	// 切片
+	tpl.Execute(os.Stdout, []int{1, 2, 3, 4, 5})
+	fmt.Println()
+
+	// 映射
+	tpl.Execute(os.Stdout, map[string]int{"one": 1, "two": 2})
+	fmt.Println()
+
+	// 结构体
+	tpl.Execute(os.Stdout, struct {
+		ID   int
+		Name string
+	}{1, "小新"})
+}
+
+	```
