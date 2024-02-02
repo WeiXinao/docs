@@ -10,10 +10,11 @@
 ### [Fixed Path and Subtree Patterns](obsidian://bookmaster?type=open-book&bid=FTcyhwpUReOpCYuo&aid=6966db16-e081-2980-e552-48f82e55f4ab&page=28)
 Go 的 servemux 支持两种不同类型的 URL 模式，固定路径和子树路径，固定路径不以斜杠结尾，而子树路径以斜杠结尾。
 
-我们的两种模式 —— "/snippet" 和 "/snippet/create" 都是 固定路径的例子，在 Go 的 servemux, 像这些固定路径模式只有当请求的 URL 路径准确匹配时，才会被匹配（并且调用相应的处理器）；
+我们的两种模式 —— `"/snippet"` 和 `"/snippet/create"` 都是 固定路径的例子，在 Go 的 servemux, 像这些固定路径模式只有当请求的 URL 路径准确匹配时，才会被匹配（并且调用相应的处理器）；
 
-相反，我们的 "/" 模式是一个 subtree path 的例子（因为它以"/"结尾），其他例子比如 "/static/"。
+相反，我们的 `"/"` 模式是一个 subtree path 的例子（因为它以"/"结尾），其他例子比如 `"/static/"`。子树路径模式（subtree path patterns），当请求 URL 路径的开头被子树路径（subtree path）匹配时，就会匹配（并且相应的处理器被调用），你可以认为子树路径（subtree path）的行为有点像它们在结尾有通配符，例如：`"/**"` 或者 `"/static/**"`
 
+这就帮助解释了为什么 `"/"` path 会匹配所有。这个模式本质上意味着 匹配后面跟随着任何字符串的单斜杠（或者什么都不匹配）。
 
 
 
