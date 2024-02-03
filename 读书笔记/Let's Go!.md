@@ -17,6 +17,10 @@ Go 的 servemux 支持两种不同类型的 URL 模式，固定路径和子树�
 
 这就帮助解释了为什么 `"/"` path 会匹配所有。这个模式本质上意味着匹配后面跟随着任何字符串的单斜杠（或者什么都不匹配）。
 
+## Customizing HTTP Headers
+1. [non-idempotent](obsidian://bookmaster?type=open-book&bid=gNZeRcxcHTYvWxQm&aid=323dddb5-2966-b8eb-bd68-fc2b3e49a0e2&page=35)：幂等性
+
+### HTTP Status Code
 
 
 
