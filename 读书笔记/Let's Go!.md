@@ -21,7 +21,10 @@ Go 的 servemux 支持两种不同类型的 URL 模式，固定路径和子树�
 1. [non-idempotent](obsidian://bookmaster?type=open-book&bid=gNZeRcxcHTYvWxQm&aid=323dddb5-2966-b8eb-bd68-fc2b3e49a0e2&page=35)：幂等性
 
 ### HTTP Status Code
-
+| 状态码 | 含义 |
+| ---- | ---- |
+| [405](obsidian://bookmaster?type=open-book&bid=gNZeRcxcHTYvWxQm&aid=3cf1b47a-c5ac-d5f1-4b52-d0e7980b48b7&page=36) | method not allowed |
+| [301](obsidian://bookmaster?type=open-book&bid=gNZeRcxcHTYvWxQm&aid=05c92eb3-aa02-aa9b-3dfe-4259415ffb69&page=33) | Permanent Redirect |
 
 
 
