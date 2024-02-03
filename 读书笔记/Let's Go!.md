@@ -7,7 +7,8 @@
 	- stderr 的实时性更强，stderr 是没有缓冲的，发生错误后会马上输出。
 	- 当 stdout 阻塞时发生错误，错误不会阻塞，会马上显示到终端。
 
-### [Fixed Path and Subtree Patterns](obsidian://bookmaster?type=open-book&bid=FTcyhwpUReOpCYuo&aid=6966db16-e081-2980-e552-48f82e55f4ab&page=28)
+### [Fixed Path and Subtree Patterns](obsidian://bookmaster?type=open-book&bid=gNZeRcxcHTYvWxQm&aid=33cf4a32-39ca-5844-0718-37b1f4c32dc9&page=28)
+
 Go 的 servemux 支持两种不同类型的 URL 模式，固定路径和子树路径，固定路径不以斜杠结尾，而子树路径以斜杠结尾。
 
 我们的两种模式 —— `"/snippet"` 和 `"/snippet/create"` 都是 固定路径的例子，在 Go 的 servemux, 像这些固定路径模式只有当请求的 URL 路径准确匹配时，才会被匹配（并且调用相应的处理器）；
