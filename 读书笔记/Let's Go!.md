@@ -26,7 +26,24 @@ Go 的 servemux 支持两种不同类型的 URL 模式，固定路径和子树�
 | [405](obsidian://bookmaster?type=open-book&bid=gNZeRcxcHTYvWxQm&aid=3cf1b47a-c5ac-d5f1-4b52-d0e7980b48b7&page=36) | method not allowed |
 | [301](obsidian://bookmaster?type=open-book&bid=gNZeRcxcHTYvWxQm&aid=05c92eb3-aa02-aa9b-3dfe-4259415ffb69&page=33) | Permanent Redirect |
 
-### Addtitional Interface
+### Addtitional Information 
+#### [Manipulating the Header Map](obsidian://bookmaster?type=open-book&bid=gNZeRcxcHTYvWxQm&aid=653862a4-5f3f-4a8c-6b75-641bafc1a8fd&page=41)
+```go
+// Set a new cache-control header. If an existing "Cache-Control" header exists
+// it will be overwritten.
+w.Header().Set("Cache-Control", "public, max-age=31536000")
+
+// In contrast, the Add() method appends a new "Cache-Control" header and can
+// be called multiple times.
+w.Header().Add("Cache-Control", "public")
+w.Header().Add("Cache-Control", "max-age=31536000")
+
+// Delete all values for the "Cache-Control" header.
+w.Header().Del("Cache-Control")
+
+// Retrieve the first value for the "Cache-Control" header.
+w.Header().Get("Cache-Control")
+```
 
 
 
