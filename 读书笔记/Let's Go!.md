@@ -52,6 +52,16 @@ w.Header().Get("Cache-Control")
 
 ## 2.8 HTML Templating  and Inheritance
 ### Template Composition
+![](https://cdn.jsdelivr.net/gh/WeiXinao/imgBed2@main/img/202402042113182.png)
+
+*base.layout.tmpl*
+
+```tmpl
+```
+
+*home.page.tmpl*
+
+
 > [!NOTE]
 > [Note: If you’re wondering, the dot at the end of the {{template "title" .}} action represents any dynamic data that you want to pass to the invoked template. We’ll talk more about this later in the book.](obsidian://bookmaster?type=open-book&bid=gNZeRcxcHTYvWxQm&aid=3a718cf1-3492-ee19-cd60-f7a721297155&page=59)
 > 
@@ -94,7 +104,8 @@ func home(w http.ResponseWriter, r *http.Request) {
 }
 ```
 
-[!]
+>[!WARNING]
+>home.page.tmpl 这个文件必须是切片中的第一个文件。
 
 
 
