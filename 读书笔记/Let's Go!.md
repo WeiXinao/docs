@@ -142,7 +142,7 @@ func home(w http.ResponseWriter, r *http.Request) {
 ### Additional Information 
 [The Block Action](obsidian://bookmaster?type=open-book&bid=gNZeRcxcHTYvWxQm&aid=713e1c2d-fd82-7803-672c-fa8b8c1e112f&page=64)
 
-[Serving Static Files](obsidian://bookmaster?type=open-book&bid=gNZeRcxcHTYvWxQm&aid=c5f1610b-2863-d3cc-8b99-d1e74b2bff36&page=66)
+
 
 
 
