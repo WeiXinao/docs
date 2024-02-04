@@ -57,10 +57,42 @@ w.Header().Get("Cache-Control")
 *base.layout.tmpl*
 
 ```tmpl
+{{define "base"}}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{template "title" .}} - Snippetbox</title>
+  </head>
+
+  <body>
+    <header>
+      <h1><a href="/">Snippetbox</a></h1>
+    </header>
+    <nav>
+      <a href="/">Home</a>
+    </nav>
+    <section>
+      {{template "body" .}}
+    </section>
+  </body>
+</html>
+{{end}}
 ```
 
 *home.page.tmpl*
 
+```tmpl
+{{template "base" .}}
+
+{{define "title"}}Home{{end}}
+
+{{define "body"}}
+<h2>Latest Snippets</h2>
+<p>There's nothing to see here yet!</p>
+{{end}}
+```
 
 > [!NOTE]
 > [Note: If you’re wondering, the dot at the end of the {{template "title" .}} action represents any dynamic data that you want to pass to the invoked template. We’ll talk more about this later in the book.](obsidian://bookmaster?type=open-book&bid=gNZeRcxcHTYvWxQm&aid=3a718cf1-3492-ee19-cd60-f7a721297155&page=59)
