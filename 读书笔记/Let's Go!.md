@@ -54,7 +54,8 @@ w.Header().Get("Cache-Control")
 ### Template Composition
 > [!NOTE]
 > [Note: If you’re wondering, the dot at the end of the {{template "title" .}} action represents any dynamic data that you want to pass to the invoked template. We’ll talk more about this later in the book.](obsidian://bookmaster?type=open-book&bid=gNZeRcxcHTYvWxQm&aid=3a718cf1-3492-ee19-cd60-f7a721297155&page=59)
-> `{{template "title" .}}` 
+> 
+> `{{template "title" .}}` 操作后面的点表示你想传递给被调用的模板的任何数据。
 
 
 
