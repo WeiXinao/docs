@@ -45,12 +45,12 @@ w.Header().Del("Cache-Control")
 w.Header().Get("Cache-Control")
 ```
 
-#### Head Canonicalization
+#### Header Canonicalization
 
 >[!NOTE]
 >[Note: When headers are written to a HTTP/2 connection the header names and values will always be converted to lowercase, as per the specifications.](obsidian://bookmaster?type=open-book&bid=gNZeRcxcHTYvWxQm&aid=373f603b-8b9e-9c29-c38e-d286681e23dd&page=42)
 >
->当头被写到 HTTP/2 连接中时，头的名称和值总是会被转化成小写。
+>**注意**：当头被写到 HTTP/2 连接中时，头的名称和值总是会被转化成小写。
 
 
 
