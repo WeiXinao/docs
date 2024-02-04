@@ -50,6 +50,15 @@ w.Header().Get("Cache-Control")
 >
 >**注意**：当头被写到 HTTP/2 连接中时，头的名称和值总是会被转化成小写。
 
+## 2.8 HTML Templating  and Inheritance
+### Template Composition
+> [!NOTE]
+> [Note: If you’re wondering, the dot at the end of the {{template "title" .}} action represents any dynamic data that you want to pass to the invoked template. We’ll talk more about this later in the book.](obsidian://bookmaster?type=open-book&bid=gNZeRcxcHTYvWxQm&aid=3a718cf1-3492-ee19-cd60-f7a721297155&page=59)
+> `{{template "title" .}}` 
+
+
+
+
 
 
 
