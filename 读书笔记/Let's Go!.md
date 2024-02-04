@@ -138,7 +138,6 @@ func home(w http.ResponseWriter, r *http.Request) {
 
 >[!WARNING]
 >home.page.tmpl 这个文件必须是切片中的第一个文件。
-
 ### Additional Information 
 [The Block Action](obsidian://bookmaster?type=open-book&bid=gNZeRcxcHTYvWxQm&aid=713e1c2d-fd82-7803-672c-fa8b8c1e112f&page=64)
 
