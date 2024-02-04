@@ -45,5 +45,7 @@ w.Header().Del("Cache-Control")
 w.Header().Get("Cache-Control")
 ```
 
+[Note: When headers are written to a HTTP/2 connection the headernames and values will always be converted to lowercase, as per thespecifications.](obsidian://bookmaster?type=open-book&bid=gNZeRcxcHTYvWxQm&aid=373f603b-8b9e-9c29-c38e-d286681e23dd&page=42)
+
 
 
