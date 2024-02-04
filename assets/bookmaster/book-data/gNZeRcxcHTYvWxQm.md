@@ -8,6 +8,6 @@ ext: pdf
 visual: false
 type: "unknown"
 status: "unread"
-progress: 70
+progress: 72
 ---
 undefined
