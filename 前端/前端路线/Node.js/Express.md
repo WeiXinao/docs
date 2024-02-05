@@ -717,9 +717,9 @@ fetch('http://localhost:3000/test', {
     res.setHeader('Access-Control-Allow-Headers', 'Content-Type')
     ```
 
-    > [!attention]
-    >
-    > `Access-Control-Allow-Origin` 设置指定值时，只能设置一个
+> [!attention]
+>
+> `Access-Control-Allow-Origin` 设置指定值时，只能设置一个
 
     
 
