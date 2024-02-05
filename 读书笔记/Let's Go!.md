@@ -146,7 +146,9 @@ func home(w http.ResponseWriter, r *http.Request) {
 #### Features and Fucnctions
 [Range requests](obsidian://bookmaster?type=open-book&bid=gNZeRcxcHTYvWxQm&aid=41908ac0-1960-c408-23c3-ee0b3ea0a800&page=74)
 
-#### Requests Are Handled Concurrently
+## The http.Handler Interface
+### [Handler Functions](obsidian://bookmaster?type=open-book&bid=gNZeRcxcHTYvWxQm&aid=8f702e6a-3470-886a-6b0f-af37ffc4f234&page=77)
+### Requests Are Handled Concurrently
 [race conditions](obsidian://bookmaster?type=open-book&bid=gNZeRcxcHTYvWxQm&aid=38573a88-9f92-8587-b012-ec9cc560506a&page=80)
 
 
