@@ -141,6 +141,14 @@ func home(w http.ResponseWriter, r *http.Request) {
 ### Additional Information 
 [The Block Action](obsidian://bookmaster?type=open-book&bid=gNZeRcxcHTYvWxQm&aid=713e1c2d-fd82-7803-672c-fa8b8c1e112f&page=64)
 
+## 2.9 Serving Static Files 
+### Additional Information 
+#### Features and Fucnctions
+[Range requests](obsidian://bookmaster?type=open-book&bid=gNZeRcxcHTYvWxQm&aid=41908ac0-1960-c408-23c3-ee0b3ea0a800&page=74)
+
+
+
+
 
 
 
