@@ -146,6 +146,12 @@ func home(w http.ResponseWriter, r *http.Request) {
 #### Features and Fucnctions
 [Range requests](obsidian://bookmaster?type=open-book&bid=gNZeRcxcHTYvWxQm&aid=41908ac0-1960-c408-23c3-ee0b3ea0a800&page=74)
 
+#### Requests Are Handled Concurrently
+[race conditions](obsidian://bookmaster?type=open-book&bid=gNZeRcxcHTYvWxQm&aid=38573a88-9f92-8587-b012-ec9cc560506a&page=80)
+
+
+
+
 
 
 
