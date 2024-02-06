@@ -24,6 +24,27 @@ Go 的 servemux 支持两种不同类型的 URL 模式，固定路径和子树�
 | ---- | ---- |
 | [405](obsidian://bookmaster?type=open-book&bid=gNZeRcxcHTYvWxQm&aid=3cf1b47a-c5ac-d5f1-4b52-d0e7980b48b7&page=36) | method not allowed |
 | [301](obsidian://bookmaster?type=open-book&bid=gNZeRcxcHTYvWxQm&aid=05c92eb3-aa02-aa9b-3dfe-4259415ffb69&page=33) | Permanent Redirect |
+
+### [The http.Error Shortcut](obsidian://bookmaster?type=open-book&bid=gNZeRcxcHTYvWxQm&aid=3c41e5c6-58dc-98bf-f1ed-fa52f8b16196&page=39)
+如果你想发送一个非 200 的状态码和一个纯文本的响应体，那么这是一个使用 `http.Error()` 简写的好机会。这是一个帮助函数，它携带一个给定的消息和状态码，然后在幕后为我们调用  `w.WriteHeader()`  和 `w.Write()` 方法。
+
+*main.go*
+
+```go
+package main
+...
+func createSnippet(w http.ResponseWriter, r *http.Request) {
+if r.Method != "POST" {
+w.Header().Set("Allow", "POST")
+// Use the http.Error() function to send a 405 status code and "Method N
+// Allowed" string as the response body.
+http.Error(w, "Method Not Allowed", 405)
+return
+}
+w.Write([]byte("Create a new snippet..."))
+}
+...
+```
 ### Addtitional Information 
 #### [Manipulating the Header Map](obsidian://bookmaster?type=open-book&bid=gNZeRcxcHTYvWxQm&aid=653862a4-5f3f-4a8c-6b75-641bafc1a8fd&page=41)
 ```go
