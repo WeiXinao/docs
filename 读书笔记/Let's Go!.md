@@ -151,7 +151,7 @@ func home(w http.ResponseWriter, r *http.Request) {
 ### Requests Are Handled Concurrently
 [race conditions](obsidian://bookmaster?type=open-book&bid=gNZeRcxcHTYvWxQm&aid=38573a88-9f92-8587-b012-ec9cc560506a&page=80)
 
-
+## 3.2 Leveled Log
 
 
 
