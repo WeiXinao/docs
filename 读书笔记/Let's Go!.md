@@ -175,7 +175,7 @@ func home(w http.ResponseWriter, r *http.Request) {
 ## 3.2 Leveled Logging
 ### Additional Information 
 #### [Concurrent Logging](obsidian://bookmaster?type=open-book&bid=gNZeRcxcHTYvWxQm&aid=5b9679b4-2211-a4cd-1e2e-c4f6c03fbae6&page=95)
-
+[self-documenting](obsidian://bookmaster?type=open-book&bid=gNZeRcxcHTYvWxQm&aid=ac790c09-0368-e937-d6ee-f4f521620eac&page=107)
 
 
 
