@@ -176,7 +176,6 @@ func home(w http.ResponseWriter, r *http.Request) {
 ### Additional Information 
 #### [Concurrent Logging](obsidian://bookmaster?type=open-book&bid=gNZeRcxcHTYvWxQm&aid=5b9679b4-2211-a4cd-1e2e-c4f6c03fbae6&page=95)
 
-[Centralized Error Handling](obsidian://bookmaster?type=open-book&bid=gNZeRcxcHTYvWxQm&aid=32726668-08d0-d2c7-cd83-42eb36eda38c&page=105)
 
 
 
