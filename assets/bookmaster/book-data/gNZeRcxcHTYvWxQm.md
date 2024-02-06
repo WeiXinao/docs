@@ -7,7 +7,7 @@ name: "Let’s Go Learn to build professional web applications with Go (Alex Edw
 ext: pdf
 visual: false
 type: "unknown"
-status: "unread"
-progress: 111
+status: "reading"
+progress: 112
 ---
 undefined
