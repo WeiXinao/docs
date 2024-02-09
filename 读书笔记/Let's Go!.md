@@ -177,7 +177,9 @@ func home(w http.ResponseWriter, r *http.Request) {
 #### [Concurrent Logging](obsidian://bookmaster?type=open-book&bid=gNZeRcxcHTYvWxQm&aid=5b9679b4-2211-a4cd-1e2e-c4f6c03fbae6&page=95)
 [self-documenting](obsidian://bookmaster?type=open-book&bid=gNZeRcxcHTYvWxQm&aid=ac790c09-0368-e937-d6ee-f4f521620eac&page=107)：In computer programming, self-documenting (or self-describing) is a common descriptor for source code and user interfaces that follow certain loosely defined conventions for naming and structure. These conventions are intended to enable developers, users, and maintainers of a system to use it effectively without requiring previous knowledge of its specification, design, or behavior.
 
-# Database-Driven Response
+# Database-Driven Responses
+## Installing a Database Driver
+语义版本控制：[Semantic Versioning 2.0.0 | Semantic Versioning (semver.org)](https://semver.org/#semantic-versioning-200)
 
 
 
