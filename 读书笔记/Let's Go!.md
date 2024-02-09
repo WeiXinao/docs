@@ -181,10 +181,23 @@ func home(w http.ResponseWriter, r *http.Request) {
 ## Installing a Database Driver
 语义版本控制：[Semantic Versioning 2.0.0 | Semantic Versioning (semver.org)](https://semver.org/#semantic-versioning-200)
 
+### [go.sum 文件的作用](obsidian://bookmaster?type=open-book&bid=gNZeRcxcHTYvWxQm&aid=4800c11d-b1bc-51bf-ea03-e24563007359&page=123)
 
+go.sum 文件包含所需包对应的校验和，如果你打开它，你应该看到类似如下的内容：
 
+*文件：go.sum*
 
+```mod
+module snippetbox  
+  
+go 1.21.5  
+  
+require github.com/go-sql-driver/mysql v1.7.1 // indirect
+```
 
+不像 go.mod 文件，go.sum 没有被设计成像我这样的人类可编辑，而且一般你不需要打开它，但是它起两个非常重要的作用：
+
+- 如果你在你的终端运行 `go mod verify` 命令，这将验证下载到你的机器的包的校验和
 
 
 
