@@ -205,7 +205,8 @@ require github.com/go-sql-driver/mysql v1.7.1 // indirect
 
 ## 4.5 Executing SQL Statements
 ### Additional Information 
-#### Placeholder Parameters
+#### [Placeholder Parameters](obsidian://bookmaster?type=open-book&bid=gNZeRcxcHTYvWxQm&aid=c6491264-9957-484e-ee09-55cb6ea62bd0&page=144)
+
 *snippetbox/cmd/web*
 
 ```go
