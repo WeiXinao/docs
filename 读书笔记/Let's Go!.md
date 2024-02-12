@@ -252,7 +252,12 @@ func (m *SnippetModel) Insert(title, content, expires string) (int, error) {
 2. 在第二个单独的步骤，`Exec()` 向数据库传入参数值。数据随后使用这些参数执行预处理语句，因为参数后面才被传输，在语句已经被编译之后，数据库会将他们看成纯数据。他们不会改变语句的意图。只要原始语句不来源于不被信任的数据，依赖注入就不会发生 。
 3. 它接下来关闭（或者清理）在数据中的预处理语句。
 
-占位符参数依赖你的数据库而有说不同。MySQL，SQL Server 和 SQLite 使用 ？记号，但是 PostgreSQL
+占位符参数依赖你的数据库而有说不同。MySQL，SQL Server 和 SQLite 使用 ？记号，但是 PostgreSQL 使用 $N 符号，例如，如你使用 PostgreSQL，你应该使用的写法：
+
+```go
+_, err := m.DB.Exec("INSERT INTO ... VALUES ($1, $2, $3)", ...)
+```
+
 
 
 
