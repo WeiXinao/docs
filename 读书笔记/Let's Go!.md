@@ -242,7 +242,7 @@ func (m *SnippetModel) Insert(title, content, expires string) (int, error) {
 }
 ```
 
-在上述的代码中，我们利用 SQL yu
+在上述的代码中，我们利用**占位符参数**来构造我们的 SQL 语句
 
 
 
