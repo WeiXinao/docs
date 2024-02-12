@@ -178,7 +178,7 @@ func home(w http.ResponseWriter, r *http.Request) {
 [self-documenting](obsidian://bookmaster?type=open-book&bid=gNZeRcxcHTYvWxQm&aid=ac790c09-0368-e937-d6ee-f4f521620eac&page=107)：In computer programming, self-documenting (or self-describing) is a common descriptor for source code and user interfaces that follow certain loosely defined conventions for naming and structure. These conventions are intended to enable developers, users, and maintainers of a system to use it effectively without requiring previous knowledge of its specification, design, or behavior.
 
 # Database-Driven Responses
-## Installing a Database Driver
+## 4.2 Installing a Database Driver
 语义版本控制：[Semantic Versioning 2.0.0 | Semantic Versioning (semver.org)](https://semver.org/#semantic-versioning-200)
 
 ### [go.sum 文件的作用](obsidian://bookmaster?type=open-book&bid=gNZeRcxcHTYvWxQm&aid=4800c11d-b1bc-51bf-ea03-e24563007359&page=123)
@@ -259,7 +259,7 @@ func (m *SnippetModel) Insert(title, content, expires string) (int, error) {
 _, err := m.DB.Exec("INSERT INTO ... VALUES ($1, $2, $3)", ...)
 ```
 
-## Single-record SQL Queries
+## 4.6 Single-record SQL Queries
 ### [Type Conversions](obsidian://bookmaster?type=open-book&bid=gNZeRcxcHTYvWxQm&aid=17bea6e6-8e63-0e78-c059-433baf971818&page=148)
 Behind the scenes of rows.Scan() your driver will automatically convert the raw output from the SQL database to the required native Go types. So long as you’re sensible with the types that you’re mapping between SQL and Go, these conversions should generally Just Work. Usually:
 
@@ -268,8 +268,8 @@ Behind the scenes of rows.Scan() your driver will automatically convert the raw 
 - INT maps to int; BIGINT maps to int64.
 - DECIMAL and NUMERIC map to float.
 - TIME, DATE and TIMESTAMP map to time.Time.
-A quirk of our MySQL driver is that we need to use the **parseTime=true** parameter in our DSN to force it to convert TIME and DATE fields to
-time.Time. Otherwise it returns these as []byte objects. This is one of
+
+A quirk of our MySQL driver is that we need to use the **parseTime=true** parameter in our DSN to force it to convert TIME and DATE fields to time.Time. Otherwise it returns these as []byte objects. This is one of
 the many driver-specific parameters that it oﬀers.
 
 
