@@ -201,7 +201,8 @@ require github.com/go-sql-driver/mysql v1.7.1 // indirect
 - 如果其他人需要下载项目的所有依赖——你可以通过运行 `go mod download`——如果有一些下载的依赖和文件中的校验和不匹配，他们将会得到一个错误。
 
 ## 4.4 Designing a Database Model
-[nitty-gritty](obsidian://bookmaster?type=open-book&bid=gNZeRcxcHTYvWxQm&aid=355df2f0-a59b-9fa6-488a-93fe5d82e2c6&page=132)：n. 事实真相，本质。
+[nitty-gritty](obsidian://bookmaster?type=open-book&bid=gNZeRcxcHTYvWxQm&aid=355df2f0-a59b-9fa6-488a-93fe5d82e2c6&page=132)：n. 事实真相，本质。 
+
 
 
 
