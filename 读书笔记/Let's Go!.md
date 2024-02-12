@@ -259,7 +259,18 @@ func (m *SnippetModel) Insert(title, content, expires string) (int, error) {
 _, err := m.DB.Exec("INSERT INTO ... VALUES ($1, $2, $3)", ...)
 ```
 
+## Single-record SQL Queries
+### [Type Conversions](obsidian://bookmaster?type=open-book&bid=gNZeRcxcHTYvWxQm&aid=17bea6e6-8e63-0e78-c059-433baf971818&page=148)
+Behind the scenes of rows.Scan() your driver will automatically convert the raw output from the SQL database to the required native Go types. So long as you’re sensible with the types that you’re mapping between SQL and Go, these conversions should generally Just Work. Usually:
 
+- CHAR, VARCHAR and TEXT map to string.
+- BOOLEAN maps to bool.
+- INT maps to int; BIGINT maps to int64.
+- DECIMAL and NUMERIC map to float.
+- TIME, DATE and TIMESTAMP map to time.Time.
+A quirk of our MySQL driver is that we need to use the **parseTime=true** parameter in our DSN to force it to convert TIME and DATE fields to
+time.Time. Otherwise it returns these as []byte objects. This is one of
+the many driver-specific parameters that it oﬀers.
 
 
 
