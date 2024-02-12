@@ -248,7 +248,7 @@ func (m *SnippetModel) Insert(title, content, expires string) (int, error) {
 
 在幕后，`DB.Exec()` 方法会执行如下三步：
 
-1. 他会在数据库中使用提供的 SQL 语句生成一个预处理语句
+1. 他会在数据库中使用提供的 SQL 语句生成一个预处理语句. 数据库解析并且解析语句，
 
 
 
