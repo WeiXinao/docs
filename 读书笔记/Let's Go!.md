@@ -269,9 +269,12 @@ Behind the scenes of rows.Scan() your driver will automatically convert the raw 
 - DECIMAL and NUMERIC map to float.
 - TIME, DATE and TIMESTAMP map to time.Time.
 
-A quirk of our MySQL driver is that we need to use the **parseTime=true** parameter in our DSN to force it to convert TIME and DATE fields to time.Time. Otherwise it returns these as []byte objects. This is one of
+A quirk of our MySQL driver is that we need to use the **parseTime=true** parameter in our DSN to force it to convert TIME and DATE fields to time.Time. Otherwise it returns these as `[]byte` objects. This is one of
 the many driver-specific parameters that it oﬀers.
 
+## 4.7 Multiple-record SQL Queries 
+> [!important] 
+> 
 
 
 
