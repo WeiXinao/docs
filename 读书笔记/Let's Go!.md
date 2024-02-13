@@ -273,7 +273,9 @@ A quirk of our MySQL driver is that we need to use the **parseTime=true** parame
 the many driver-specific parameters that it oﬀers.
 
 ## [4.7 Multiple-record SQL Queries](obsidian://bookmaster?type=open-book&bid=gNZeRcxcHTYvWxQm&aid=298b25ca-edad-0660-c683-0b81354027b5&page=154)
-****
+
+*pkg/models/mysql/snippets.go*
+
 ```go
 // Latest This will return the 10 most recently created snippets
 func (m *SnippetModel) Latest() ([]*models.Snippet, error) {
