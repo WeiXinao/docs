@@ -343,9 +343,57 @@ func (m *SnippetModel) Latest() ([]*models.Snippet, error) {
 ### [Working with Transactions](obsidian://bookmaster?type=open-book&bid=gNZeRcxcHTYvWxQm&aid=5797a7b9-5dda-b3e0-8502-121f73aa6f45&page=161)
 意识到调用 `Exec()`、`Query` 和 `QueryRow()` 可以使用 `sql.DB` 池中的任何连接池是非常重要的。即使你有两次调用，在你的代码中相互之间是立即执行的，也没法保证他们将会使用相同的数据库连接。
 
-有时候这是不可接受的，例如，如果你用 MySQL 的 `Lock Table` 给一个表加锁，你必须在相关的连接上调用 UNLOCK TABLE
+有时候这是不可接受的，例如，如果你用 MySQL 的 `LOCK TABLE` 给一个表加锁，你必须在相同的连接上调用 `UNLOCK TABLE` 去避免死锁。
 
+为了保证相关的链接被使用，你可以用一个事务来包裹多条语句。这是基本方式：
 
+```go
+type ExampleModel struct {
+	DB *sql.DB
+}
+
+func (m *ExampleModel) ExampleTransaction() error {
+	// Calling the Begin() method on the connection pool creates a new sql.Tx
+	// object, which represents the in-progress database transaction.
+	tx, err := m.DB.Begin()
+	if err != nil {
+		return err
+	}
+
+	// Call Exec() on the transaction, passing in your statement and any
+	// parameters. It's important to notice that tx.Exec() is called on the
+	// transaction object just created, NOT the connection pool. Although we're
+	// using tx.Exec() here you can also use tx.Query() and tx.QueryRow() in
+	// exactly the same way.
+	_, err = tx.Exec("INSERT INTO ...")
+	if err != nil {
+		// If there is any error, we call the tx.Rollback() method on the
+		// transaction. This will abort the transaction and no changes will be
+		// made to the database.
+		tx.Rollback()
+		return err
+	}
+	// Carry out another transaction in exactly the same way.
+	_, err = tx.Exec("UPDATE ...")
+	if err != nil {
+		tx.Rollback()
+		return err
+	}
+	// If there are no errors, the statements in the transaction can be committe
+	// to the database with the tx.Commit() method. It's really important to ALW
+	// call either Rollback() or Commit() before your function returns. If you
+	// don't the connection will stay open and not be returned to the connectio
+	// pool. This can lead to hitting your maximum connection limit/running out
+	// resources.
+	err = tx.Commit()
+	return err
+}
+```
+
+如果你想将多条 SQL 语句作为单个原子行为来执行，事务也是超级有用的。只要你在事件的任何错误中使用`tx.Rollback()` 方法，事务保证下面两种情况之一：
+
+- 所有的语句都执行成功；或者
+- 没有语句执行成功并且数据库保持不变。
 
 
 
