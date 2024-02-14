@@ -340,6 +340,7 @@ func (m *SnippetModel) Latest() ([]*models.Snippet, error) {
 > [!important] 
 > 用 `defer rows.Close()` 关闭 `resultset` 在这是很重要的。只要 `resultset` 是打开的，它将保持底层的数据库链接是打开的···，所以如果在这个方法中出现了一些错误并且 `resultset` 没有关闭，它可能很快导致在连接池中的所有连接被用完。
 
+### [Working with Transactions](obsidian://bookmaster?type=open-book&bid=gNZeRcxcHTYvWxQm&aid=5797a7b9-5dda-b3e0-8502-121f73aa6f45&page=161)
 
 
 
