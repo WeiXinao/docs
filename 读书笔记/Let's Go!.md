@@ -398,7 +398,7 @@ func (m *ExampleModel) ExampleTransaction() error {
 ### [Managing Connections](obsidian://bookmaster?type=open-book&bid=gNZeRcxcHTYvWxQm&aid=0ade0940-3473-f895-6ae5-549495e20ebe&page=163)
 ### [Prepared statements](obsidian://bookmaster?type=open-book&bid=gNZeRcxcHTYvWxQm&aid=409c22b1-127a-79c0-627f-514a1362fff2&page=164)
 
-[Hopefully](obsidian://bookmaster?type=open-book&bid=gNZeRcxcHTYvWxQm&aid=449bd1b0-62af-ba7c-7b6e-d4b2bdefa461&page=170)
+
 
 
 
