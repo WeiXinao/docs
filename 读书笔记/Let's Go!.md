@@ -396,6 +396,7 @@ func (m *ExampleModel) ExampleTransaction() error {
 - 没有语句执行成功并且数据库保持不变。
 ### [Managing Connections](obsidian://bookmaster?type=open-book&bid=gNZeRcxcHTYvWxQm&aid=0ade0940-3473-f895-6ae5-549495e20ebe&page=163)
 ### [Prepared statements](obsidian://bookmaster?type=open-book&bid=gNZeRcxcHTYvWxQm&aid=409c22b1-127a-79c0-627f-514a1362fff2&page=164)
+# [Middleware](obsidian://bookmaster?type=open-book&bid=gNZeRcxcHTYvWxQm&aid=5b5ca640-a148-67a6-699b-8548c148ae67&page=213)
 
 
 
