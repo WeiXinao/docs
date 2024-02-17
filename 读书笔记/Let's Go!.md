@@ -424,7 +424,17 @@ func secureHeaders(next http.Handler) http.Handler {
 secureHeaders -> servemux -> application header -> servemux ->secureHeaders
 ```
 
-在任何的中间件处理器，在 `next.ServeHTTP()` 之前的代码
+在任何的中间件处理器，在 `next.ServeHTTP()` 之前的代码将会沿着链向下执行，并且任何在 `next.ServeHTTP()` 后面的代码 —— 或者在延迟函数中代码 —— 将会沿着链的反方向执行。
+
+```go
+func myMiddleware(next http.Handler) http.Handler {
+	return http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
+		// Any code here will execute on the way down the chain.
+		next.ServeHTTP(w, r)
+		// Any code here will execute on the way back up the chain.
+	})
+}
+```
 
 
 
