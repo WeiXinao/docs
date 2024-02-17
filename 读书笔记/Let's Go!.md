@@ -167,7 +167,7 @@ func home(w http.ResponseWriter, r *http.Request) {
 #### Features and Fucnctions
 [Range requests](obsidian://bookmaster?type=open-book&bid=gNZeRcxcHTYvWxQm&aid=41908ac0-1960-c408-23c3-ee0b3ea0a800&page=74)
 
-## The http.Handler Interface
+## 2.10 The http.Handler Interface
 ### [Handler Functions](obsidian://bookmaster?type=open-book&bid=gNZeRcxcHTYvWxQm&aid=8f702e6a-3470-886a-6b0f-af37ffc4f234&page=77)
 ### Requests Are Handled Concurrently
 [race conditions](obsidian://bookmaster?type=open-book&bid=gNZeRcxcHTYvWxQm&aid=38573a88-9f92-8587-b012-ec9cc560506a&page=80)
@@ -177,7 +177,7 @@ func home(w http.ResponseWriter, r *http.Request) {
 #### [Concurrent Logging](obsidian://bookmaster?type=open-book&bid=gNZeRcxcHTYvWxQm&aid=5b9679b4-2211-a4cd-1e2e-c4f6c03fbae6&page=95)
 [self-documenting](obsidian://bookmaster?type=open-book&bid=gNZeRcxcHTYvWxQm&aid=ac790c09-0368-e937-d6ee-f4f521620eac&page=107)：In computer programming, self-documenting (or self-describing) is a common descriptor for source code and user interfaces that follow certain loosely defined conventions for naming and structure. These conventions are intended to enable developers, users, and maintainers of a system to use it effectively without requiring previous knowledge of its specification, design, or behavior.
 
-# Database-Driven Responses
+# 4 Database-Driven Responses
 ## 4.2 Installing a Database Driver
 语义版本控制：[Semantic Versioning 2.0.0 | Semantic Versioning (semver.org)](https://semver.org/#semantic-versioning-200)
 
@@ -397,7 +397,34 @@ func (m *ExampleModel) ExampleTransaction() error {
 ### [Managing Connections](obsidian://bookmaster?type=open-book&bid=gNZeRcxcHTYvWxQm&aid=0ade0940-3473-f895-6ae5-549495e20ebe&page=163)
 ### [Prepared statements](obsidian://bookmaster?type=open-book&bid=gNZeRcxcHTYvWxQm&aid=409c22b1-127a-79c0-627f-514a1362fff2&page=164)
 
-# 6. 
+# 6 Middleware
+## 6.2 Setting Security Headers 
+### Additional Information 
+#### Flow of Control
+*snippetbox/cmd/web/middleware.go*
+
+```go
+package main
+
+import "net/http"
+
+func secureHeaders(next http.Handler) http.Handler {
+	return http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
+		w.Header().Set("X-XSS-Protection", "1; mode=block")
+		w.Header().Set("X-Frame-Options", "deny")
+
+		next.ServeHTTP(w, r)
+	})
+}
+```
+
+知道当最后一个在链上处理器返回时，控制流程是沿着链的反方法传递的。所有当我们的代码被执行时，控制流程实际上看起来像这样：
+
+```plain
+secureHeaders -> servemux -> application header -> servemux ->secureHeaders
+```
+
+在任何的中间件处理器，在 `next.ServeHTTP()` 之前的代码
 
 
 
