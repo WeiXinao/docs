@@ -436,7 +436,7 @@ func myMiddleware(next http.Handler) http.Handler {
 }
 ```
 
-[Hopefully](obsidian://bookmaster?type=open-book&bid=gNZeRcxcHTYvWxQm&aid=80f5089c-5873-a1a2-8f31-45023777e83e&page=273)
+
 
 
 
