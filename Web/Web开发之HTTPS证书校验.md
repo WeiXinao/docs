@@ -20,3 +20,16 @@ SSL握手协议包含4个阶段，下面简单介绍每个阶段。
 10. 服务器、浏览器接下来的通讯都是用对称密码方案，对称密钥是加过密的。
 
 上面所述的是双向认证 SSL 协议的具体通讯过程，这种情况要求服务器和用户双方都有证书。
+
+## SSL 双向认证的例子
+首先创建服务器端私有密钥和公共密钥
+
+```
+1, keytool -genkey -alias clientkey -keystore kserver.ks  
+密码: serverpass  
+2, keytool -export -alias serverkey -keystore kserver.ks -file server.crt  
+3, keytool -import -alias serverkey -file server.crt -keystore tclient.ks  
+密码: clientpublicpass
+```
+
+下面创建客户器端私有密钥和公共密钥
