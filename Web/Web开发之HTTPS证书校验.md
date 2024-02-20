@@ -33,3 +33,16 @@ SSL握手协议包含4个阶段，下面简单介绍每个阶段。
 ```
 
 下面创建客户器端私有密钥和公共密钥
+
+```
+1, keytool -genkey -alias clientkey -keystore kclient.ks  
+密码: clientpass  
+2, keytool -export -alias clientkey -keystore kclient.ks -file client.crt  
+3, keytool -import -alias clientkey -file client.crt -keystore tserver.ks  
+密码: serverpublicpass
+```
+
+把服务器端产生的公共密钥放到客户端, 同样把客户端创建的公共密钥放到服务器端。
+
+常见的HTTPS传输, 不需要进行客户端认证, 也就是单向认证. 这时也就不需要创建客户端的私钥和公钥. 服务器端也只要配置一下服务器端的私钥即可, 当客户端浏览器访问时会生成一个证书文件,类似于上面创建的crt文件. 如果需要程序访问,可以通过这个crt文件生成一个keystore. 然后是用这个keystore作为trust keystore即可。
+## TLS 证书校验
