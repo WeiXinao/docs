@@ -438,7 +438,5 @@ func myMiddleware(next http.Handler) http.Handler {
 
 
 
-|     |     |
-| --- | --- |
-|     |     |
+
 
