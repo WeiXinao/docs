@@ -43,4 +43,12 @@ NoSQL (NoSQL = Not only SQL), 意即 「不仅仅是 SQL」，泛指非关系型
 - 支持二进制数据及大型对象
 - 可以根据数据的特点替代 **RDBMS**，成为独立的数据库。或者配合 RDBMS，存储指定的数据。
 
+### 2.2.3 安装目录：/user/local/bin
+查看安装目录：
 
+- redis-benchmark：性能测试工具
+- redis-check-aof：修复有问题的 AOF 文件
+- redis-check-dump：修复有问题的 dump.rdb 文件
+- redis-sentinel：Redis 集群使用
+- **redis-server**：Redis 服务器启动命令
+- **redis-cli** ：客户端，操作入口
