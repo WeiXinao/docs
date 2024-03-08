@@ -71,3 +71,6 @@ Redis 是单线程+多路 IO 复用技术
 串行 vs 多线程+锁（memcached） vs 单线程+多路 IO 复用（Redis）
 
 (与 Memcached 三点不同：支持多数据类型，支持持久化，单线程+多路 IO 复用)
+
+![](https://cdn.jsdelivr.net/gh/WeiXinao/imgBed2@main/img/202403081908700.png)
+
