@@ -43,6 +43,9 @@ NoSQL (NoSQL = Not only SQL), 意即 「不仅仅是 SQL」，泛指非关系型
 - 支持二进制数据及大型对象
 - 可以根据数据的特点替代 **RDBMS**，成为独立的数据库。或者配合 RDBMS，存储指定的数据。
 
+## Redis 概述安装
+- Redis 是一个**开源的 key-value 存储系统。
+- 和 Memcached 类似，它支持存储的 value 类型相对更多。包括 **string**（字符串）、list（链表）
 ### 2.2.3 安装目录：/user/local/bin
 查看安装目录：
 
