@@ -63,3 +63,7 @@ NoSQL (NoSQL = Not only SQL), 意即 「不仅仅是 SQL」，泛指非关系型
 - **dbsize** 查看当前数据库的 key 的数量
 - **flushdb 清空当前库**
 - **flushall 通杀全部库**
+
+Redis 是单线程+多路 IO 复用技术
+
+多路复用是指使用一个线程来检查多个文件描述符（Socket）的就绪状态，比如调用 select 和 poll 函数，传入多个文件描述符
