@@ -52,3 +52,9 @@ NoSQL (NoSQL = Not only SQL), 意即 「不仅仅是 SQL」，泛指非关系型
 - redis-sentinel：Redis 集群使用
 - **redis-server**：Redis 服务器启动命令
 - **redis-cli** ：客户端，操作入口
+
+### 2.2.6 Redis 介绍相关知识
+端口 **6379** 从何而来
+Alessia **Merz**
+
+默认 16 个数据库，类似数组
