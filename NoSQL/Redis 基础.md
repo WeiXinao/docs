@@ -118,6 +118,16 @@ Redis 是单线程+多路 IO 复用技术
 ### 3.2.2 常用命令
 ![](https://cdn.jsdelivr.net/gh/WeiXinao/imgBed2@main/img/202403092126181.png)
 
-| `set <key><value> 添加键值对` |     |
-| ------------------------ | --- |
-|                          |     |
+\*NX：当数据库中 key 不存在时，可以将 key-value 添加到数据库
+\*XX：当数据库中 key 存在时，可以将 key-value 添加数据库，与 NX 参数互斥
+\*EX：key 的超时秒数
+\*PX：key 的超时毫秒数，与 EX 互斥
+
+| 命令                    | 说明                      |
+| --------------------- | ----------------------- |
+| `set <key><value> `   | 添加键值对                   |
+| `get <key>`           | 查询对应键值                  |
+| `append <key><value>` | 将给定的 `<value>` 追加到原值的末尾 |
+| `strlen <k`           |                         |
+|                       |                         |
+|                       |                         |
