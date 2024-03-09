@@ -93,3 +93,12 @@ Redis 是单线程+多路 IO 复用技术
 
 ![](https://cdn.jsdelivr.net/gh/WeiXinao/imgBed2@main/img/202403081908700.png)
 
+# 3. 常用五大数据类型
+哪里去获得 Redis 常见数据类型操作命令：https://redis.io/commands/
+
+## 3.1 Redis 键（Key）
+- key \* 查看当前库所有 key （匹配：keys \*1）
+- exists key 判断某个 key 是否存在
+- type key 查看你的 key 是什么类型
+- del key 删除指定的 key 数据
+- 
