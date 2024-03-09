@@ -58,7 +58,8 @@ NoSQL (NoSQL = Not only SQL), 意即 「不仅仅是 SQL」，泛指非关系型
 - 分布式架构，做 session 共享
 
 ### 2.1.2 多样的数据结构存储持久化数据
- 
+ ![](https://cdn.jsdelivr.net/gh/WeiXinao/imgBed2@main/img/202403091500273.png)
+
 
 ### 2.2.3 安装目录：/user/local/bin
 查看安装目录：
