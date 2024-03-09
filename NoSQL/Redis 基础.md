@@ -101,4 +101,10 @@ Redis 是单线程+多路 IO 复用技术
 - exists key 判断某个 key 是否存在
 - type key 查看你的 key 是什么类型
 - del key 删除指定的 key 数据
-- 
+- **unlink 根据 value 选择非阻塞删除** （仅 keys 从 keyspace 元数据中删除，真正删除会在后续异步操作。）
+- expire key 10 10 秒钟：为给定的 key 设置过期时间
+- ttl key 查看还有多少秒过期，-1 表示永不过期，-2 表示已过期 
+- select 命令切换数据库
+- dbsize 查看当前数据库的 key 的数量
+- flushdb 清空当前库 
+- flushall 通杀全部库
