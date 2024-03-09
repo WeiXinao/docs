@@ -1,4 +1,4 @@
-# NoSQL 数据简介
+# 1. NoSQL 数据简介
 ## 1.1 为什么要引入 NoSQL
 1. 保证 session 一致性。
 
@@ -43,7 +43,7 @@ NoSQL (NoSQL = Not only SQL), 意即 「不仅仅是 SQL」，泛指非关系型
 - 支持二进制数据及大型对象
 - 可以根据数据的特点替代 **RDBMS**，成为独立的数据库。或者配合 RDBMS，存储指定的数据。
 
-## 2. Redis 概述安装
+# 2. Redis 概述安装
 - Redis 是一个**开源**的 **key-value** 存储系统。
 - 和 Memcached 类似，它支持存储的 value 类型相对更多。包括 **string**（字符串）、**list**（链表）、**set**（集合）、**zset**（sorted set 有序集合）和 **hash** （哈希类型）。
 - 这些类型都支持 push/pop、add/remove 及取交集并集和差集及更丰富的操作，而且这些操作都是**原子性**的。
