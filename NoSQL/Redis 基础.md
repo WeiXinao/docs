@@ -175,4 +175,8 @@ i = 0; 两个线程分别对 i 进行++100 次，值是多少？答案：[\2\-\2
 | `getset <key><value>`         | 以新换旧，设置了新值同时获得旧值                                            |
 
 ### 3.2.3 数据结构
-String 的数据结构为简单动态字符串（Simple Dynamic String，缩写 SDS）。是可以修改的字符串。内部结构实现上类似y
+String 的数据结构为简单动态字符串（Simple Dynamic String，缩写 SDS）。是可以修改的字符串。内部结构实现上类似于 Java 的 ArrayList，采用预分配冗余空间的方式来减少内存的频繁分配。
+
+![](https://cdn.jsdelivr.net/gh/WeiXinao/imgBed2@main/img/202403092307004.png)
+
+如图中所示，内部为当前字符串实际分配的空间 capacity，一般要高于实际字符串的长度 len。当字符串长度小于 1M 时，扩容都是加倍现有的空间，如果超过 1M，扩容时一次只会多扩 1M 的空间。zhu'yi
