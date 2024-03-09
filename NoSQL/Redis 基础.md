@@ -108,3 +108,16 @@ Redis 是单线程+多路 IO 复用技术
 - dbsize 查看当前数据库的 key 的数量
 - flushdb 清空当前库 
 - flushall 通杀全部库
+
+## 3.2 Redis 字符串（String）
+### 3.2.1 简介
+ String 是 Redis 最基本的类型，你可以理解成与 Memcached 一模一样的类型，一个 key 对应一个 value。
+ String 类型是**二进制安全的**。意味着 Redis 的 string 可以包含任何数据。比如 jpg 图片或者序列化的对象。
+ String 类型是 Redis 最基本的数据类型，一个 Redis 中字符串 value 最多可以是 **512M**
+
+### 3.2.2 常用命令
+![](https://cdn.jsdelivr.net/gh/WeiXinao/imgBed2@main/img/202403092126181.png)
+
+| `set <key><value> 添加键值对` |     |
+| ------------------------ | --- |
+|                          |     |
