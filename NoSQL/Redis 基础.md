@@ -43,9 +43,13 @@ NoSQL (NoSQL = Not only SQL), 意即 「不仅仅是 SQL」，泛指非关系型
 - 支持二进制数据及大型对象
 - 可以根据数据的特点替代 **RDBMS**，成为独立的数据库。或者配合 RDBMS，存储指定的数据。
 
-## Redis 概述安装
+## 2. Redis 概述安装
 - Redis 是一个**开源的 key-value 存储系统。
-- 和 Memcached 类似，它支持存储的 value 类型相对更多。包括 **string**（字符串）、list（链表）
+- 和 Memcached 类似，它支持存储的 value 类型相对更多。包括 **string**（字符串）、**list**（链表）、**set**（集合）、**zset**（sorted set 有序集合）和 **hash** （哈希类型）。
+- 这些类型都支持 push/pop、add/remove 及取交集并集和差集及更丰富的操作，而且这些操作都是**原子性**的。
+- 在此基础上，Redis 支持各种不同方式的**排序**。
+- 与 memcached 一样，为了保证效率，数据都是**缓存在内存**中。
+- 区别的是 Redis 会周期性的把更新的数据写入磁盘或者把修改操作写入追加的ji
 ### 2.2.3 安装目录：/user/local/bin
 查看安装目录：
 
@@ -74,6 +78,7 @@ Redis 是单线程+多路 IO 复用技术
 串行 vs 多线程+锁（memcached） vs 单线程+多路 IO 复用（Redis）
 
 (与 Memcached 三点不同：支持多数据类型，支持持久化，单线程+多路 IO 复用)
+
 
 ![](https://cdn.jsdelivr.net/gh/WeiXinao/imgBed2@main/img/202403081908700.png)
 
