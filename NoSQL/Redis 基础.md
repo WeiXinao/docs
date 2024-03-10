@@ -288,8 +288,15 @@ Redis 有序集合 zset 与普通集合 set 非常类似，是一个**没有重�
 
 ### 3.6.2 常用命令
 
-| 命令                                                           | 说明                                                                                  |
-| :----------------------------------------------------------- | :---------------------------------------------------------------------------------- |
-| `zadd <key><score><value1><score2><value2>`                  | 将一个或多个 member 元素及其 score 值加入到有序集合 key 当中。                                           |
-| `zrange <key><start><stop> [WITHSCORES]`                     | 返回有序集合 key 中，下标在 `<start><stop>` 之间的元素，带 WITHSCORES，可以让分数一起和值返回到结果集。                |
-| `zrangebyscore key minmax [withscores] [limit offset count]` | 返回有序集 key 中，所有 score 介于 min 和 max 之间（包括等于 min 或 max）的成员。有序集成员按 score 值递增（从小到大）次序排列。 |
+| 命令                                                             | 说明                                                                                  |
+| :------------------------------------------------------------- | :---------------------------------------------------------------------------------- |
+| `zadd <key><score><value1><score2><value2>`                    | 将一个或多个 member 元素及其 score 值加入到有序集合 key 当中。                                           |
+| `zrange <key><start><stop> [WITHSCORES]`                       | 返回有序集合 key 中，下标在 `<start><stop>` 之间的元素，带 WITHSCORES，可以让分数一起和值返回到结果集。                |
+| `zrangebyscore key minmax [withscores] [limit offset count]`   | 返回有序集 key 中，所有 score 介于 min 和 max 之间（包括等于 min 或 max）的成员。有序集成员按 score 值递增（从小到大）次序排列。 |
+| `zrevrangebyscore key maxmin [withscore] [limit offset count]` | 同上，改为从大到小排列。                                                                        |
+| `zincrby <key><increment><value>`                              | 为元素的 score 加上销量                                                                     |
+| `zrem <key><value>`                                            | 删除该集合下，指定值的元素                                                                       |
+| `zcount <key><min><max>`                                       | 统计该集合，分区间内的元素个数                                                                     |
+| `zrank <key><value>`                                           | 返回该值在集合中的排名，从 0 开始。                                                                 |
+### 3.6.3 数据结构
+SortedSet(zset) 是 Redis 提供的一个非常特别的数据结构，一方面它等价于 Java 的数据结构  `Map<string, Double>`，可以给每个元素 value 赋予一个权重 score，另一方面它又类似于 TreeSet，内部的元素会按照权重 score 进行排序，可以得到每个元素的名次，还可以通过 score 的范围来获取元素的列表。
