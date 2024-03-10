@@ -246,4 +246,10 @@ Redis 的 Set 是 string 类型的**无序集合。它的底层其实是一个 v
 ### 3.4.3 数据结构 
 Set 数据结构是 dict 字典，字典是用哈希表实现的。
 
-Java 中的 HashSet 的内部实现使用的是 HashMap，只不过所有的 value 都指向同一个对象。Redis 的 set 结构也是一样，它的内部也使用
+Java 中的 HashSet 的内部实现使用的是 HashMap，只不过所有的 value 都指向同一个对象。Redis 的 set 结构也是一样，它的内部也使用 hash 结构，所有的 value 都指向同一个内部值。
+
+## 3.5 Redis 哈希（Hash）
+### 3.5.1 简介
+Redis hash 是一个键值对集合。
+
+Redis hash 是一个 string 类型的 **field** 和 **value** 的映射表，hash 特别适合存储对象。类似 Java 里面的 `Map<String,Object`
