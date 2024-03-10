@@ -258,3 +258,17 @@ Redis hash 是一个 string 类型的 **field** 和 **value** 的映射表，has
 
 主要有以下两种方式：
 
+![](https://cdn.jsdelivr.net/gh/WeiXinao/imgBed2@main/img/202403102108544.png)
+
+### 3.5.3 常用命令
+
+| 命令                                                | 说明                                   |
+| :------------------------------------------------ | :----------------------------------- |
+| `hset <key><field><value>`                        | 给 `<key>`集合中的 `<field>` 赋值 `<value>` |
+| `hget <key1><field>`                              | 从 `<key1>` 集合 `<field>` 去除 value     |
+| `hmset <key1><field1><value1><field2><value2>...` | 批量设置 hash 的值                         |
+| `hexists <key1><field>`                           | 查看哈希表 key 中，给定域 field 是否存在。          |
+| `hkeys <key>`                                     | 列出该 hash 集合中的所有 field                |
+| `hvals <key>`                                     | 列出该 hash 集合中的所有 value                |
+| `hincrby <key><field><increment>`                 | 为哈希表 key 中的域 field 的值加上增量1、-1        |
+| `hsetnx <key><field><value>`                      | 将哈希表 key 中的域 field 的值设置为 value       |
