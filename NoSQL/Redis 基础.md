@@ -260,15 +260,23 @@ Redis hash 是一个 string 类型的 **field** 和 **value** 的映射表，has
 
 ![](https://cdn.jsdelivr.net/gh/WeiXinao/imgBed2@main/img/202403102108544.png)
 
-### 3.5.3 常用命令
+### 3.5.2 常用命令
 
-| 命令                                                | 说明                                   |
-| :------------------------------------------------ | :----------------------------------- |
-| `hset <key><field><value>`                        | 给 `<key>`集合中的 `<field>` 赋值 `<value>` |
-| `hget <key1><field>`                              | 从 `<key1>` 集合 `<field>` 去除 value     |
-| `hmset <key1><field1><value1><field2><value2>...` | 批量设置 hash 的值                         |
-| `hexists <key1><field>`                           | 查看哈希表 key 中，给定域 field 是否存在。          |
-| `hkeys <key>`                                     | 列出该 hash 集合中的所有 field                |
-| `hvals <key>`                                     | 列出该 hash 集合中的所有 value                |
-| `hincrby <key><field><increment>`                 | 为哈希表 key 中的域 field 的值加上增量1、-1        |
-| `hsetnx <key><field><value>`                      | 将哈希表 key 中的域 field 的值设置为 value       |
+| 命令                                                | 说明                                              |
+| :------------------------------------------------ | :---------------------------------------------- |
+| `hset <key><field><value>`                        | 给 `<key>`集合中的 `<field>` 赋值 `<value>`            |
+| `hget <key1><field>`                              | 从 `<key1>` 集合 `<field>` 去除 value                |
+| `hmset <key1><field1><value1><field2><value2>...` | 批量设置 hash 的值                                    |
+| `hexists <key1><field>`                           | 查看哈希表 key 中，给定域 field 是否存在。                     |
+| `hkeys <key>`                                     | 列出该 hash 集合中的所有 field                           |
+| `hvals <key>`                                     | 列出该 hash 集合中的所有 value                           |
+| `hincrby <key><field><increment>`                 | 为哈希表 key 中的域 field 的值加上增量1、-1                   |
+| `hsetnx <key><field><value>`                      | 将哈希表 key 中的域 field 的值设置为 value，当且仅当域名 field 不存在 |
+### 3.5.3 数据结构
+Hash 类型对应的数据结构是两种：ziplist（压缩列表），hashtable（哈希表）。当 field-value 长度较短且个数较少时，使用 ziplist，否则使用 hashtable。
+
+## 3.6 Redis 有序集合 Zset（sorted set）
+### 3.6.1 简介
+Redis 有序集合 zset 与普通集合 set 非常类似，是一个**没有重复元素**的集合。
+
+不同之处是有序集合的每个成员都关联了一个**评分（score）**，这个评分（score）被用来按照从最低分到最高分的方式排序集合中的成员。**集合中的cheng'yua**
