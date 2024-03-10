@@ -300,3 +300,8 @@ Redis 有序集合 zset 与普通集合 set 非常类似，是一个**没有重�
 | `zrank <key><value>`                                           | 返回该值在集合中的排名，从 0 开始。                                                                 |
 ### 3.6.3 数据结构
 SortedSet(zset) 是 Redis 提供的一个非常特别的数据结构，一方面它等价于 Java 的数据结构  `Map<string, Double>`，可以给每个元素 value 赋予一个权重 score，另一方面它又类似于 TreeSet，内部的元素会按照权重 score 进行排序，可以得到每个元素的名次，还可以通过 score 的范围来获取元素的列表。
+
+zset 底层是用了两个数据结构
+
+1. hash，hash 的作用就是关联元素 value 和权重 score，保证元素 value 的唯一性，可以通过元素 value 找到对应的 score 值。
+2. 跳跃表，跳跃表的目的是在于给元素 value 排序，根据 score 的范围获取元素列表。
