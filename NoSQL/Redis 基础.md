@@ -252,4 +252,9 @@ Java 中的 HashSet 的内部实现使用的是 HashMap，只不过所有的 val
 ### 3.5.1 简介
 Redis hash 是一个键值对集合。
 
-Redis hash 是一个 string 类型的 **field** 和 **value** 的映射表，hash 特别适合存储对象。类似 Java 里面的 `Map<String,Object>`
+Redis hash 是一个 string 类型的 **field** 和 **value** 的映射表，hash 特别适合存储对象。类似 Java 里面的 `Map<String,Object>`。
+
+用户 id 为查找的 key，存储的 value 用户对象包含姓名、年龄、生日等信息，如果用普通的 key/value结构来存储。
+
+主要有以下两种方式：
+
