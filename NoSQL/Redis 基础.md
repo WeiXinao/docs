@@ -332,3 +332,18 @@ zset 底层是用了两个数据结构
 		在第 0 层，51 节点为要查找的节点，节点被找到，共查找 4 次。
 
 		从此可以看出跳跃表比有序链表效率要高
+
+# 4 Redis 配置文件介绍
+## 4.1 Units 单位
+配置大小写单位，开头定义了一些基本的度量单位，只支持 bytes，不支持 bit
+
+大小写不敏感
+
+![](https://cdn.jsdelivr.net/gh/WeiXinao/imgBed2@main/img/202403102235343.png)
+
+## 4.2 INCLUDES 包含
+![](https://cdn.jsdelivr.net/gh/WeiXinao/imgBed2@main/img/202403102237923.png)
+
+## 4.3 网络相关配置
+### 4.3.1 bind
+默认青
