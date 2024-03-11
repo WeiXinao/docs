@@ -344,5 +344,4 @@ zset 底层是用了两个数据结构
 ## 4.2 INCLUDES 包含
 ![](https://cdn.jsdelivr.net/gh/WeiXinao/imgBed2@main/img/202403102237923.png)
 
-## 4.3 网络相关配置
-### 4.3.1 bind
+
