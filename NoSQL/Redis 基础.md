@@ -425,3 +425,6 @@ AOF 持久化工作流程
 ![](https://cdn.jsdelivr.net/gh/WeiXinao/imgBed2@main/img/202403152227504.png)
 
 ## 5.3 RDB-AOF 混合持久化
+![](https://cdn.jsdelivr.net/gh/WeiXinao/imgBed2@main/img/202403152321213.png)
+
+RDB 和 AOF 可以共存
