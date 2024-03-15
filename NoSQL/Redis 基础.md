@@ -380,9 +380,10 @@ RDB 是如何工作的？
 
 总结
 
+![](https://cdn.jsdelivr.net/gh/WeiXinao/imgBed2@main/img/202403152227331.png)
 
 ## 5.2 AOF 
-AOF 是如何工作的？ 
+重写原理 
 
 **Redis >= 7.0**
 
@@ -420,3 +421,7 @@ AOF 持久化工作流程
 2. aof 运行效率慢于 rdb, 每秒同步策略效率较好，不同步效率和 rdb 相同
 
 总结
+
+![](https://cdn.jsdelivr.net/gh/WeiXinao/imgBed2@main/img/202403152227504.png)
+
+## 5.3 RDB-AOF 混合持久化
