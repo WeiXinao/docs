@@ -428,3 +428,13 @@ AOF 持久化工作流程
 ![](https://cdn.jsdelivr.net/gh/WeiXinao/imgBed2@main/img/202403152321213.png)
 
 RDB 和 AOF 可以共存
+
+RDB 和 AOF 共存后听谁的？
+
+![](https://cdn.jsdelivr.net/gh/WeiXinao/imgBed2@main/img/202403152329725.png)
+
+数据恢复顺序和加载流程
+
+在同时开启 rdb 和 aof 持久化时，重启时只会加载 aof 文件，不会加载 rdb 文件
+
+![](https://cdn.jsdelivr.net/gh/WeiXinao/imgBed2@main/img/202403152330126.png)
