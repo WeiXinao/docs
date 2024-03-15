@@ -347,6 +347,7 @@ zset 底层是用了两个数据结构
 # 5 Redis 持久化
 持久化指的是将数据写到持久化的存储，比如一块固态硬盘。Redis 提供了一系列的持久化选项。它们包括：
 
-- RDB（Redis Database）：RDB 持久化给你的数据集执行一个时间点的快照
+- **RDB**（Redis Database）：RDB 持久化以特定的时间间隔给你的数据集执行一个时间点的快照。
+- **AOF**（Append Only File）：AOF 持久化记录服务器所接受的每一个写操作
 
 
