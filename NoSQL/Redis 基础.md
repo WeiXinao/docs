@@ -345,11 +345,26 @@ zset 底层是用了两个数据结构
 ![](https://cdn.jsdelivr.net/gh/WeiXinao/imgBed2@main/img/202403102237923.png)
 
 # 5 Redis 持久化
+
+![](https://cdn.jsdelivr.net/gh/WeiXinao/imgBed2@main/img/202403152028507.png)
+
+
 持久化指的是将数据写到持久化的存储，比如一块固态硬盘。Redis 提供了一系列的持久化选项。它们包括：
 
 - **RDB**（Redis Database）：RDB 持久化以特定的时间间隔给你的数据集执行一个时间点的快照。
 - **AOF**（Append Only File）：AOF 持久化记录服务器所接受的每一个写操作。这些操作在服务器启动的时候重新执行，重建原数据集。命令以 Redis 协议自身相同的形式被记录。
 - **No persistance**：你可以完全禁用持久化。这有时在缓存时使用。
-- **RDB + AOF**：你可以在相同的实例中结合AOF 和 RDB
+- **RDB + AOF**：你可以在相同的实例中结合AOF 和 RDB。
+
+## 5.1 RDB
+RDB 是如何工作的？
+
+- Redis fork 一个进程。我们现在有了一个子线程和一个父线程。
+- 子线程开始将数据集写入临时 RDB 文件。
+- 当子线程写完新的 RDB 文件，用它替换旧文件。
+
+这种方法有利于 Redis 写入时复制。
+
+## 5.2 AOF 
 
 
