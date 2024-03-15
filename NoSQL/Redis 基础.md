@@ -344,4 +344,9 @@ zset 底层是用了两个数据结构
 ## 4.2 INCLUDES 包含
 ![](https://cdn.jsdelivr.net/gh/WeiXinao/imgBed2@main/img/202403102237923.png)
 
+# 5 Redis 持久化
+持久化指的是将数据写到持久化的存储，比如一块固态硬盘。Redis 提供了一系列的持久化选项。它们包括：
+
+- RDB（Redis Database）：RDB 持久化给你的数据集执行一个时间点的快照
+
 
