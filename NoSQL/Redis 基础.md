@@ -429,12 +429,16 @@ zset 底层是用了两个数据结构
 
 RDB 和 AOF 可以共存
 
-RDB 和 AOF 共存后听谁的？
+### 5.3.1 RDB 和 AOF 共存后听谁的？
 
 ![](https://cdn.jsdelivr.net/gh/WeiXinao/imgBed2@main/img/202403152329725.png)
 
-数据恢复顺序和加载流程
+### 5.3.2 数据恢复顺序和加载流程
 
 在同时开启 rdb 和 aof 持久化时，重启时只会加载 aof 文件，不会加载 rdb 文件
 
 ![](https://cdn.jsdelivr.net/gh/WeiXinao/imgBed2@main/img/202403152330126.png)
+
+### 5.3.3 怎么选？用哪个？
+- RDB 持久化方式能够在指定的时间间隔能对你的数据进行快照存储
+- AOF 持久化方式记录每次对服务器的写操作，当服务器重启的时候会重新执行这些命令来恢复原始的数据，AOF 命令
