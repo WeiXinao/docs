@@ -383,7 +383,21 @@ zset 底层是用了两个数据结构
 ![](https://cdn.jsdelivr.net/gh/WeiXinao/imgBed2@main/img/202403152227331.png)
 
 ## 5.2 AOF 
-### 5.2.1 重写原理 
+### 5.2.1 AOF 重写机制
+#### 5.2.1.1 是什么？
+![](https://cdn.jsdelivr.net/gh/WeiXinao/imgBed2@main/img/202403252201036.png)
+
+![](https://cdn.jsdelivr.net/gh/WeiXinao/imgBed2@main/img/202403252202337.png)
+
+一句话：启动 AOF 文件的内容压缩，只保留可以恢复数据的最小指令集。
+
+#### 5.2.1.2 官网默认配置
+![](https://cdn.jsdelivr.net/gh/WeiXinao/imgBed2@main/img/202403252203188.png)
+
+注意，**同时满足，且的关系**才会触发
+
+1. 根据上次重写后的 aof 大小，判断当前
+### 5.2.2 重写原理 
 
 **Redis >= 7.0**
 
@@ -466,5 +480,15 @@ RDB + AOF 混合方式：结合了RDB和AOF的优点，既能快速加载又能�
 同时关闭 RDB + AOF 
 
 ```
-sav
+save ""
 ```
+
+- 禁用 rdb
+- 在禁用 rdb 持久化模式下，我们仍然可以使用命令 `save`、`bgsave` 生成 rdb 文件
+
+```
+appendonly no
+```
+
+- 禁用 aof 
+- 禁用 aof 持久化模式下，我们仍然可以使用命令 `bgrewriteof` 生成 aof 文件。
