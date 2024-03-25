@@ -383,6 +383,8 @@ zset 底层是用了两个数据结构
 ![](https://cdn.jsdelivr.net/gh/WeiXinao/imgBed2@main/img/202403152227331.png)
 
 ## 5.2 AOF 
+
+- **以日志的形式**
 ### 5.2.1 AOF 缓冲区三种写回策略
 1. Always
 
@@ -394,7 +396,10 @@ zset 底层是用了两个数据结构
 
 3. no
 
-	操作系统控制的写
+	操作系统控制的写回，每个命令执行完，只是先把日志写到 AOF 文件的内存缓冲区，由操作系统决定何时将缓冲区内容写回磁盘
+
+![](https://cdn.jsdelivr.net/gh/WeiXinao/imgBed2@main/img/202403252225965.png)
+
 
 ### 5.2.2 AOF 重写机制
 #### 5.2.2.1 是什么？
