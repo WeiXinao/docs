@@ -563,4 +563,14 @@ Redis 客户端可以订阅任意数量的频道，类似我们微信关注多�
 1. `SUBSCRIBE channel [channel...]`
 	- 订阅给定的一个或多个频道的信息
 	- **推荐先订阅后再发布，订阅成功之前发布的消息是收不到的**
+	- 订阅的客户端每次可以收到一个 3 个参数的消息
+		- 消息的种类
+		- 始发频道的名称
+		- 实际消息的内容
+2. `PUBLISH channel message`
+	- 发布消息到指定的频道
+3. `PSUBSCRIBE pattern [pattern...]`
+	- 按照模式批量订阅，订阅一个或多个符合给定模式（支持 \* 号 ? 号之类）的频道
+4. `PUBSUB subcommend [argument [argument...]]`
+	- 查看订阅与发布系统状态
 	- 
