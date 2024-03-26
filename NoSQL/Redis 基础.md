@@ -573,4 +573,15 @@ Redis 客户端可以订阅任意数量的频道，类似我们微信关注多�
 	- 按照模式批量订阅，订阅一个或多个符合给定模式（支持 \* 号 ? 号之类）的频道
 4. `PUBSUB subcommend [argument [argument...]]`
 	- 查看订阅与发布系统状态
-	- 
+	- `PUBSUB CHANNELS`
+		- 由活跃频道组成的列表
+	- `PUBSUB NUMSUB [channel [channel...]]`
+		- 某个频道有几个订阅者
+	- `PUBSUB NUMPAT`
+5. `UNSUBSCRIBE [channel [channel ...]]`
+	- 取消订阅
+6. `PUNSUBSCRIBE [pattern [pattern ...]]`
+	- 退订所有给定模式的频道
+
+## 7.4 总结
+**Redis 可以实现消息中间件 MQ 的功能，通过发布订阅实现消息的引导和fen'liu
